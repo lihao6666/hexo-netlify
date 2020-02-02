@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: true,
+    comments: {"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Linux Mint配置2（ss科学上网）一 . 服务器的搭建（VPS）1. 在合适的VPS网站上购买VPS（vultr推荐），记住ip，password2. 进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）  命令格式：ssh root@ip（这里第一次登陆时可能会让你输入用户名和密码，需要你输入你买VPS注册得账号密码）  3. 输入密码一路回">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux下ss搭建">
+<meta property="og:url" content="http://yoursite.com/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:site_name" content="Mars456">
+<meta property="og:description" content="Linux Mint配置2（ss科学上网）一 . 服务器的搭建（VPS）1. 在合适的VPS网站上购买VPS（vultr推荐），记住ip，password2. 进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）  命令格式：ssh root@ip（这里第一次登陆时可能会让你输入用户名和密码，需要你输入你买VPS注册得账号密码）  3. 输入密码一路回">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*VK1s3NgNSJKpbvUD.jpg">
+<meta property="article:published_time" content="2019-09-29T09:41:38.000Z">
+<meta property="article:modified_time" content="2019-11-27T14:49:04.000Z">
+<meta property="article:author" content="李浩">
+<meta property="article:tag" content="linux-ss">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/0*VK1s3NgNSJKpbvUD.jpg">
+
+<link rel="canonical" href="http://yoursite.com/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>linux下ss搭建 | Mars456</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mars456</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">意映如晤</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">16</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">29</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mars456">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          linux下ss搭建
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-29 17:41:38" itemprop="dateCreated datePublished" datetime="2019-09-29T17:41:38+08:00">2019-09-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Linux-Mint配置2（ss科学上网）"><a href="#Linux-Mint配置2（ss科学上网）" class="headerlink" title="Linux Mint配置2（ss科学上网）"></a>Linux Mint配置2（ss科学上网）</h1><h2 id="一-服务器的搭建（VPS）"><a href="#一-服务器的搭建（VPS）" class="headerlink" title="一 . 服务器的搭建（VPS）"></a>一 . 服务器的搭建（VPS）</h2><h3 id="1-在合适的VPS网站上购买VPS（vultr推荐），记住ip，password"><a href="#1-在合适的VPS网站上购买VPS（vultr推荐），记住ip，password" class="headerlink" title="1. 在合适的VPS网站上购买VPS（vultr推荐），记住ip，password"></a>1. 在合适的VPS网站上购买VPS（vultr推荐），记住ip，password</h3><h3 id="2-进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）"><a href="#2-进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）" class="headerlink" title="2. 进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）"></a>2. 进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）</h3><pre><code>  命令格式：ssh root@ip（这里第一次登陆时可能会让你输入用户名和密码，需要你输入你买VPS注册得账号密码）
+</code></pre><p><img src="https://cdn-images-1.medium.com/max/1600/0*VK1s3NgNSJKpbvUD.jpg" alt="ssh"></p>
+<h3 id="3-输入密码一路回车到出现root-···即可"><a href="#3-输入密码一路回车到出现root-···即可" class="headerlink" title="3. 输入密码一路回车到出现root@···即可"></a>3. 输入密码一路回车到出现root@···即可</h3><h3 id="4-部署服务器端（这里有代码）"><a href="#4-部署服务器端（这里有代码）" class="headerlink" title="4. 部署服务器端（这里有代码）"></a>4. 部署服务器端（这里有代码）</h3><pre><code>1. wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
+2. chmod +x shadowsocks.sh
+3. ./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log
+4.  剩下自己按照提示输入就行，结束后回到桌面会发现这个文件
+</code></pre><h2 id="二-Linux安装ss并配置开机启动"><a href="#二-Linux安装ss并配置开机启动" class="headerlink" title="二. Linux安装ss并配置开机启动"></a>二. Linux安装ss并配置开机启动</h2><h3 id="1-下载ss"><a href="#1-下载ss" class="headerlink" title="1. 下载ss"></a>1. 下载ss</h3><pre><code>1. sudo apt-get install python-pip //安装pip
+2. sudo apt-get install shadowsocks//安装ss
+</code></pre><h3 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2. 修改配置文件"></a>2. 修改配置文件</h3><pre><code>1. 在/etc/下创建文件ss.json (名字随意路径也可以自己选择）
+2. 编辑配置文件sudo vim /etc/ss.json
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;server&quot;:&quot;my_server_ip&quot;,&#x2F;&#x2F;代理ip</span><br><span class="line">	&quot;server_port&quot;:my_port,&#x2F;&#x2F;代理端口</span><br><span class="line">	&quot;password&quot;:&quot;passwd&quot;,&#x2F;&#x2F;密码</span><br><span class="line">	&quot;method&quot;:&quot;aes-256-cfb&quot;&#x2F;&#x2F;没有逗号</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>3. 打开终端输入sslocal -c /etc/ss.json（如果不报错打开google测试即可）
+</code></pre><h3 id="3-可能出现问题"><a href="#3-可能出现问题" class="headerlink" title="3. 可能出现问题"></a>3. 可能出现问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">运行sslocal 报错</span><br><span class="line">AttributeError: &#x2F;usr&#x2F;lib&#x2F;x86_64-Linux-gnu&#x2F;libcrypto.so.1.1: undefined symbol: EVP_CIPHER_CTX_cleanuphttp:&#x2F;&#x2F;www.cnblogs.com&#x2F;lzhd24&#x2F;p&#x2F;6686803.html</span><br></pre></td></tr></table></figure>
+<pre><code>1. 用vi打开文件：vi /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
+2. 将第52行libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,) 改为libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
+3. 再次搜索cleanup（全文件共2处，此处位于111行），将libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx) 改为libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
+4.保存退出继续运行sslocal -c 命令
+</code></pre><h3 id="4-设置开机启动项"><a href="#4-设置开机启动项" class="headerlink" title="4.设置开机启动项"></a>4.设置开机启动项</h3><pre><code>系统有开机启动项设置，这里可以在开机启动项里设置加入启动命令即可（这里rc.local)出现问题，在新版本ubuntu中不执行
+</code></pre><h3 id="5-设置终端运行（前面设置的ss不是全局代理，终端无法ping-谷歌）"><a href="#5-设置终端运行（前面设置的ss不是全局代理，终端无法ping-谷歌）" class="headerlink" title="5.设置终端运行（前面设置的ss不是全局代理，终端无法ping 谷歌）"></a>5.设置终端运行（前面设置的ss不是全局代理，终端无法ping 谷歌）</h3><h4 id="1-安装polipo（支持socks6）"><a href="#1-安装polipo（支持socks6）" class="headerlink" title="(1)安装polipo（支持socks6）"></a>(1)安装polipo（支持socks6）</h4><pre><code>sudo apt install polipo
+</code></pre><h4 id="2-编辑配置文件，保存到-etc-polipo-config"><a href="#2-编辑配置文件，保存到-etc-polipo-config" class="headerlink" title="(2) 编辑配置文件，保存到/etc/polipo/config"></a>(2) 编辑配置文件，保存到/etc/polipo/config</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># This file only needs to list configuration variables that deviate</span><br><span class="line"># from the default values.  See &#x2F;usr&#x2F;share&#x2F;doc&#x2F;polipo&#x2F;examples&#x2F;config.sample</span><br><span class="line"># and &quot;polipo -v&quot; for variables you can tweak and further information.</span><br><span class="line"> </span><br><span class="line">logSyslog &#x3D; true</span><br><span class="line">logFile &#x3D; &#x2F;var&#x2F;log&#x2F;polipo&#x2F;polipo.log</span><br><span class="line"> </span><br><span class="line">proxyAddress &#x3D; &quot;0.0.0.0&quot;</span><br><span class="line"> </span><br><span class="line">socksParentProxy &#x3D; &quot;127.0.0.1:1080&quot;</span><br><span class="line">socksProxyType &#x3D; socks5</span><br><span class="line"> </span><br><span class="line">chunkHighMark &#x3D; 50331648</span><br><span class="line">objectHighMark &#x3D; 16384</span><br><span class="line"> </span><br><span class="line">serverMaxSlots &#x3D; 64</span><br><span class="line">serverSlots &#x3D; 16</span><br><span class="line">serverSlots1 &#x3D; 32</span><br></pre></td></tr></table></figure>
+<h4 id="3-重启polipo"><a href="#3-重启polipo" class="headerlink" title="(3)重启polipo"></a>(3)重启polipo</h4><pre><code>sudo service polipo restart
+curl google.com（看看是否有用）
+</code></pre><h4 id="4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）"><a href="#4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）" class="headerlink" title="(4)添加环境变量，要不然只能这一个终端可以使用（vim ～/.bashrc)(添加后source /etc/profile 让环境变量立即生效）"></a>(4)添加环境变量，要不然只能这一个终端可以使用（vim ～/.bashrc)(添加后source /etc/profile 让环境变量立即生效）</h4><pre><code>export http_proxy=&quot;http://127.0.0.1:8123&quot;
+export https_proxy=&quot;https://127.0.0.1:8123&quot;
+</code></pre>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/linux-ss/" rel="tag"><i class="fa fa-tag"></i> linux-ss</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/09/29/linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" rel="prev" title="linux双系统安装">
+      <i class="fa fa-chevron-left"></i> linux双系统安装
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%80%E6%89%8B%E6%9C%AD/" rel="next" title="人间失格第一手札">
+      人间失格第一手札 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-Mint配置2（ss科学上网）"><span class="nav-number">1.</span> <span class="nav-text">Linux Mint配置2（ss科学上网）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-服务器的搭建（VPS）"><span class="nav-number">1.1.</span> <span class="nav-text">一 . 服务器的搭建（VPS）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在合适的VPS网站上购买VPS（vultr推荐），记住ip，password"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 在合适的VPS网站上购买VPS（vultr推荐），记住ip，password</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-输入密码一路回车到出现root-···即可"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 输入密码一路回车到出现root@···即可</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-部署服务器端（这里有代码）"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. 部署服务器端（这里有代码）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-Linux安装ss并配置开机启动"><span class="nav-number">1.2.</span> <span class="nav-text">二. Linux安装ss并配置开机启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-下载ss"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 下载ss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改配置文件"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. 修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-可能出现问题"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 可能出现问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-设置开机启动项"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.设置开机启动项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-设置终端运行（前面设置的ss不是全局代理，终端无法ping-谷歌）"><span class="nav-number">1.2.5.</span> <span class="nav-text">5.设置终端运行（前面设置的ss不是全局代理，终端无法ping 谷歌）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-安装polipo（支持socks6）"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">(1)安装polipo（支持socks6）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-编辑配置文件，保存到-etc-polipo-config"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">(2) 编辑配置文件，保存到&#x2F;etc&#x2F;polipo&#x2F;config</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-重启polipo"><span class="nav-number">1.2.5.3.</span> <span class="nav-text">(3)重启polipo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）"><span class="nav-number">1.2.5.4.</span> <span class="nav-text">(4)添加环境变量，要不然只能这一个终端可以使用（vim ～&#x2F;.bashrc)(添加后source &#x2F;etc&#x2F;profile 让环境变量立即生效）</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="李浩"
+      src="/images/touxiang.png">
+  <p class="site-author-name" itemprop="name">李浩</p>
+  <div class="site-description" itemprop="description">分享信仰、爱好、Python等个人学习记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lihao6666" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lihao6666" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1956413161@qq.com" title="E-Mail → mailto:1956413161@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李浩</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">16k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">14 mins.</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: true,
+      notify: true,
+      appId: 'IyuIhwFs8LLW5qWaD9aPtCle-gzGzoHsz',
+      appKey: 'S85f5raFWoycfL4a7Uti7iOB',
+      placeholder: "期待你的评论",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
@@ -40,7 +40,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
@@ -50,7 +50,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="读经分享1">
 <meta property="og:url" content="http://yoursite.com/2019/11/08/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB/index.html">
-<meta property="og:site_name" content="Mars456">
+<meta property="og:site_name" content="三毛的小窝">
 <meta property="og:description" content="晨读感动分享 今天早上和国鑫读了林前1-4，自己有了一些感动，也分享了出来，分享的很乱，这里记录总结一下，未来共勉  分享起点:  因为我曾定了主意，在你们中间不知道别的，只知道耶稣基督并他钉十字架。(哥林多前书 2:2 和合本) 回想来大学团契两年多了，经历了很多事情，自己对神的认识和个人的生命也在一点点长进，或许很慢，但是自己却很满足，自己周围有一群能让自己头疼和高兴的小伙伴也很感恩神的带领。">
 <meta property="article:published_time" content="2019-11-08T00:25:06.000Z">
 <meta property="article:modified_time" content="2019-11-27T14:49:04.000Z">
@@ -70,7 +70,7 @@
   };
 </script>
 
-  <title>读经分享1 | Mars456</title>
+  <title>读经分享1 | 三毛的小窝</title>
   
 
 
@@ -114,7 +114,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Mars456</span>
+        <span class="site-title">三毛的小窝</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -159,9 +159,34 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">29</span></a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -195,7 +220,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mars456">
+      <meta itemprop="name" content="三毛的小窝">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -495,6 +520,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

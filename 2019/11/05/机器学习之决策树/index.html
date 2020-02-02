@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
@@ -40,7 +40,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
@@ -50,7 +50,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习之决策树">
 <meta property="og:url" content="http://yoursite.com/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/index.html">
-<meta property="og:site_name" content="Mars456">
+<meta property="og:site_name" content="三毛的小窝">
 <meta property="og:description" content="机器学习之决策树 决策树是一个有监督分类与回归算法。决策树的生成只考虑局部最优，相对的，决策树剪枝则考虑全局最优  1 树模型 分类决策树模型是一种描述对实例进行分类的树形结构。结点有两种类型，内部结点表示一个特征或属性，叶结点表示一个类。 用决策树分类，从根结点开始，对实例的某一特征进行测试，根据测试结果，将实例分配到其子节点；这时，每一个子结点对应着该特征的一个取值，如此递归下去，直到到达叶子">
 <meta property="og:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_10-39-50.png">
 <meta property="og:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234517.png">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>机器学习之决策树 | Mars456</title>
+  <title>机器学习之决策树 | 三毛的小窝</title>
   
 
 
@@ -124,7 +124,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Mars456</span>
+        <span class="site-title">三毛的小窝</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -169,9 +169,34 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">29</span></a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -205,7 +230,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mars456">
+      <meta itemprop="name" content="三毛的小窝">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -512,6 +537,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

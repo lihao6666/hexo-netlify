@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
@@ -40,7 +40,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
   };
@@ -48,9 +48,9 @@
 
   <meta name="description" content="分享信仰、爱好、Python等个人学习记录">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Mars456">
+<meta property="og:title" content="三毛的小窝">
 <meta property="og:url" content="http://yoursite.com/page/3/index.html">
-<meta property="og:site_name" content="Mars456">
+<meta property="og:site_name" content="三毛的小窝">
 <meta property="og:description" content="分享信仰、爱好、Python等个人学习记录">
 <meta property="article:author" content="李浩">
 <meta property="article:tag" content=" Gold Is Beautiful、Python Is Easy">
@@ -68,7 +68,7 @@
   };
 </script>
 
-  <title>Mars456</title>
+  <title>三毛的小窝</title>
   
 
 
@@ -112,7 +112,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Mars456</span>
+        <span class="site-title">三毛的小窝</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -157,9 +157,34 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">29</span></a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -184,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/19/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.png">
@@ -193,12 +218,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mars456">
+      <meta itemprop="name" content="三毛的小窝">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/" class="post-title-link" itemprop="url">Python设计模式1</a>
+            <a href="/2019/11/19/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F6/" class="post-title-link" itemprop="url">Python设计模式6</a>
         </h1>
 
         <div class="post-meta">
@@ -208,14 +233,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-10-15 21:57:58" itemprop="dateCreated datePublished" datetime="2019-10-15T21:57:58+08:00">2019-10-15</time>
+              <time title="Created: 2019-11-19 10:37:42" itemprop="dateCreated datePublished" datetime="2019-11-19T10:37:42+08:00">2019-11-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-16 14:37:48" itemprop="dateModified" datetime="2019-12-16T14:37:48+08:00">2019-12-16</time>
+                <time title="Modified: 2019-12-12 23:42:28" itemprop="dateModified" datetime="2019-12-12T23:42:28+08:00">2019-12-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,8 +254,8 @@
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%88%9B%E5%BB%BA%E5%9E%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">创建型</span>
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">结构型</span>
                   </a>
                 </span>
             </span>
@@ -244,133 +269,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>614</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h2 id="Python设计模式1-单例模式"><a href="#Python设计模式1-单例模式" class="headerlink" title="Python设计模式1(单例模式)"></a>Python设计模式1(单例模式)</h2><hr>
-<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><blockquote>
-<p>单例模式就是确保一个类只有一个实例.当你希望整个系统中,某个类只有一个实例时,单例模式就派上了用场。比如,某个服务器的配置信息存在在一个文件中,客户端通过AppConfig类来读取配置文件的信息.如果程序的运行的过程中,很多地方都会用到配置文件信息,则就需要创建很多的AppConfig实例,这样就导致内存中有很多AppConfig对象的实例,造成资源的浪费.其实这个时候AppConfig我们希望它只有一份,就可以使用单例模式.</p>
-</blockquote>
-<h3 id="单例模式实现"><a href="#单例模式实现" class="headerlink" title="单例模式实现"></a>单例模式实现</h3><h4 id="1-使用模块"><a href="#1-使用模块" class="headerlink" title="1 使用模块"></a>1 使用模块</h4><blockquote>
-<p>python模块就是单例模式的一个体现、因为第一次导入模块的时候会生成.pyc文件，第二次导入时就会加载.pyc文件</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">singleton = Singleton()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过模块调用</span></span><br><span class="line"><span class="keyword">from</span> test <span class="keyword">import</span> singleton</span><br></pre></td></tr></table></figure>
-<h4 id="2-装饰器"><a href="#2-装饰器" class="headerlink" title="2 装饰器"></a>2 装饰器</h4><blockquote>
-<p>装饰器里面的外层变量定义一个字典,里面存放这个类的实例.当第一次创建的收,就将这个实例保存到这个字典中.然后以后每次创建对象的时候,都去这个字典中判断一下,如果已经被实例化,就直接取这个实例对象.如果不存在就保存到字典中.</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    _instance = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_singleton</span><span class="params">(*args, **kargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> _instance:</span><br><span class="line">            _instance[cls] = cls(*args, **kargs)</span><br><span class="line">        <span class="keyword">return</span> _instance[cls]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> _singleton</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Singleton</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span></span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, a)</span>:</span></span><br><span class="line">        self.a = a</span><br><span class="line"></span><br><span class="line">a1 = A(<span class="number">2</span>)</span><br><span class="line">a2 = A(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="3-加锁类方法"><a href="#3-加锁类方法" class="headerlink" title="3 加锁类方法"></a>3 加锁类方法</h4><blockquote>
-<p>多线程调用如果出现堵塞，单纯的类方法无法实现单例模式，这里需要加锁</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    _instance_lock = threading.Lock()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,*args,**kwargs)</span>:</span></span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_instance</span><span class="params">(cls,*args,**kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(Singleton,<span class="string">'_instance'</span>):</span><br><span class="line">            <span class="keyword">with</span> Singleton._instance_lock:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> hasattr(Singleton,<span class="string">'_instance'</span>):</span><br><span class="line">                    Singleton._instance = Singleton(*args,**kwargs)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Singleton._instance</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">(arg)</span>:</span></span><br><span class="line">    obj = Singleton.get_instance(arg)</span><br><span class="line">    print(obj)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    t = threading.Thread(target=task,args=[i,])</span><br><span class="line">    t.start()</span><br><span class="line"></span><br><span class="line">obj = Singleton.get_instance()</span><br><span class="line">print(obj)</span><br></pre></td></tr></table></figure>
-<h4 id="4-基于new方法实现的单例模式"><a href="#4-基于new方法实现的单例模式" class="headerlink" title="4 基于new方法实现的单例模式"></a>4 基于<strong>new</strong>方法实现的单例模式</h4><blockquote>
-<p>一个对象的实例化过程是先执行类的<strong>new</strong>方法,如果我们没有写,默认会调用object的<strong>new</strong>方法,返回一个实例化对象,然后再调用<strong>init</strong>方法,对这个对象进行初始化,我们可以根据这个实现单例.在一个类的<strong>new</strong>方法中先判断是不是存在实例,如果存在实例,就直接返回,如果不存在实例就创建.</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    _instance_lock = threading.Lock()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(Singleton, <span class="string">"_instance"</span>):</span><br><span class="line">            <span class="keyword">with</span> Singleton._instance_lock:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> hasattr(Singleton, <span class="string">"_instance"</span>):</span><br><span class="line">                    Singleton._instance = object.__new__(cls)  </span><br><span class="line">        <span class="keyword">return</span> Singleton._instance</span><br><span class="line"></span><br><span class="line">obj1 = Singleton()</span><br><span class="line">obj2 = Singleton()</span><br><span class="line">print(obj1,obj2)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">(arg)</span>:</span></span><br><span class="line">    obj = Singleton()</span><br><span class="line">    print(obj)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    t = threading.Thread(target=task,args=[i,])</span><br><span class="line">    t.start()</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%BF%94%E5%9B%9E%E9%A1%B5%E9%9D%A2%E5%8F%91%E7%94%9F%E7%9A%84%E4%BA%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mars456">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/14/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%BF%94%E5%9B%9E%E9%A1%B5%E9%9D%A2%E5%8F%91%E7%94%9F%E7%9A%84%E4%BA%8B/" class="post-title-link" itemprop="url">从输入url到返回页面发生的事</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-10-14 19:15:02" itemprop="dateCreated datePublished" datetime="2019-10-14T19:15:02+08:00">2019-10-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2019/10/14/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%BF%94%E5%9B%9E%E9%A1%B5%E9%9D%A2%E5%8F%91%E7%94%9F%E7%9A%84%E4%BA%8B/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/10/14/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%BF%94%E5%9B%9E%E9%A1%B5%E9%9D%A2%E5%8F%91%E7%94%9F%E7%9A%84%E4%BA%8B/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/11/19/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/19/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F6/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -399,56 +299,63 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="从输入url到返回页面发生的事"><a href="#从输入url到返回页面发生的事" class="headerlink" title="从输入url到返回页面发生的事"></a>从输入url到返回页面发生的事</h1><h2 id="1-DNS解析"><a href="#1-DNS解析" class="headerlink" title="1.DNS解析"></a>1.DNS解析</h2><h3 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h3><blockquote>
-<p>DNS解析就是将网址解析成IP的过程</p>
+          <h2 id="Python设计模式6-装饰器模式"><a href="#Python设计模式6-装饰器模式" class="headerlink" title="Python设计模式6(装饰器模式)"></a>Python设计模式6(装饰器模式)</h2><h3 id="一、python闭包"><a href="#一、python闭包" class="headerlink" title="一、python闭包"></a>一、python闭包</h3><blockquote>
+<p>在一个外函数中定义了一个内函数，内函数里运用了外函数的临时变量，并且外函数的返回值是内函数的引用。这样就构成了一个闭包</p>
 </blockquote>
-<h3 id="1-2-解析过程"><a href="#1-2-解析过程" class="headerlink" title="1.2 解析过程"></a>1.2 解析过程</h3><blockquote>
-<p>DNS解析是递归查询的过程，主要有以下先后关系</p>
+<p>举例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># print_msg是外围函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_msg</span><span class="params">()</span>:</span></span><br><span class="line">    msg = <span class="string">"I'm closure"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># printer是嵌套函数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">printer</span><span class="params">()</span>:</span></span><br><span class="line">        print(msg)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> printer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里获得的就是一个闭包</span></span><br><span class="line">closure = print_msg()</span><br><span class="line"><span class="comment">#外函数结束的时候发现内部函数将会用到自己的临时变量，这两个临时变量就不会释放，会绑定给这个内部函数</span></span><br><span class="line">print(<span class="number">123</span>)</span><br><span class="line"><span class="comment">#先输出123</span></span><br><span class="line"><span class="comment"># 输出 I'm closure</span></span><br><span class="line">closure()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>闭包的作用就是保存上下文内容，脱离了原本的作用域，可以用于装饰器的构建</p>
 </blockquote>
-<ul>
-<li>先在本地域名服务器查询IP地址</li>
-<li>如果上一步未查到，到根域名服务器查询</li>
-<li>根域名服务器不存在，则本地域名会向com顶级域名服务器发送请求</li>
-</ul>
-<h3 id="1-3-DNS缓冲"><a href="#1-3-DNS缓冲" class="headerlink" title="1.3 DNS缓冲"></a>1.3 DNS缓冲</h3><blockquote>
-<p>如果每次都这么多查询步骤会特别麻烦，为了优化DNS解析，通过DNS缓冲技术减少请求步骤</p>
+<h3 id="二、python装饰器"><a href="#二、python装饰器" class="headerlink" title="二、python装饰器"></a>二、python装饰器</h3><h4 id="1、引入"><a href="#1、引入" class="headerlink" title="1、引入"></a>1、引入</h4><blockquote>
+<p>当我们想统计一段代码的运行时间时，很多时候我们需要侵入到代码内部去修改，，就像下面一样</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DNS存在着多级缓存，从离浏览器的距离排序的话，有以下几种: 浏览器缓存，系统缓存，路由器缓存，IPS服务器缓存，根域名服务器缓存，顶级域名服务器缓存，主域名服务器缓存。</span><br></pre></td></tr></table></figure>
-<h3 id="1-4-DNS负载均衡"><a href="#1-4-DNS负载均衡" class="headerlink" title="1.4 DNS负载均衡"></a>1.4 DNS负载均衡</h3><blockquote>
-<p>DNS可以返回一个合适的机器的IP给用户，例如可以根据每台机器的负载量，该机器离用户地理位置的距离等等，这种过程就是DNS负载均衡，又叫做DNS重定向，例子如CDN</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">    start_time = time.time()</span><br><span class="line">    print(<span class="string">"hello"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"world"</span>)</span><br><span class="line">    end_time = time.time()</span><br><span class="line"></span><br><span class="line">    execution_time = (end_time - start_time)*<span class="number">1000</span></span><br><span class="line">    print(<span class="string">"time is %d ms"</span> %execution_time)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这样往往会很不规范，python可以实现函数的传参，所以我们可以再定义一个函数去调用，如下</p>
 </blockquote>
-<h2 id="2-TCP连接"><a href="#2-TCP连接" class="headerlink" title="2.TCP连接"></a>2.TCP连接</h2><blockquote>
-<p>在拿到域名对应的IP地址后，会以随机端口（1024~~65535）向WEB服务器程序80端口发起TCP的连接请求，这个连接请求进入到内核的TCP/IP协议栈（用于识别该连接请求，解封包，一层一层的剥开），还有可能要经过Netfilter防火墙（属于内核的模块）的过滤，最终到达WEB程序，最终建立了TCP/IP的连接，对于客户端与服务器的TCP链接，必然要说的就是『三次握手』</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(func)</span>:</span></span><br><span class="line">    start_time = time.time()</span><br><span class="line">    f()</span><br><span class="line">    end_time = time.time()</span><br><span class="line">    execution_time = (end_time - start_time)*<span class="number">1000</span></span><br><span class="line">    print(<span class="string">"time is %d ms"</span> %execution_time)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"hello"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"world"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    deco(f)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这样每次都要调用deco(),如果使用过多会很麻烦。这样装饰器就出现了</p>
 </blockquote>
-<p><img src="http://ww1.sinaimg.cn/large/006QuJaKly1g7xyonxwj2j30gg097a9w.jpg" alt="undefined"></p>
-<h2 id="3-http请求"><a href="#3-http请求" class="headerlink" title="3.http请求"></a>3.http请求</h2><blockquote>
-<p>建立TCP连接之后，发起HTTP请求，请求一般分为三部分</p>
+<h4 id="2、简单装饰器"><a href="#2、简单装饰器" class="headerlink" title="2、简单装饰器"></a>2、简单装饰器</h4><p>例子:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">()</span>:</span></span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f()</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        execution_time = (end_time - start_time)*<span class="number">1000</span></span><br><span class="line">        print(<span class="string">"time is %d ms"</span> %execution_time )</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"hello"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"world"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    f()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里面使用了闭包的方法，外部函数传入要装饰函数名，内部函数返回装饰函数的名字，这里没有对被装饰的函数进行任何修改，其实加入@desc很像java中的注解方法，这里相当于不用再调用deco(f())了，可以直接调用要被装饰的函数</p>
 </blockquote>
-<ul>
-<li>请求方法URI协议/版本</li>
-<li>请求头(Request Header)</li>
-<li>请求正文</li>
-</ul>
-<h2 id="4-服务端处理"><a href="#4-服务端处理" class="headerlink" title="4.服务端处理"></a>4.服务端处理</h2><blockquote>
-<p>服务器端收到请求后的由web服务器（准确说应该是http服务器）处理请求，诸如Apache、Ngnix、IIS等。web服务器解析用户请求，知道了需要调度哪些资源文件，再通过相应的这些资源文件处理用户请求和参数，并调用数据库信息，最后将结果通过web服务器返回给浏览器客户端，这些返回结果以http响应报文形式，有以下几点组成：</p>
+<h4 id="3、带固定参装饰器"><a href="#3、带固定参装饰器" class="headerlink" title="3、带固定参装饰器"></a>3、带固定参装饰器</h4><p>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(a,b)</span>:</span></span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f(a,b)</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        execution_time = (end_time - start_time)*<span class="number">1000</span></span><br><span class="line">        print(<span class="string">"time is %d ms"</span> % execution_time)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    print(<span class="string">"be on"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"result is %d"</span> %(a+b))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    f(<span class="number">3</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="4、无固定参数传递"><a href="#4、无固定参数传递" class="headerlink" title="4、无固定参数传递"></a>4、无固定参数传递</h4><p>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f(*args, **kwargs)</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        execution_time_ = (end_time - start_time)*<span class="number">1000</span></span><br><span class="line">        print(<span class="string">"time is %d ms"</span> %execution_time)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@deco</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    print(<span class="string">"be on"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"result is %d"</span> %(a+b))</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(a,b,c)</span>:</span></span><br><span class="line">    print(<span class="string">"be on"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"result is %d"</span> %(a+b+c))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    f2(<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">    f(<span class="number">3</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="5、多个装饰器装饰一个函数"><a href="#5、多个装饰器装饰一个函数" class="headerlink" title="5、多个装饰器装饰一个函数"></a>5、多个装饰器装饰一个函数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco01</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"this is deco01"</span>)</span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f(*args, **kwargs)</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        execution_time = (end_time - start_time)*<span class="number">1000</span></span><br><span class="line">        print(<span class="string">"time is %d ms"</span> % execution_time)</span><br><span class="line">        print(<span class="string">"deco01 end here"</span>)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco02</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"this is deco02"</span>)</span><br><span class="line">        f(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">        print(<span class="string">"deco02 end here"</span>)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco01</span></span><br><span class="line"><span class="meta">@deco02</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    print(<span class="string">"be on"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"result is %d"</span> %(a+b))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    f(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># result:</span></span><br><span class="line">this <span class="keyword">is</span> deco01</span><br><span class="line">this <span class="keyword">is</span> deco02</span><br><span class="line">be on</span><br><span class="line">result <span class="keyword">is</span> <span class="number">7</span></span><br><span class="line">deco02 end here</span><br><span class="line">time <span class="keyword">is</span> <span class="number">1001</span> ms</span><br><span class="line">deco01 end here</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>从上面结果可以看出来多个装饰器的执行是有顺序的，相当于执行deco01(deco02(f(3,4)))</p>
 </blockquote>
-<ul>
-<li>状态码</li>
-<li>响应头</li>
-<li>响应正文</li>
-</ul>
-<h3 id="4-1-状态码"><a href="#4-1-状态码" class="headerlink" title="4.1 状态码"></a>4.1 状态码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1xx：指示信息–表示请求已接收，继续处理。</span><br><span class="line"></span><br><span class="line">2xx：成功–表示请求已被成功接收、理解、接受。</span><br><span class="line"></span><br><span class="line">3xx：重定向–要完成请求必须进行更进一步的操作。</span><br><span class="line"></span><br><span class="line">4xx：客户端错误–请求有语法错误或请求无法实现。</span><br><span class="line"></span><br><span class="line">5xx：服务器端错误–服务器未能实现合法的请求。</span><br></pre></td></tr></table></figure>
-<h2 id="5-关闭TCP连接"><a href="#5-关闭TCP连接" class="headerlink" title="5.关闭TCP连接"></a>5.关闭TCP连接</h2><blockquote>
-<p>为了避免服务器与客户端双方的资源占用和损耗，当双方没有请求或响应传递时，任意一方都可以发起关闭请求。与创建TCP连接的3次握手类似，关闭TCP连接，需要4次握手。</p>
+<h4 id="6、类装饰器"><a href="#6、类装饰器" class="headerlink" title="6、类装饰器"></a>6、类装饰器</h4><blockquote>
+<p>装饰器不仅可以是函数，还可以是类，相比函数装饰器，类装饰器具有灵活度大、高内聚、封装性等优点。使用类装饰器主要依靠类的<strong>call</strong>方法</p>
 </blockquote>
-<p><img src="http://ww1.sinaimg.cn/large/006QuJaKly1g7xyxx5lnoj30dl0aejr7.jpg" alt="undefined"></p>
-<h2 id="6-浏览器资源解析"><a href="#6-浏览器资源解析" class="headerlink" title="6.浏览器资源解析"></a>6.浏览器资源解析</h2><blockquote>
-<p>对于返回后的响应正文内容，如css/html/js等等资源，浏览器是一个边解析边渲染的过程。首先浏览器解析HTML文件构建DOM树，然后解析CSS文件构建渲染树，等到渲染树构建完成后，浏览器开始布局渲染树并将其绘制到屏幕上。这个过程比较复杂，涉及到两个概念: reflow(回流)和repain(重绘)。DOM节点中的各个元素都是以盒模型的形式存在，这些都需要浏览器去计算其位置和大小等，这个过程称为relow;当盒模型的位置,大小以及其他属性，如颜色,字体,等确定下来之后，浏览器便开始绘制内容，这个过程称为repain。页面在首次加载时必然会经历reflow和repain。reflow和repain过程是非常消耗性能的，尤其是在移动设备上，它会破坏用户体验，有时会造成页面卡顿。所以我们应该尽可能少的减少reflow和repain，下面是流程图：<br><img src="http://ww1.sinaimg.cn/large/006QuJaKly1g7xz1o7mjcj30hc081wem.jpg" alt="undefined"></p>
+<p>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func)</span>:</span></span><br><span class="line">        self._func = func</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'class decorator runing'</span>)</span><br><span class="line">        self._func()</span><br><span class="line">        print(<span class="string">'class decorator ending'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Foo　　# bar = Foo(bar)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'bar'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bar()　　<span class="comment"># Foo(bar)()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="comment"># class decorator runing</span></span><br><span class="line"><span class="comment"># bar</span></span><br><span class="line"><span class="comment"># class decorator ending</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这里的<strong>call</strong>魔术方法，相当于实现闭包功能，可以参照之前魔术方法那一篇文章</p>
 </blockquote>
-<h2 id="7-总结"><a href="#7-总结" class="headerlink" title="7.总结"></a>7.总结</h2><blockquote>
-<p>这里面涉及到一些网页优化问题，后面学习后再次补充</p>
+<h3 id="三、python内置装饰器"><a href="#三、python内置装饰器" class="headerlink" title="三、python内置装饰器"></a>三、python内置装饰器</h3><h4 id="1、property"><a href="#1、property" class="headerlink" title="1、property"></a>1、property</h4><blockquote>
+<p>property可以将python定义的函数当做属性访问，从而提供更加友好访问方式，但是有时候setter/deleter也是需要的<br>只有@property表示只读。<br>同时有@property和@x.setter表示可读可写。<br>同时有@property和@x.setter和@x.deleter表示可读可写可删除。</p>
 </blockquote>
-<h2 id="8-参考文章"><a href="#8-参考文章" class="headerlink" title="8.参考文章"></a>8.参考文章</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;segmentfault.com&#x2F;a&#x2F;1190000006879700</span><br><span class="line">https:&#x2F;&#x2F;www.cnblogs.com&#x2F;yuanzhiguo&#x2F;p&#x2F;8119470.html</span><br></pre></td></tr></table></figure>
+<p>例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.__name = name</span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__name</span><br><span class="line"><span class="meta">    @name.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> isinstance(value, str):</span><br><span class="line">            <span class="keyword">raise</span> TypeError(<span class="string">'name must be str'</span>)</span><br><span class="line">        self.__name = value</span><br><span class="line"><span class="meta">    @name.deleter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">raise</span> TypeError(<span class="string">'can not delete'</span>)</span><br><span class="line">f = Foo(<span class="string">'jack'</span>)</span><br><span class="line">print(f.name)  <span class="comment"># jack</span></span><br><span class="line">f.name = <span class="string">'hanmeimei'</span></span><br><span class="line">print(f.name)  <span class="comment"># hanmeimei</span></span><br><span class="line"><span class="comment"># del f.name  # TypeError: can not delete</span></span><br></pre></td></tr></table></figure>
+<h4 id="2、类方法"><a href="#2、类方法" class="headerlink" title="2、类方法"></a>2、类方法</h4><blockquote>
+<p>仅仅与类交互而不和实例交互，类在使用时会将类本身当做参数传给类方法的第一个参数</p>
+</blockquote>
+<p>例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line">    car = <span class="string">'audi'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">value</span><span class="params">(cls, category)</span>:</span></span><br><span class="line">        print(<span class="string">'%s is the %s'</span> % (category, cls.car))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bmw</span><span class="params">(Car)</span>:</span></span><br><span class="line">    car = <span class="string">'Bmw'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Benz</span><span class="params">(Car)</span>:</span></span><br><span class="line">    car = <span class="string">'Benz'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(<span class="string">'通过实例进行调用'</span>)</span><br><span class="line">b = Bmw()</span><br><span class="line">b.value(<span class="string">'normal'</span>)</span><br><span class="line">print(<span class="string">'直接用类名进行调用'</span>)</span><br><span class="line">Benz.value(<span class="string">'NOnormal'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="3、静态方法"><a href="#3、静态方法" class="headerlink" title="3、静态方法"></a>3、静态方法</h4><blockquote>
+<p>将类中的方法设置为静态方法，就是在不需要创建实例对象的情况下，可以通过类名来进行直接引用，来达到将函数功能与实例解绑的效果</p>
+</blockquote>
+<p>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(x, y)</span>:</span></span><br><span class="line">        print(<span class="string">'x + y = %s'</span> % (x+y))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cls = Test()</span><br><span class="line">print(<span class="string">'可以通过实例对象来引用'</span>)</span><br><span class="line">cls.index(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">print(<span class="string">'通过类名直接引用静态方法'</span>)</span><br><span class="line">Test.index(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">可以通过实例对象来引用</span></span><br><span class="line"><span class="string">x + y = 3</span></span><br><span class="line"><span class="string">通过类名直接引用静态方法</span></span><br><span class="line"><span class="string">x + y = 3</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="4、实例方法、类方法、和静态方法区别"><a href="#4、实例方法、类方法、和静态方法区别" class="headerlink" title="4、实例方法、类方法、和静态方法区别"></a>4、实例方法、类方法、和静态方法区别</h4><blockquote>
+<p>实例方法调用时有一个隐含参数self，实例调用时可以不传self，self是实例本身<br>类方法调用时有一个隐含参数cls，类调用时可以不传cls，cls是实例本身<br>静态方法没有隐含参数<br>类方法和静态方法可以通过函数名直接调用方法，实例方法必须通过实例</p>
+</blockquote>
+<h3 id="四、装饰器模式"><a href="#四、装饰器模式" class="headerlink" title="四、装饰器模式"></a>四、装饰器模式</h3><blockquote>
+<p>在面向对象中，装饰模式指：动态地给一个对象添加一些额外的职责。就增加一些功能来说，装饰模式比生成子类更为灵活。<br>装饰器模式就是利用装饰器实现对一些对象功能扩展，例如在django项目登录模块中对一些需要登录功能的限制就使用到了这个模式，通过添加装饰器对功能限制，这样一方面实现了功能扩展，也让代码更加规范易懂</p>
+</blockquote>
 
       
     </div>
@@ -468,7 +375,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%89%E6%89%8B%E6%9C%AD/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.png">
@@ -477,12 +384,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mars456">
+      <meta itemprop="name" content="三毛的小窝">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%89%E6%89%8B%E6%9C%AD/" class="post-title-link" itemprop="url">人间失格第三手札</a>
+            <a href="/2019/11/18/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB2/" class="post-title-link" itemprop="url">读经分享2</a>
         </h1>
 
         <div class="post-meta">
@@ -492,564 +399,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-09-29 17:49:07" itemprop="dateCreated datePublished" datetime="2019-09-29T17:49:07+08:00">2019-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%89%E6%89%8B%E6%9C%AD/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%89%E6%89%8B%E6%9C%AD/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>252</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="一、这世上所有人说话总是拐弯抹角，闪烁其词，他们总是试图用这种微妙复杂的说话方式来逃避责任，虽然近乎徒劳无功，但他们还是费尽心机地时刻防范着。"><a href="#一、这世上所有人说话总是拐弯抹角，闪烁其词，他们总是试图用这种微妙复杂的说话方式来逃避责任，虽然近乎徒劳无功，但他们还是费尽心机地时刻防范着。" class="headerlink" title="一、这世上所有人说话总是拐弯抹角，闪烁其词，他们总是试图用这种微妙复杂的说话方式来逃避责任，虽然近乎徒劳无功，但他们还是费尽心机地时刻防范着。"></a>一、这世上所有人说话总是拐弯抹角，闪烁其词，他们总是试图用这种微妙复杂的说话方式来逃避责任，虽然近乎徒劳无功，但他们还是费尽心机地时刻防范着。</h4><h4 id="二、那嗤笑的面影里潜藏着一种近于轻蔑却又不同于轻蔑的东西。倘若把人世间比作一片大海，那么，在大海的万丈深渊里就分明曳动着那种奇妙的影子。我正是透过那种嗤笑，管窥了成年人生活的深层奥秘。"><a href="#二、那嗤笑的面影里潜藏着一种近于轻蔑却又不同于轻蔑的东西。倘若把人世间比作一片大海，那么，在大海的万丈深渊里就分明曳动着那种奇妙的影子。我正是透过那种嗤笑，管窥了成年人生活的深层奥秘。" class="headerlink" title="二、那嗤笑的面影里潜藏着一种近于轻蔑却又不同于轻蔑的东西。倘若把人世间比作一片大海，那么，在大海的万丈深渊里就分明曳动着那种奇妙的影子。我正是透过那种嗤笑，管窥了成年人生活的深层奥秘。"></a>二、那嗤笑的面影里潜藏着一种近于轻蔑却又不同于轻蔑的东西。倘若把人世间比作一片大海，那么，在大海的万丈深渊里就分明曳动着那种奇妙的影子。我正是透过那种嗤笑，管窥了成年人生活的深层奥秘。</h4><h4 id="三、显露在外面的不一定是真的，每个人总有些不为人知的内幕。"><a href="#三、显露在外面的不一定是真的，每个人总有些不为人知的内幕。" class="headerlink" title="三、显露在外面的不一定是真的，每个人总有些不为人知的内幕。"></a>三、显露在外面的不一定是真的，每个人总有些不为人知的内幕。</h4><h4 id="四、同样的事日日反复，只需遵守昨日的惯例，倘若没有过度的欢喜，便不会有极度的悲伤，为了躲避前方的绊脚石，蟾蜍也会迂回前行"><a href="#四、同样的事日日反复，只需遵守昨日的惯例，倘若没有过度的欢喜，便不会有极度的悲伤，为了躲避前方的绊脚石，蟾蜍也会迂回前行" class="headerlink" title="四、同样的事日日反复，只需遵守昨日的惯例，倘若没有过度的欢喜，便不会有极度的悲伤，为了躲避前方的绊脚石，蟾蜍也会迂回前行"></a>四、同样的事日日反复，只需遵守昨日的惯例，倘若没有过度的欢喜，便不会有极度的悲伤，为了躲避前方的绊脚石，蟾蜍也会迂回前行</h4>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%BA%8C%E6%89%8B%E6%9C%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mars456">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%BA%8C%E6%89%8B%E6%9C%AD/" class="post-title-link" itemprop="url">人间失格第二手札</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-29 17:47:33" itemprop="dateCreated datePublished" datetime="2019-09-29T17:47:33+08:00">2019-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%BA%8C%E6%89%8B%E6%9C%AD/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%BA%8C%E6%89%8B%E6%9C%AD/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>159</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="一、越是容易对事物感到胆怯的神经质的人，就越是渴望暴风雨降临得更加猛烈"><a href="#一、越是容易对事物感到胆怯的神经质的人，就越是渴望暴风雨降临得更加猛烈" class="headerlink" title="一、越是容易对事物感到胆怯的神经质的人，就越是渴望暴风雨降临得更加猛烈"></a>一、越是容易对事物感到胆怯的神经质的人，就越是渴望暴风雨降临得更加猛烈</h4><h4 id="二、而且他是在无意识种实施着逗笑的丑角行为（伪装），全然没有觉察到这种丑角行为的悲惨。这正是他与我本质上迥然相异的地方"><a href="#二、而且他是在无意识种实施着逗笑的丑角行为（伪装），全然没有觉察到这种丑角行为的悲惨。这正是他与我本质上迥然相异的地方" class="headerlink" title="二、而且他是在无意识种实施着逗笑的丑角行为（伪装），全然没有觉察到这种丑角行为的悲惨。这正是他与我本质上迥然相异的地方"></a>二、而且他是在无意识种实施着逗笑的丑角行为（伪装），全然没有觉察到这种丑角行为的悲惨。这正是他与我本质上迥然相异的地方</h4><h4 id="三、我不敢面对生活中的很多交际，尽量回避那过多的交往"><a href="#三、我不敢面对生活中的很多交际，尽量回避那过多的交往" class="headerlink" title="三、我不敢面对生活中的很多交际，尽量回避那过多的交往"></a>三、我不敢面对生活中的很多交际，尽量回避那过多的交往</h4><h4 id="四、有时候无法面对，就选择逃避（没有欲望，没有感情），只是为了逃离，堕落堕落。"><a href="#四、有时候无法面对，就选择逃避（没有欲望，没有感情），只是为了逃离，堕落堕落。" class="headerlink" title="四、有时候无法面对，就选择逃避（没有欲望，没有感情），只是为了逃离，堕落堕落。"></a>四、有时候无法面对，就选择逃避（没有欲望，没有感情），只是为了逃离，堕落堕落。</h4>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%80%E6%89%8B%E6%9C%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mars456">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%80%E6%89%8B%E6%9C%AD/" class="post-title-link" itemprop="url">人间失格第一手札</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-29 17:44:29" itemprop="dateCreated datePublished" datetime="2019-09-29T17:44:29+08:00">2019-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%80%E6%89%8B%E6%9C%AD/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%80%E6%89%8B%E6%9C%AD/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>507</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="我这一生，尽是可耻的过往"><a href="#我这一生，尽是可耻的过往" class="headerlink" title="我这一生，尽是可耻的过往"></a>我这一生，尽是可耻的过往</h2><h4 id="一、表面上我不断地强装出笑脸，可内心里却是对人类拼死拼活的服务，汗流浃背的服务。"><a href="#一、表面上我不断地强装出笑脸，可内心里却是对人类拼死拼活的服务，汗流浃背的服务。" class="headerlink" title="一、表面上我不断地强装出笑脸，可内心里却是对人类拼死拼活的服务，汗流浃背的服务。"></a>一、表面上我不断地强装出笑脸，可内心里却是对人类拼死拼活的服务，汗流浃背的服务。</h4><p>（辛苦的逢迎，背后总有些各样的无奈，当你因为各样原因放下自己的那份身段去强装出那种令人厌恶的姿态时，什么讥笑言语都是过眼云烟罢了。）</p>
-<h4 id="二、不公平现象是必然存在的。这一点是明摆着的事实。本来诉诸于人就是徒劳无益的。所以我依旧对真实的事情一言不发，默默忍耐着除了继续扮演滑稽逗笑角色之外已经别无选择。"><a href="#二、不公平现象是必然存在的。这一点是明摆着的事实。本来诉诸于人就是徒劳无益的。所以我依旧对真实的事情一言不发，默默忍耐着除了继续扮演滑稽逗笑角色之外已经别无选择。" class="headerlink" title="二、不公平现象是必然存在的。这一点是明摆着的事实。本来诉诸于人就是徒劳无益的。所以我依旧对真实的事情一言不发，默默忍耐着除了继续扮演滑稽逗笑角色之外已经别无选择。"></a>二、不公平现象是必然存在的。这一点是明摆着的事实。本来诉诸于人就是徒劳无益的。所以我依旧对真实的事情一言不发，默默忍耐着除了继续扮演滑稽逗笑角色之外已经别无选择。</h4><p>（绝对的公平是不存在的，当你因为遭遇了一个不公平待遇而去原地谩骂的时候，你已经陷入这样的泥潭，为何不依靠自己的能力去改变，去证明自己，而麻木于这样的不公平更是可悲的，你的心会随着时间而慢慢变老变枯竭）</p>
-<h4 id="三、这仅仅是其中一个微不足道的事例。相互欺骗，却又令人惊奇地不受到任何伤害，甚至于就好像没有察觉到彼此在欺骗似的，这种不加掩饰从而显得清冽、豁达的互不信任的例子，在人类生活中比比皆是。"><a href="#三、这仅仅是其中一个微不足道的事例。相互欺骗，却又令人惊奇地不受到任何伤害，甚至于就好像没有察觉到彼此在欺骗似的，这种不加掩饰从而显得清冽、豁达的互不信任的例子，在人类生活中比比皆是。" class="headerlink" title="三、这仅仅是其中一个微不足道的事例。相互欺骗，却又令人惊奇地不受到任何伤害，甚至于就好像没有察觉到彼此在欺骗似的，这种不加掩饰从而显得清冽、豁达的互不信任的例子，在人类生活中比比皆是。"></a>三、这仅仅是其中一个微不足道的事例。相互欺骗，却又令人惊奇地不受到任何伤害，甚至于就好像没有察觉到彼此在欺骗似的，这种不加掩饰从而显得清冽、豁达的互不信任的例子，在人类生活中比比皆是。</h4><p>（伪装这种东西说绝对的坏也是不恰当的，毕竟在这样一个时代，完全活出自己的模样真的是太困难了，人们往往都活在一个甚至多个角色之中，而当我们习惯这种角色的切换后，一切都变得我理所当然了，包括谎言，欺骗等等，真实这种东西，太奢侈了。。。）</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mars456">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">linux下ss搭建</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-29 17:41:38" itemprop="dateCreated datePublished" datetime="2019-09-29T17:41:38+08:00">2019-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Linux-Mint配置2（ss科学上网）"><a href="#Linux-Mint配置2（ss科学上网）" class="headerlink" title="Linux Mint配置2（ss科学上网）"></a>Linux Mint配置2（ss科学上网）</h1><h2 id="一-服务器的搭建（VPS）"><a href="#一-服务器的搭建（VPS）" class="headerlink" title="一 . 服务器的搭建（VPS）"></a>一 . 服务器的搭建（VPS）</h2><h3 id="1-在合适的VPS网站上购买VPS（vultr推荐），记住ip，password"><a href="#1-在合适的VPS网站上购买VPS（vultr推荐），记住ip，password" class="headerlink" title="1. 在合适的VPS网站上购买VPS（vultr推荐），记住ip，password"></a>1. 在合适的VPS网站上购买VPS（vultr推荐），记住ip，password</h3><h3 id="2-进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）"><a href="#2-进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）" class="headerlink" title="2. 进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）"></a>2. 进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）</h3><pre><code>  命令格式：ssh root@ip（这里第一次登陆时可能会让你输入用户名和密码，需要你输入你买VPS注册得账号密码）
-</code></pre><p><img src="https://cdn-images-1.medium.com/max/1600/0*VK1s3NgNSJKpbvUD.jpg" alt="ssh"></p>
-<h3 id="3-输入密码一路回车到出现root-···即可"><a href="#3-输入密码一路回车到出现root-···即可" class="headerlink" title="3. 输入密码一路回车到出现root@···即可"></a>3. 输入密码一路回车到出现root@···即可</h3><h3 id="4-部署服务器端（这里有代码）"><a href="#4-部署服务器端（这里有代码）" class="headerlink" title="4. 部署服务器端（这里有代码）"></a>4. 部署服务器端（这里有代码）</h3><pre><code>1. wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
-2. chmod +x shadowsocks.sh
-3. ./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log
-4.  剩下自己按照提示输入就行，结束后回到桌面会发现这个文件
-</code></pre><h2 id="二-Linux安装ss并配置开机启动"><a href="#二-Linux安装ss并配置开机启动" class="headerlink" title="二. Linux安装ss并配置开机启动"></a>二. Linux安装ss并配置开机启动</h2><h3 id="1-下载ss"><a href="#1-下载ss" class="headerlink" title="1. 下载ss"></a>1. 下载ss</h3><pre><code>1. sudo apt-get install python-pip //安装pip
-2. sudo apt-get install shadowsocks//安装ss
-</code></pre><h3 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2. 修改配置文件"></a>2. 修改配置文件</h3><pre><code>1. 在/etc/下创建文件ss.json (名字随意路径也可以自己选择）
-2. 编辑配置文件sudo vim /etc/ss.json
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;server&quot;:&quot;my_server_ip&quot;,&#x2F;&#x2F;代理ip</span><br><span class="line">	&quot;server_port&quot;:my_port,&#x2F;&#x2F;代理端口</span><br><span class="line">	&quot;password&quot;:&quot;passwd&quot;,&#x2F;&#x2F;密码</span><br><span class="line">	&quot;method&quot;:&quot;aes-256-cfb&quot;&#x2F;&#x2F;没有逗号</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>3. 打开终端输入sslocal -c /etc/ss.json（如果不报错打开google测试即可）
-</code></pre><h3 id="3-可能出现问题"><a href="#3-可能出现问题" class="headerlink" title="3. 可能出现问题"></a>3. 可能出现问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">运行sslocal 报错</span><br><span class="line">AttributeError: &#x2F;usr&#x2F;lib&#x2F;x86_64-Linux-gnu&#x2F;libcrypto.so.1.1: undefined symbol: EVP_CIPHER_CTX_cleanuphttp:&#x2F;&#x2F;www.cnblogs.com&#x2F;lzhd24&#x2F;p&#x2F;6686803.html</span><br></pre></td></tr></table></figure>
-<pre><code>1. 用vi打开文件：vi /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
-2. 将第52行libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,) 改为libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
-3. 再次搜索cleanup（全文件共2处，此处位于111行），将libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx) 改为libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
-4.保存退出继续运行sslocal -c 命令
-</code></pre><h3 id="4-设置开机启动项"><a href="#4-设置开机启动项" class="headerlink" title="4.设置开机启动项"></a>4.设置开机启动项</h3><pre><code>系统有开机启动项设置，这里可以在开机启动项里设置加入启动命令即可（这里rc.local)出现问题，在新版本ubuntu中不执行
-</code></pre><h3 id="5-设置终端运行（前面设置的ss不是全局代理，终端无法ping-谷歌）"><a href="#5-设置终端运行（前面设置的ss不是全局代理，终端无法ping-谷歌）" class="headerlink" title="5.设置终端运行（前面设置的ss不是全局代理，终端无法ping 谷歌）"></a>5.设置终端运行（前面设置的ss不是全局代理，终端无法ping 谷歌）</h3><h4 id="1-安装polipo（支持socks6）"><a href="#1-安装polipo（支持socks6）" class="headerlink" title="(1)安装polipo（支持socks6）"></a>(1)安装polipo（支持socks6）</h4><pre><code>sudo apt install polipo
-</code></pre><h4 id="2-编辑配置文件，保存到-etc-polipo-config"><a href="#2-编辑配置文件，保存到-etc-polipo-config" class="headerlink" title="(2) 编辑配置文件，保存到/etc/polipo/config"></a>(2) 编辑配置文件，保存到/etc/polipo/config</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># This file only needs to list configuration variables that deviate</span><br><span class="line"># from the default values.  See &#x2F;usr&#x2F;share&#x2F;doc&#x2F;polipo&#x2F;examples&#x2F;config.sample</span><br><span class="line"># and &quot;polipo -v&quot; for variables you can tweak and further information.</span><br><span class="line"> </span><br><span class="line">logSyslog &#x3D; true</span><br><span class="line">logFile &#x3D; &#x2F;var&#x2F;log&#x2F;polipo&#x2F;polipo.log</span><br><span class="line"> </span><br><span class="line">proxyAddress &#x3D; &quot;0.0.0.0&quot;</span><br><span class="line"> </span><br><span class="line">socksParentProxy &#x3D; &quot;127.0.0.1:1080&quot;</span><br><span class="line">socksProxyType &#x3D; socks5</span><br><span class="line"> </span><br><span class="line">chunkHighMark &#x3D; 50331648</span><br><span class="line">objectHighMark &#x3D; 16384</span><br><span class="line"> </span><br><span class="line">serverMaxSlots &#x3D; 64</span><br><span class="line">serverSlots &#x3D; 16</span><br><span class="line">serverSlots1 &#x3D; 32</span><br></pre></td></tr></table></figure>
-<h4 id="3-重启polipo"><a href="#3-重启polipo" class="headerlink" title="(3)重启polipo"></a>(3)重启polipo</h4><pre><code>sudo service polipo restart
-curl google.com（看看是否有用）
-</code></pre><h4 id="4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）"><a href="#4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）" class="headerlink" title="(4)添加环境变量，要不然只能这一个终端可以使用（vim ～/.bashrc)(添加后source /etc/profile 让环境变量立即生效）"></a>(4)添加环境变量，要不然只能这一个终端可以使用（vim ～/.bashrc)(添加后source /etc/profile 让环境变量立即生效）</h4><pre><code>export http_proxy=&quot;http://127.0.0.1:8123&quot;
-export https_proxy=&quot;https://127.0.0.1:8123&quot;
-</code></pre>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mars456">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/29/linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">linux双系统安装</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-29 17:40:27" itemprop="dateCreated datePublished" datetime="2019-09-29T17:40:27+08:00">2019-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2019/09/29/linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/29/linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>537</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Linux-Mint-配置1（GRUB）"><a href="#Linux-Mint-配置1（GRUB）" class="headerlink" title="Linux Mint 配置1（GRUB）"></a>Linux Mint 配置1（GRUB）</h1><hr>
-<h2 id="1-删除原来的Linux"><a href="#1-删除原来的Linux" class="headerlink" title="1. 删除原来的Linux"></a>1. 删除原来的Linux</h2><h3 id="一-修复MBR（主引导记录）"><a href="#一-修复MBR（主引导记录）" class="headerlink" title="一 修复MBR（主引导记录）"></a>一 修复MBR（主引导记录）</h3><pre><code>1. 下载MbrFix软件，下载地址为http://www.sysint.no/mbrfix（注意64位）
-2. 先右键打开软件以管理员运行，然后cmd进入文件夹输入
-3. 输入：32位：MbrFix/drive 0 fixmbr
-        64位：MbrFix64/drive 0 fixmbr
-4. 输入Y， OK！！！
-</code></pre><h3 id="二-删除数据（Ubuntu）"><a href="#二-删除数据（Ubuntu）" class="headerlink" title="二 删除数据（Ubuntu）"></a>二 删除数据（Ubuntu）</h3><pre><code>1. 进入磁盘管理
-2. 点击没有名字的分区，删除（就是没有像D：这样的盘符）
-3. 重启
-</code></pre><h2 id="2-下载需要安装的Linux，使用软件做启动盘（略）"><a href="#2-下载需要安装的Linux，使用软件做启动盘（略）" class="headerlink" title="2. 下载需要安装的Linux，使用软件做启动盘（略）"></a>2. 下载需要安装的Linux，使用软件做启动盘（略）</h2><h2 id="3-GRUB引导（双显卡）"><a href="#3-GRUB引导（双显卡）" class="headerlink" title="3. GRUB引导（双显卡）"></a>3. GRUB引导（双显卡）</h2><pre><code>1. 开机bios先选择u盘启动，然后F10保存进入Linux引导界面
-2. 按e编辑grub，到quiet splash 一行，在后面加上nouveau.modeset=0（禁用n卡），然后F10进入安装（也可以删除quiet splash，这样很装逼，你可以看见电脑进程启动记录）
-3. 到了分配空间最好选择自动分配，会自动选择你删除的那个盘，然后分区
-</code></pre><h2 id="4-修改GRUB"><a href="#4-修改GRUB" class="headerlink" title="4. 修改GRUB"></a>4. 修改GRUB</h2><pre><code>1. sudo vi /etc/default/grub
-2. 在quiet splash后面加入nouveau.modeset=0，保存
-3. sudo update-grub
-</code></pre>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/%E5%9B%9E%E5%88%B0%E4%BD%A0%E9%9D%A2%E5%89%8Ddemo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mars456">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/28/%E5%9B%9E%E5%88%B0%E4%BD%A0%E9%9D%A2%E5%89%8Ddemo/" class="post-title-link" itemprop="url">回到你面前demo</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-28 20:51:10" itemprop="dateCreated datePublished" datetime="2019-09-28T20:51:10+08:00">2019-09-28</time>
+              <time title="Created: 2019-11-18 22:15:53" itemprop="dateCreated datePublished" datetime="2019-11-18T22:15:53+08:00">2019-11-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -1070,8 +420,8 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%BF%A1%E4%BB%B0/%E6%AD%8C%E8%AF%8D/" itemprop="url" rel="index">
-                    <span itemprop="name">歌词</span>
+                  <a href="/categories/%E4%BF%A1%E4%BB%B0/%E5%88%86%E4%BA%AB/" itemprop="url" rel="index">
+                    <span itemprop="name">分享</span>
                   </a>
                 </span>
             </span>
@@ -1085,8 +435,8 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2019/09/28/%E5%9B%9E%E5%88%B0%E4%BD%A0%E9%9D%A2%E5%89%8Ddemo/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/28/%E5%9B%9E%E5%88%B0%E4%BD%A0%E9%9D%A2%E5%89%8Ddemo/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/11/18/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/18/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB2/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1096,7 +446,7 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>0</span>
+              <span>40</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1115,7 +465,10 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">回归了宁静寂静忧愁无尽，</span><br><span class="line">我在想你在想他在想什么。</span><br><span class="line">那种快乐和幸福只是一刻，</span><br><span class="line">走出人群彷徨惆怅留我一个。</span><br><span class="line"></span><br><span class="line">当初的祈祷是献给谁为祭？</span><br><span class="line">当初举手是在谁面前的誓言？</span><br><span class="line">当初的眼泪是音乐的渲染嘛？</span><br><span class="line">当初的宣告为了别人眼光嘛？</span><br><span class="line"></span><br><span class="line">感恩是因为生活富足嘛？</span><br><span class="line">没有了一切热情还会在吗？</span><br><span class="line">困窘逆境还会倾诉嘛？</span><br><span class="line">走出人群还能有信心嘛？</span><br><span class="line"></span><br><span class="line">多么想回到你面前，</span><br><span class="line">脱开难断的锁链，</span><br><span class="line">那些我知道不知道的事，</span><br><span class="line">放心交在你手间。</span><br><span class="line"></span><br><span class="line">万物借你话而创造，</span><br><span class="line">我可以再一次微笑，</span><br><span class="line">靠着你所出的每句话，</span><br><span class="line">我可以回到你面前。</span><br></pre></td></tr></table></figure>
+          <h2 id="忍耐与喜乐"><a href="#忍耐与喜乐" class="headerlink" title="忍耐与喜乐"></a>忍耐与喜乐</h2><blockquote>
+<p>在指望中要喜乐；在患难中要忍耐；祷告要恒切。<br>(罗马书 12:12 和合本)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">一直认为一个基督徒活出的生命应该是满有喜乐的，应该对神和生活都充满着希望。</span><br><span class="line">感觉从大学进入团契到现在，神借着他的话语给了自己很多的改变，其中我感觉很重要的一点就是喜乐的生命。虽然生活并不是总是一帆风顺，但是自己知道有那一位可以依靠，就可以少了很多忧愁和烦恼，自己在学校或者团契中很多时候也很开心，因为自己感觉只有自己在生活中有一颗喜乐的心，才会更加愿意与神亲近，才能托住自己的信仰生活，让自己避免很多软弱的破口。除了喜乐的心，还有很重要的一点就是忍耐的心，往往这也是很容易让我们软弱的破口。对于我们来说理性和急促的生活方式，往往让我们面对问题的时候，都不会会去等候或者向神寻求帮助，即使当时向神祷告寻求帮助，如果神没有马上回应，自己的心也会有所波动，所以学会忍耐，学会去等候神真的很重要。</span><br><span class="line"></span><br><span class="line">希望每一个爱神的人都能多一点快乐，少一点忧愁，多一点忍耐，少一点急躁。。。</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1135,7 +488,7 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/jupyter-notebook-%E6%90%AD%E5%BB%BA%E7%A7%BB%E5%8A%A8%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/08/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.png">
@@ -1144,12 +497,12 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mars456">
+      <meta itemprop="name" content="三毛的小窝">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/28/jupyter-notebook-%E6%90%AD%E5%BB%BA%E7%A7%BB%E5%8A%A8%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C/" class="post-title-link" itemprop="url">jupyter notebook 搭建移动代码运行</a>
+            <a href="/2019/11/08/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB/" class="post-title-link" itemprop="url">读经分享1</a>
         </h1>
 
         <div class="post-meta">
@@ -1159,7 +512,7 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-09-28 10:05:20" itemprop="dateCreated datePublished" datetime="2019-09-28T10:05:20+08:00">2019-09-28</time>
+              <time title="Created: 2019-11-08 08:25:06" itemprop="dateCreated datePublished" datetime="2019-11-08T08:25:06+08:00">2019-11-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -1174,8 +527,14 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/%E4%BF%A1%E4%BB%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">信仰</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BF%A1%E4%BB%B0/%E5%88%86%E4%BA%AB/" itemprop="url" rel="index">
+                    <span itemprop="name">分享</span>
                   </a>
                 </span>
             </span>
@@ -1189,8 +548,8 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2019/09/28/jupyter-notebook-%E6%90%AD%E5%BB%BA%E7%A7%BB%E5%8A%A8%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/28/jupyter-notebook-%E6%90%AD%E5%BB%BA%E7%A7%BB%E5%8A%A8%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/11/08/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/08/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1200,7 +559,7 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>121</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1219,15 +578,372 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="服务器搭建jupyter-notebook"><a href="#服务器搭建jupyter-notebook" class="headerlink" title="服务器搭建jupyter notebook"></a>服务器搭建jupyter notebook</h1><hr>
-<h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#先购买一个虚拟服务器、如腾讯的校园服务器</span></span><br><span class="line">pip3 install jupyter</span><br></pre></td></tr></table></figure>
-<h2 id="二、生成访问密码"><a href="#二、生成访问密码" class="headerlink" title="二、生成访问密码"></a>二、生成访问密码</h2><p>1.进入服务器python3<br>2.输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from notebook.auth import passwd</span><br><span class="line">passswd()</span><br><span class="line">#输入密码，重复，复制生成的密文</span><br></pre></td></tr></table></figure></p>
-<h2 id="三、修改配置文件"><a href="#三、修改配置文件" class="headerlink" title="三、修改配置文件"></a>三、修改配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#生成配置文件</span><br><span class="line">jupyter notebook --generate-config</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#修改配置文件</span><br><span class="line"># 找到下面几项将前面的#去除，并进行相应的修改</span><br><span class="line"></span><br><span class="line"># 设定ip访问，允许任意ip访问</span><br><span class="line">c.NotebookApp.ip &#x3D; &#39;*&#39;</span><br><span class="line"># 不打开浏览器</span><br><span class="line">c.NotebookApp.open_browser &#x3D; False</span><br><span class="line"># 用于访问的端口，设定一个不用的端口即可，这里设置为7000</span><br><span class="line">c.NotebookApp.port &#x3D; 7000</span><br><span class="line"># 设置登录密码， 将刚刚复制的内容替换此处的xxx</span><br><span class="line">c.NotebookApp.password &#x3D; u&#39;xxx&#39;</span><br><span class="line"># 保存退出即可</span><br></pre></td></tr></table></figure>
-<h2 id="四、运行jupyter-notebook"><a href="#四、运行jupyter-notebook" class="headerlink" title="四、运行jupyter notebook"></a>四、运行jupyter notebook</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#可以使用screen运行和ctrl + a + d快捷键</span><br><span class="line">jupyter notebook --allow-root</span><br></pre></td></tr></table></figure>
-<h2 id="五、浏览器登录"><a href="#五、浏览器登录" class="headerlink" title="五、浏览器登录"></a>五、浏览器登录</h2><p>进入浏览器输入服务器ip+端口号即可</p>
-<h2 id="六、ipad使用技巧"><a href="#六、ipad使用技巧" class="headerlink" title="六、ipad使用技巧"></a>六、ipad使用技巧</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">因为jupyter支持远程访问、我们完全可以通过ipad 网址加端口号访问，ipad也可以通过termius远程控制应用开启关闭，具体参考上一节</span><br></pre></td></tr></table></figure>
-<h2 id="七、可能遇到的问题"><a href="#七、可能遇到的问题" class="headerlink" title="七、可能遇到的问题"></a>七、可能遇到的问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">有些服务器没有安装python或者pip，百度安装</span><br><span class="line"></span><br><span class="line">pip更新</span><br></pre></td></tr></table></figure>
+          <h3 id="晨读感动分享"><a href="#晨读感动分享" class="headerlink" title="晨读感动分享"></a>晨读感动分享</h3><blockquote>
+<p>今天早上和国鑫读了林前1-4，自己有了一些感动，也分享了出来，分享的很乱，这里记录总结一下，未来共勉</p>
+</blockquote>
+<p>分享起点:</p>
+<blockquote>
+<p>因为我曾定了主意，在你们中间不知道别的，只知道耶稣基督并他钉十字架。(哥林多前书 2:2 和合本)</p>
+<p>回想来大学团契两年多了，经历了很多事情，自己对神的认识和个人的生命也在一点点长进，或许很慢，但是自己却很满足，自己周围有一群能让自己头疼和高兴的小伙伴也很感恩神的带领。</p>
+<p>今天读完这段经文后，自己仔细想了自己目前的生命状况，然后我问了国鑫这样一个问题: “你什么时候开始接受神在自己生命中掌权做王？”<br>国鑫回答我说:”可能到现在我还没有做到过….”</p>
+<p>自己很喜欢，可能也是唯一喜欢的几个动漫角色就是东京喰种中的 金木和他的好伙伴永近英良,为什么呢，因为感觉他们很值得我去学习，学习什么呢？——-用心去爱自己在乎的人，无论家人、朋友、或是只有几面之缘的陌生人。可能这只是一部动漫，但在我的眼里，我看出了一个不一样的生命。如果可能生活会削平一个人的棱角，但是削不平一个人的心，生活会改变一个人的性格，但是我对你的感情始终如一，(当年永近英良最后一集和金木的对白，直接泪崩) 可能这就是我认为比较好的价值观吧。但是现实往往并不总是如此，很多时候我们都是感性的人，对待自己周围的人更多是爱憎分明，如果你在我心中不是我说希望的那种，可能关系也就这样了。很残酷、确很现实。一个人状态好的时候，看谁可能都是笑的，状态不好的时候可能看自己都烦，哈哈哈。。。。</p>
+<p>一个人对待自己周围的人的感觉是否真的会随着生活或者另一个人的变化而改变呢?爱憎分明是否真的符合神的心意呢?</p>
+<p>神教导我们说要爱人如己、要有忍耐和恩慈。真正进入生活中，我想所很难做到，其实真的很难，就像你对一个陌生人态度一样，没有关系的建立，怎么能有感情的联系呢！！！今天读到这节经文，联系最近晨读读的四福音书卷，是否我们连最简单的耶稣并他的十字架，也还没有领受。</p>
+<p>耶稣对待自己周围的门徒或是其他的人是怎样的态度呢，自己想想，羞愧不已，自己一章一章分享的时候，分享过很多次自己应该向耶稣学习的东西，但是现在想想，这对待人态度，耶稣不就是最好的榜样吗？剩下的属灵的解释就不说了，我想大部分人到这应该都会明白我想表达的</p>
+<p>一个人对待生活或者周围人的态度是不应该被一些东西所挟制的，就像耶稣一样，无论环境如何，无论你如何，我对你的态度始终如一 …………………但是也不是说你的坏行为就当被原谅，一个人会犯错，但是是有被原谅的机会的，关键在于你的悔改和改变………..</p>
+<p>最近看过一段评论，现在很多人活得很现实，曾经的深情在现在来看可能就叫做====舔狗，哈哈哈，看到这的时候是挺难受的，但还是希望主内的弟兄姊妹能够保守本心，保持着对神的爱，对自己周围人的爱，可能很难，但这条路上我们从来不孤单</p>
+</blockquote>
+<p>分享终点。。。。。。</p>
+<p>不不不</p>
+<blockquote>
+<p>天气变冷了，还想分享一首我许嵩的&lt;&lt;全球变冷&gt;&gt;<br>天气会变冷，大家的心不要。。。。。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/" class="post-title-link" itemprop="url">机器学习之决策树</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-05 23:28:45" itemprop="dateCreated datePublished" datetime="2019-11-05T23:28:45+08:00">2019-11-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-02 23:50:49" itemprop="dateModified" datetime="2020-02-02T23:50:49+08:00">2020-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>677</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="机器学习之决策树"><a href="#机器学习之决策树" class="headerlink" title="机器学习之决策树"></a>机器学习之决策树</h2><blockquote>
+<p>决策树是一个有监督分类与回归算法。<br>决策树的生成只考虑局部最优，相对的，决策树剪枝则考虑全局最优</p>
+</blockquote>
+<h4 id="1-树模型"><a href="#1-树模型" class="headerlink" title="1 树模型"></a>1 树模型</h4><blockquote>
+<p>分类决策树模型是一种描述对实例进行分类的树形结构。结点有两种类型，内部结点表示一个特征或属性，叶结点表示一个类。 用决策树分类，从根结点开始，对实例的某一特征进行测试，根据测试结果，将实例分配到其子节点；这时，每一个子结点对应着该特征的一个取值，如此递归下去，直到到达叶子结点。最后将实例分到叶结点的类中。</p>
+</blockquote>
+<p>如下图：<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_10-39-50.png" alt=""></p>
+<h4 id="2-划分依据"><a href="#2-划分依据" class="headerlink" title="2 划分依据"></a>2 划分依据</h4><h5 id="①-熵"><a href="#①-熵" class="headerlink" title="① 熵"></a>① 熵</h5><blockquote>
+<p>物理学上，熵 Entropy 是“混乱” 程度的量度。<br>系统越有序，熵值越低；系统越混乱或者分散，熵值越高.</p>
+</blockquote>
+<h5 id="②-熵计算公式"><a href="#②-熵计算公式" class="headerlink" title="② 熵计算公式"></a>② 熵计算公式</h5><p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234517.png" alt=""></p>
+<blockquote>
+<p>其中pi表示分类选择的概率，log2pi为信息定义</p>
+</blockquote>
+<h5 id="③-特征选择-信息增益"><a href="#③-特征选择-信息增益" class="headerlink" title="③ 特征选择(信息增益)"></a>③ 特征选择(信息增益)</h5><blockquote>
+<p>1、以某特征划分数据集前后的熵的差值。熵可以表示样本集合的不确定性，熵越大，样本的不确定性就越大。因此可以使用划分前后集合熵的差值来衡量使用当前特征对于样本集合D划分效果的好坏</p>
+</blockquote>
+<p>计算方法如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">entroy(前)-entroy(后)</span><br><span class="line"><span class="comment"># 表示未划分之前的熵和划分后熵值的差</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="3-决策树构建"><a href="#3-决策树构建" class="headerlink" title="3 决策树构建"></a>3 决策树构建</h4><blockquote>
+<p>构建决策树就要基于划分依据，进行划分数据信息增益的计算，选择信息增益最大的来进行划分数据，直到求到叶子节点，实现数据集的划分</p>
+</blockquote>
+<p><strong>例子</strong>:</p>
+<p>分类数据如下<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-00-03.png" alt=""></p>
+<ul>
+<li>不划分，计算原始的熵<br><img src="https://ws1.sinaimg.cn/large/006QuJaKly1g94vtlo5axj30xc081jrc.jpg" alt=""></li>
+<li>如果划分的话第一步，先假设按照outlook这一标准划分，结果如下：<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-01-44.png" alt=""></li>
+<li>分别计算这三种类别的熵，然后计算三种类别的总熵(概率和熵值得乘积之和)<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234907.png" alt=""><br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234920.png" alt=""></li>
+<li>计算信息增益，IG(outlook)=0.940−0.694=0.246</li>
+<li>分别计算另外两种划分的信息增益率，然后构建第一层决策树<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-10-34.png" alt=""></li>
+<li>接着在每一种类别下再进行划分，直到每个节点下只有一个分类，即叶子节点，如下图<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-12-33.png" alt=""></li>
+</ul>
+<h4 id="4-代码示例"><a href="#4-代码示例" class="headerlink" title="4 代码示例"></a>4 代码示例</h4><p>略</p>
+<h4 id="5-参考文章"><a href="#5-参考文章" class="headerlink" title="5 参考文章"></a>5 参考文章</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.csdn.net&#x2F;sinat_30353259&#x2F;article&#x2F;details&#x2F;80917362</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/04/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/04/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">Python魔术方法</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-04 19:25:51" itemprop="dateCreated datePublished" datetime="2019-11-04T19:25:51+08:00">2019-11-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/11/04/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/04/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>910</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Python魔术方法"><a href="#Python魔术方法" class="headerlink" title="Python魔术方法"></a>Python魔术方法</h2><p>在Python中，所有以“__”双下划线包起来的方法，都统称为“Magic Method”,这里对一些常用的魔术方法进行总结</p>
+<h3 id="1、特殊的一些通用属性"><a href="#1、特殊的一些通用属性" class="headerlink" title="1、特殊的一些通用属性"></a>1、特殊的一些通用属性</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>魔术方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>name</strong></td>
+<td>类、函数、方法等的名字</td>
+</tr>
+<tr>
+<td><strong>module</strong></td>
+<td>类定义所在的模块</td>
+</tr>
+<tr>
+<td><strong>class</strong></td>
+<td>对象或类所属的类</td>
+</tr>
+<tr>
+<td><strong>bases</strong></td>
+<td>当前类的基类(父类)</td>
+</tr>
+<tr>
+<td><strong>doc</strong></td>
+<td>类、函数的文档帮助，没有定义为None</td>
+</tr>
+<tr>
+<td><strong>mro</strong></td>
+<td>Method Resolution Order 方法解析顺序 </td>
+</tr>
+<tr>
+<td><strong>dict</strong></td>
+<td>类或实例的属性，可写的字典,包含一个类的各种属性方法</td>
+</tr>
+<tr>
+<td><strong>dir</strong></td>
+<td>返回类或者对象的所有成员名称列表</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2、-对象的创建、初始化、销毁"><a href="#2、-对象的创建、初始化、销毁" class="headerlink" title="2、 对象的创建、初始化、销毁"></a>2、 对象的创建、初始化、销毁</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>魔术方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>new</strong></td>
+<td>对象创建</td>
+</tr>
+<tr>
+<td><strong>init</strong></td>
+<td>对象初始化</td>
+</tr>
+<tr>
+<td><strong>del</strong></td>
+<td>对象的销毁</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>当生成对象之前先调用的是<strong>new</strong>方法，接受的参数是cls类，然后返回类的实例，<br>当对象创建完成后，接受self参数需要对对象进行初始化，调用的就是<strong>init</strong>方法，<br>当对象的生命周期调用结束时，调用的是<strong>del</strong>析构方法,进行对象的删除，释放变量信息</p>
+</blockquote>
+<p>示例代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, name)</span>:</span></span><br><span class="line">        print(<span class="string">'正在new.....'</span>)</span><br><span class="line">        <span class="comment"># 不知道new方法是做什么的, 那么就直接返回父类的new方法</span></span><br><span class="line">        <span class="keyword">return</span>  super(Student, cls).__new__(cls)</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 初始化(构造)方法: 创建对象时自动执行</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        print(<span class="string">"正在初始化对象....."</span>)</span><br><span class="line">        self.name = name</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 析构方法: 对象删除时自动调用</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"正在删除对象....."</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 当程序运行结束之后, 会自动释放变量信息. 会自动调用析构方法;</span></span><br><span class="line">s = Student(<span class="string">'张三'</span>)</span><br><span class="line">print(s.name)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>回想一下之前写过的单例模式中实现的一个方法，就是在<strong>init</strong>之前先在<strong>new</strong>方法中判断实例是否存在，如果存在，就返回已经存在的实例，如果不存在再创建新的实例</p>
+</blockquote>
+<h3 id="3、-属性控制访问"><a href="#3、-属性控制访问" class="headerlink" title="3、 属性控制访问"></a>3、 属性控制访问</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">__getattr__(self, name):</span><br><span class="line"><span class="comment"># 该方法定义了你试图访问一个不存在的属性时的行为。</span></span><br><span class="line"><span class="comment"># 因此，重载该方法可以实现捕获错误拼写然后进行重定向, 或者对一些废弃的属性进行警告。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">__setattr__(self, name, value)</span><br><span class="line"><span class="comment">#与__getattr__(self, name)不同，__setattr__ 是一个封装的解决方案。无论属性是否存在，它都允许你定义对对属性的赋值行为，以为这你可以对属性的值进行个性定制。实现__setattr__时要避免"无限递归"的错误</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">__delattr__:</span><br><span class="line"><span class="comment"># 与 __setattr__ 相同，但是功能是删除一个属性而不是设置他们。实现时也要防止无限递归现象发生</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__getattribute__(self, name):</span><br><span class="line"><span class="comment"># __getattribute__定义了你的属性被访问时的行为，相比较，__getattr__只有该属性不存在时才会起作用。</span></span><br><span class="line"><span class="comment"># 因此，在支持__getattribute__的Python版本,调用__getattr__前必定会调用 __getattribute__。__getattribute__同样要避免"无限递归"的错误。</span></span><br><span class="line"><span class="comment"># 需要提醒的是，最好不要尝试去实现__getattribute__,因为很少见到这种做法，而且很容易出bug。</span></span><br></pre></td></tr></table></figure>
+<p>实例代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Access</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getattr__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        print(<span class="string">'__getattr__'</span>)</span><br><span class="line">        <span class="keyword">return</span> super(Access, self).__getattr__(name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__setattr__</span><span class="params">(self, name, value)</span>:</span></span><br><span class="line">        print(<span class="string">'__setattr__'</span>)</span><br><span class="line">        <span class="keyword">return</span> super(Access, self).__setattr__(name, value)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__delattr__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        print(<span class="string">'__delattr__'</span>)</span><br><span class="line">        <span class="keyword">return</span> super(Access, self).__delattr__(name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getattribute__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        print(<span class="string">'__getattribute__'</span>)</span><br><span class="line">        <span class="keyword">return</span> super(Access, self).__getattribute__(name)</span><br><span class="line"></span><br><span class="line">access = Access()</span><br><span class="line">access.attr1 = <span class="literal">True</span>  <span class="comment"># __setattr__调用</span></span><br><span class="line">access.attr1  <span class="comment"># 属性存在,只有__getattribute__调用</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    access.attr2  <span class="comment"># 属性不存在, 先调用__getattribute__, 后调用__getattr__</span></span><br><span class="line"><span class="keyword">except</span> AttributeError:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">del</span> access.attr1  <span class="comment"># __delattr__调用</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4、自定义容器的方法"><a href="#4、自定义容器的方法" class="headerlink" title="4、自定义容器的方法"></a>4、自定义容器的方法</h3><blockquote>
+<p>可以利用 <strong>setitem</strong> 、<strong>getitem</strong>、 <strong>iter</strong> 等等实现可变容器和不可变的容器，例如可变(list.dict),不可变(string,tuple).</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">__len__(self):</span><br><span class="line"><span class="comment">#返回容器长度，对于可变和不可变都是其中的一部分</span></span><br><span class="line">__getitem__(self,key):</span><br><span class="line"><span class="comment"># 定义当某一项被访问时，使用self[key]所产生的行为。这也是不可变容器和可变容器协议的一部分。</span></span><br><span class="line"><span class="comment"># 如果键的类型错误将产生TypeError；如果key没有合适的值则产生KeyError</span></span><br><span class="line">__setitem__(self,key,value):</span><br><span class="line"><span class="comment"># 当你执行self[key] = value时，调用的是该方法。</span></span><br><span class="line">__delitem__(self,key):</span><br><span class="line"><span class="comment"># 定义当一个项目被删除时的行为(比如 del self[key])。这只是可变容器协议中的一部分。</span></span><br><span class="line"><span class="comment"># 当使用一个无效的键时应该抛出适当的异常</span></span><br><span class="line">__reversed__(self):</span><br><span class="line"><span class="comment"># 实现当reversed()被调用时的行为。应该返回序列反转后的版本。仅当序列可以是有序的时候实现它，例如对于列表或者元组。</span></span><br><span class="line">__contains__(self, item):</span><br><span class="line"><span class="comment"># 定义了调用in和not in来测试成员是否存在的时候所产生的行为。</span></span><br><span class="line"><span class="comment"># 你可能会问为什么这个不是序列协议的一部分？因为当__contains__没有被定义的时候，如果没有定义，那么Python会迭代容器中的元素来一个一个比较，从而决定返回True或者False。</span></span><br><span class="line">__missing__(self, key):</span><br><span class="line"><span class="comment"># dict字典类型会有该方法，它定义了key如果在容器中找不到时触发的行为。</span></span><br><span class="line"><span class="comment"># 比如d = &#123;'a': 1&#125;, 当你执行d[notexist]时，d.__missing__['notexist']就会被调用。</span></span><br></pre></td></tr></table></figure>
+<h3 id="5、反射"><a href="#5、反射" class="headerlink" title="5、反射"></a>5、反射</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__instancecheck__(self, instance):</span><br><span class="line"><span class="comment"># 检查一个实例是不是你定义的类的实例</span></span><br><span class="line">__subclasscheck__(self, subclass):</span><br><span class="line"><span class="comment"># 检查一个类是不是你定义的类的子类</span></span><br></pre></td></tr></table></figure>
+<h3 id="6、可调用对象"><a href="#6、可调用对象" class="headerlink" title="6、可调用对象"></a>6、可调用对象</h3><blockquote>
+<p>在Python中，一个特殊的魔术方法可以让类的实例的行为表现的像函数一样，你可以调用它们，将一个函数当做一个参数传到另外一个函数中等等。这是一个非常强大的特性。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">__call__(self, [args...]):</span><br><span class="line"><span class="comment"># 允许一个类的实例像函数一样被调用。实质上说，这意味着 x() 与 x.__call__() 是相同的。</span></span><br><span class="line"><span class="comment"># 注意 __call__ 的参数可变。这意味着你可以定义 __call__ 为其他你想要的函数，无论有多少个参数。</span></span><br></pre></td></tr></table></figure>
+<p>应用实例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Entity</span>:</span> </span><br><span class="line">    <span class="string">""" </span></span><br><span class="line"><span class="string">    调用实体来改变实体的位置 </span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x, y)</span>:</span> </span><br><span class="line">        self.x, self.y = x, y </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, x, y)</span>:</span> </span><br><span class="line">        <span class="string">""" </span></span><br><span class="line"><span class="string">        改变实体的位置 </span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.x, self.y = x, y</span><br><span class="line"></span><br><span class="line">e = Entity(<span class="number">3</span>,<span class="number">5</span>)</span><br><span class="line">e(<span class="number">5</span>,<span class="number">6</span>)</span><br><span class="line">print(e.x,e.y)</span><br><span class="line"></span><br><span class="line"><span class="string">'''output:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">5 6</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<h3 id="7、上下文管理"><a href="#7、上下文管理" class="headerlink" title="7、上下文管理"></a>7、上下文管理</h3><blockquote>
+<p>还记得在打开文件的with语句吗，在with声明的代码段中，我们可以做一些对象的开始操作和退出操作,还能对异常进行处理。这需要实现两个魔术方法: <strong>enter</strong> 和 <strong>exit</strong>。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">__enter__(self):</span><br><span class="line"><span class="comment"># 定义了当使用with语句的时候，会话管理器在块被初始创建时要产生的行为。</span></span><br><span class="line"><span class="comment"># 请注意，__enter__的返回值与with语句的目标或者as后的名字绑定。</span></span><br><span class="line">__exit__(self, exception_type, exception_value, traceback):</span><br><span class="line"><span class="comment"># 定义了当一个代码块被执行或者终止后，会话管理器应该做什么。它可以被用来处理异常、执行清理工作或做一些代码块执行完毕之后的日常工作。如果代码块执行成功，exception_type，exception_value，和traceback将会为None。否则，你可以选择处理这个异常或者是直接交给用户处理。如果你想处理这个异常的话，请确保__exit__在所有语句结束之后返回True。如果你想让异常被会话管理器处理的话，那么就让其产生该异常。</span></span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'foo.txt'</span>) <span class="keyword">as</span> bar: </span><br><span class="line">    <span class="comment"># do something with bar</span></span><br><span class="line"><span class="comment"># 当使用with语句时先调用__enter__返回bar对象，然后使用bar对象处理上下文，最后代码执行完后再调用__exit__,处理上下文结果</span></span><br></pre></td></tr></table></figure>
+<h3 id="8、复制"><a href="#8、复制" class="headerlink" title="8、复制"></a>8、复制</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">__copy__(self):</span><br><span class="line"><span class="comment"># 实现复制中的浅拷贝</span></span><br><span class="line">__deepcopy__(self, memodict=&#123;&#125;):</span><br><span class="line"><span class="comment"># 定义了当对你的类的实例调用copy.deepcopy()时所产生的行为。</span></span><br><span class="line"><span class="comment"># copy.deepcopy()返回了你的对象的一个深拷贝——对象和其数据都被拷贝了。</span></span><br><span class="line"><span class="comment"># memodict是对之前被拷贝的对象的一个缓存——这优化了拷贝过程并且阻止了对递归数据结构拷贝时的无限递归。</span></span><br></pre></td></tr></table></figure>
+<h3 id="9、总结"><a href="#9、总结" class="headerlink" title="9、总结"></a>9、总结</h3><blockquote>
+<p>学习魔术方法，会让我们对于平时调用函数或者使用一些内置方法时更明白其原理，在后面的学习中我也会尝试使用魔术方法来实现一些基础的类作为实践</p>
+</blockquote>
+<h3 id="10、参考文章"><a href="#10、参考文章" class="headerlink" title="10、参考文章"></a>10、参考文章</h3><blockquote>
+<p><a href="https://www.cnblogs.com/pyxiaomangshe/p/7927540.html" target="_blank" rel="noopener">https://www.cnblogs.com/pyxiaomangshe/p/7927540.html</a></p>
+</blockquote>
+
       
     </div>
 
@@ -1246,7 +962,7 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1412,6 +1128,10 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

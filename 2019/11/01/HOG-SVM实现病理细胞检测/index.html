@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -52,6 +52,7 @@
 <meta property="og:url" content="https://lihao6666.cn/2019/11/01/HOG-SVM%E5%AE%9E%E7%8E%B0%E7%97%85%E7%90%86%E7%BB%86%E8%83%9E%E6%A3%80%E6%B5%8B/index.html">
 <meta property="og:site_name" content="三毛的小窝">
 <meta property="og:description" content="HOG+SVM实现病理细胞检测1 数据分析与处理 这里获取到的数据有两部分，一部分是带标注xml的正样本，一部分是不带xml的负样本，这里感觉负样本和正样本差别有点大，后面处理需要注意一下 这里处理数据主要有两个部分，一个部分是获取用于训练的正样本，需要通过xml从大图中提取出来，另一部分是用于训练的负样本，因为没有提供xml文件，需要我们自己分割出来用于训练，我这里采用随机分割的方法，选取一部分">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006QuJaKly1g8iz5t30x4j33402c0x6p.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006QuJaKly1g8iz6pbmxzj30hs0dcq3d.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006QuJaKly1g8iz714jfoj30hs0dcaaq.jpg">
@@ -59,7 +60,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006QuJaKly1g93m5z1pcsj30dx0dz76c.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006QuJaKly1g93m93mducj30fe0edq6l.jpg">
 <meta property="article:published_time" content="2019-11-01T13:54:06.000Z">
-<meta property="article:modified_time" content="2019-11-27T14:49:04.000Z">
+<meta property="article:modified_time" content="2020-02-03T17:21:59.060Z">
 <meta property="article:author" content="李浩">
 <meta property="article:tag" content="目标检测">
 <meta name="twitter:card" content="summary">
@@ -129,7 +130,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -143,31 +144,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">14</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">14</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">16</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">16</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">30</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">30</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
       </li>
   </ul>
@@ -181,7 +182,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocorrect="off" autocapitalize="none"
-           placeholder="Searching..." spellcheck="false"
+           placeholder="搜索..." spellcheck="false"
            type="text" id="search-input">
   </div>
   <span class="popup-btn-close">
@@ -217,7 +218,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="default">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/11/01/HOG-SVM%E5%AE%9E%E7%8E%B0%E7%97%85%E7%90%86%E7%BB%86%E8%83%9E%E6%A3%80%E6%B5%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -235,26 +236,31 @@
         </h1>
 
         <div class="post-meta">
+          
+            <i class="fa fa-thumb-tack"></i>
+            <font color="RED">置顶</font>
+            <span class="post-meta-divider">|</span>
+          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2019-11-01 21:54:06" itemprop="dateCreated datePublished" datetime="2019-11-01T21:54:06+08:00">2019-11-01</time>
+              <time title="创建时间：2019-11-01 21:54:06" itemprop="dateCreated datePublished" datetime="2019-11-01T21:54:06+08:00">2019-11-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-04 01:21:59" itemprop="dateModified" datetime="2020-02-04T01:21:59+08:00">2020-02-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
                     <span itemprop="name">深度学习</span>
@@ -269,27 +275,20 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-comment-o"></i>
       </span>
-      <span class="post-meta-item-text">Valine: </span>
+      <span class="post-meta-item-text">Valine：</span>
     
     <a title="valine" href="/2019/11/01/HOG-SVM%E5%AE%9E%E7%8E%B0%E7%97%85%E7%90%86%E7%BB%86%E8%83%9E%E6%A3%80%E6%B5%8B/#valine-comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2019/11/01/HOG-SVM%E5%AE%9E%E7%8E%B0%E7%97%85%E7%90%86%E7%BB%86%E8%83%9E%E6%A3%80%E6%B5%8B/" itemprop="commentCount"></span>
     </a>
   </span>
   
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
+  
+            <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -307,6 +306,7 @@
 </blockquote>
 <p>分割正样本代码:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> skimage.feature <span class="keyword">import</span> hog  </span><br><span class="line"><span class="keyword">from</span> sklearn.externals <span class="keyword">import</span> joblib  </span><br><span class="line"><span class="keyword">import</span> xml.dom.minidom <span class="keyword">as</span> xdm  </span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np  </span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image </span><br><span class="line"><span class="keyword">import</span> cv2  </span><br><span class="line"><span class="keyword">import</span> os  </span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> config <span class="keyword">import</span> *</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">train_xml_filePath = <span class="string">'./sig-pos/sig-train-pos-xml/'</span></span><br><span class="line"><span class="comment"># xml path</span></span><br><span class="line">train_pos_restPath = <span class="string">'./sig-pos/sig-train-pos-rest/'</span></span><br><span class="line"><span class="comment"># save path</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getBox</span><span class="params">(object)</span>:</span>  </span><br><span class="line">    groupId = str(object.getElementsByTagName(<span class="string">"name"</span>)[<span class="number">0</span>].firstChild.data)  <span class="comment"># 细胞类别</span></span><br><span class="line">    bndbox = object.getElementsByTagName(<span class="string">"bndbox"</span>)[<span class="number">0</span>]</span><br><span class="line">    xmin = int(bndbox.childNodes[<span class="number">1</span>].firstChild.data)</span><br><span class="line">    ymin = int(bndbox.childNodes[<span class="number">3</span>].firstChild.data)</span><br><span class="line">    xmax = int(bndbox.childNodes[<span class="number">5</span>].firstChild.data)</span><br><span class="line">    ymax = int(bndbox.childNodes[<span class="number">7</span>].firstChild.data)  </span><br><span class="line">    box = (xmin,ymin,xmax,ymax)   </span><br><span class="line">    <span class="keyword">return</span> box  </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_image_pos</span><span class="params">(filePath)</span>:</span>  </span><br><span class="line">    Data = []  </span><br><span class="line">    num = <span class="number">0</span>  </span><br><span class="line">    <span class="keyword">for</span> childDir <span class="keyword">in</span> os.listdir(filePath):  </span><br><span class="line">        f_im = os.path.join(filePath, childDir)  </span><br><span class="line">        f_xml = os.path.join(train_xml_filePath, <span class="string">'%s.xml'</span> %childDir.split(<span class="string">'.'</span>)[<span class="number">0</span>])</span><br><span class="line">        dom = xdm.parse(f_xml)</span><br><span class="line">        root = dom.documentElement</span><br><span class="line">        objects = root.getElementsByTagName(<span class="string">"object"</span>)</span><br><span class="line">        image = Image.open(f_im) <span class="comment"># open the image</span></span><br><span class="line">        <span class="keyword">for</span> object <span class="keyword">in</span> objects:</span><br><span class="line">            box = getBox(object)  </span><br><span class="line">            region = image.crop(box) <span class="comment"># 分割图片</span></span><br><span class="line">            data = np.asarray(region) <span class="comment"># 数据转换  </span></span><br><span class="line">            data = cv2.resize(data,save_image_size,interpolation=cv2.INTER_CUBIC) <span class="comment"># 插值方法</span></span><br><span class="line">            save_name = os.path.join(train_pos_restPath,<span class="string">"%s.jpg"</span> %str(num))</span><br><span class="line">            cv2.imwrite(save_name,data)</span><br><span class="line">            num += <span class="number">1</span>  </span><br><span class="line">        print(<span class="string">"%d processing: %s"</span> %(num,childDir))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    save_image_pos(<span class="string">"./sig-pos/sig-train-pos"</span>)</span><br><span class="line"><span class="comment"># 正样本提取了大概4500张左右(100,100)尺寸的患病细胞图片</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>分割负样本代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">train_neg_restPath = <span class="string">'./sig-neg/sig-train-neg-rest/'</span></span><br><span class="line">crop_image_size = (<span class="number">100</span>,<span class="number">100</span>)</span><br><span class="line">save_image_size = (<span class="number">100</span>,<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_image_neg</span><span class="params">(filePath,per_image_amount)</span>:</span></span><br><span class="line">    random.seed(<span class="number">1</span>)</span><br><span class="line">    num = <span class="number">0</span></span><br><span class="line">    pic_num = <span class="number">0</span></span><br><span class="line">    crop_width,crop_height = crop_image_size</span><br><span class="line">    <span class="keyword">for</span> childDir <span class="keyword">in</span> tqdm(os.listdir(filePath)):</span><br><span class="line">        f_im = os.path.join(filePath, childDir)  </span><br><span class="line">        image = Image.open(f_im)</span><br><span class="line">        width,height = image.size</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(per_image_amount):</span><br><span class="line">            x = random.randint(<span class="number">0</span>,width-crop_width<span class="number">-1</span>)</span><br><span class="line">            y = random.randint(<span class="number">0</span>,height-crop_height<span class="number">-1</span>)</span><br><span class="line">            box = (x,y,x+crop_width,y+crop_height)</span><br><span class="line">            region = image.crop(box)</span><br><span class="line">            data = np.asarray(region)</span><br><span class="line">            data = cv2.resize(data,save_image_size,interpolation=cv2.INTER_CUBIC)</span><br><span class="line">            save_name = os.path.join(train_neg_restPath,<span class="string">"%s.jpg"</span> %str(num))</span><br><span class="line">            cv2.imwrite(save_name,data)</span><br><span class="line">            num += <span class="number">1</span></span><br><span class="line">        pic_num += <span class="number">1</span></span><br><span class="line">        <span class="comment"># if pic_num &gt;= 10:</span></span><br><span class="line">        <span class="comment">#     break</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    save_image_neg(<span class="string">"./sig-neg/sig-train-neg"</span>,<span class="number">300</span>)</span><br><span class="line"><span class="comment">#负样本自己只选了部分大图分割，每张大图300张小图，总共10800张小图负样本</span></span><br></pre></td></tr></table></figure>
 <p>补：</p>
@@ -430,10 +430,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -456,20 +456,20 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">30</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">16</span>
-        <span class="site-state-item-name">categories</span></a>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -510,12 +510,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">16k</span>
+    <span title="站点总字数">16k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">15 mins.</span>
+    <span title="站点阅读时长">15 分钟</span>
 </div>
 
         

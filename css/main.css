@@ -503,10 +503,10 @@ pre code {
   text-shadow: none;
 }
 pre .deletion {
-  background: #800000;
+  background: #fdd;
 }
 pre .addition {
-  background: #008000;
+  background: #dfd;
 }
 pre .meta {
   color: #b58900;
@@ -1199,7 +1199,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffe004;
+  background: #fff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2763,6 +2763,17 @@ body {
   border-radius: 1em;
 }
 .note.success {
-  background-color: #eff8f0;
-  border-left-color: #5cb85c;
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, STKaiti, KaiTi, SimKai, DFKai-SB, 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  background-color: #fdf6e3;
+  border-left-color: #fdf6e3;
+}
+code {
+  color: #dd4b39;
+}
+.btn {
+  padding: 3px 15px;
+  color: #fff !important;
+  background-color: #bdc3c7;
+  border: 0px;
+  border-radius: 15px;
 }

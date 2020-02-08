@@ -46,20 +46,22 @@
   };
 </script>
 
-  <meta name="description" content="Python设计模式12(策略模式-行为型) 策略指的就是为了达到某一目的而采取的手段或者方法。为了实现软件设计，对象可能会用到多种多样的算法。这些算法甚至会经常改变。如果将这些算法都硬编码到对象中，将会使得对象本身变得臃肿不堪，而且有时候支持不同的算法也是一个性能负担。策略模式很好的实现了在运行时根据需要透明的更改对象的算法和将算法与本身对象解耦，从而避免出现上述两个问题. 因此策略模式可以定义">
+  <meta name="description" content="出来如花，又被割下，飞去如影，不能存留。                          (约伯记 14:2 和合本)你们以为可记念的箴言是炉灰的箴言；你们以为可靠的坚垒是淤泥的坚垒。                          (约伯记 13:12 和合本)惟有两件不要向我施行，我就不躲开你的面：就是把你的手缩回，远离我身；又不使你的惊惶威吓我。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python设计模式12">
-<meta property="og:url" content="https://lihao6666.cn/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F12/index.html">
+<meta property="og:title" content="读经分享3">
+<meta property="og:url" content="https://lihao6666.cn/2020/02/08/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB3/index.html">
 <meta property="og:site_name" content="三毛的小窝">
-<meta property="og:description" content="Python设计模式12(策略模式-行为型) 策略指的就是为了达到某一目的而采取的手段或者方法。为了实现软件设计，对象可能会用到多种多样的算法。这些算法甚至会经常改变。如果将这些算法都硬编码到对象中，将会使得对象本身变得臃肿不堪，而且有时候支持不同的算法也是一个性能负担。策略模式很好的实现了在运行时根据需要透明的更改对象的算法和将算法与本身对象解耦，从而避免出现上述两个问题. 因此策略模式可以定义">
+<meta property="og:description" content="出来如花，又被割下，飞去如影，不能存留。                          (约伯记 14:2 和合本)你们以为可记念的箴言是炉灰的箴言；你们以为可靠的坚垒是淤泥的坚垒。                          (约伯记 13:12 和合本)惟有两件不要向我施行，我就不躲开你的面：就是把你的手缩回，远离我身；又不使你的惊惶威吓我。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-12-13T07:54:13.000Z">
-<meta property="article:modified_time" content="2019-12-13T05:06:59.965Z">
+<meta property="og:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/IMG_0015.JPG">
+<meta property="article:published_time" content="2020-02-08T15:58:02.000Z">
+<meta property="article:modified_time" content="2020-02-08T16:34:32.215Z">
 <meta property="article:author" content="李浩">
-<meta property="article:tag" content="设计模式">
+<meta property="article:tag" content="分享">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/IMG_0015.JPG">
 
-<link rel="canonical" href="https://lihao6666.cn/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F12/">
+<link rel="canonical" href="https://lihao6666.cn/2020/02/08/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB3/">
 
 
 <script id="page-configurations">
@@ -71,7 +73,7 @@
   };
 </script>
 
-  <title>Python设计模式12 | 三毛的小窝</title>
+  <title>读经分享3 | 三毛的小窝</title>
   
 
 
@@ -217,7 +219,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F12/">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2020/02/08/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.png">
@@ -230,40 +232,50 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Python设计模式12
+          读经分享3
         </h1>
 
         <div class="post-meta">
+          
+            <i class="fa fa-thumb-tack"></i>
+            <font color="RED">置顶</font>
+            <span class="post-meta-divider">|</span>
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-12-13 15:54:13 / 修改时间：13:06:59" itemprop="dateCreated datePublished" datetime="2019-12-13T15:54:13+08:00">2019-12-13</time>
+              <time title="创建时间：2020-02-08 23:58:02" itemprop="dateCreated datePublished" datetime="2020-02-08T23:58:02+08:00">2020-02-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-09 00:34:32" itemprop="dateModified" datetime="2020-02-09T00:34:32+08:00">2020-02-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">Python设计模式</span>
+                  <a href="/categories/%E4%BF%A1%E4%BB%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">信仰</span>
                   </a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">行为型</span>
+                  <a href="/categories/%E4%BF%A1%E4%BB%B0/%E5%88%86%E4%BA%AB/" itemprop="url" rel="index">
+                    <span itemprop="name">分享</span>
                   </a>
                 </span>
             </span>
 
           
-            <span id="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F12/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式12" title="阅读次数">
+            <span id="/2020/02/08/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB3/" class="post-meta-item leancloud_visitors" data-flag-title="读经分享3" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -285,8 +297,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F12/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F12/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/02/08/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB3/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/08/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB3/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -301,13 +313,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Python设计模式12-策略模式-行为型"><a href="#Python设计模式12-策略模式-行为型" class="headerlink" title="Python设计模式12(策略模式-行为型)"></a>Python设计模式12(策略模式-行为型)</h2><blockquote>
-<p>策略指的就是为了达到某一目的而采取的手段或者方法。为了实现软件设计，对象可能会用到多种多样的算法。这些算法甚至会经常改变。如果将这些算法都硬编码到对象中，将会使得对象本身变得臃肿不堪，而且有时候支持不同的算法也是一个性能负担。策略模式很好的实现了在运行时根据需要透明的更改对象的算法和将算法与本身对象解耦，从而避免出现上述两个问题.</p>
-<p>因此策略模式可以定义为：　定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法可以独立于使用它的客户变化。每一个封装算法的类称之为策略(Strategy)类，策略模式提供了一种可插入式(Pluggable)算法的实现方案</p>
-</blockquote>
-<h4 id="1、实例"><a href="#1、实例" class="headerlink" title="1、实例"></a>1、实例</h4><p>例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">customer</span>:</span></span><br><span class="line">    customer_name=<span class="string">""</span></span><br><span class="line">    snd_way=<span class="string">""</span></span><br><span class="line">    info=<span class="string">""</span></span><br><span class="line">    phone=<span class="string">""</span></span><br><span class="line">    email=<span class="string">""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setPhone</span><span class="params">(self,phone)</span>:</span></span><br><span class="line">        self.phone=phone</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setEmail</span><span class="params">(self,mail)</span>:</span></span><br><span class="line">        self.email=mail</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getPhone</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.phone</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getEmail</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.email</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setInfo</span><span class="params">(self,info)</span>:</span></span><br><span class="line">        self.info=info</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setName</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        self.customer_name=name</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setBrdWay</span><span class="params">(self,snd_way)</span>:</span></span><br><span class="line">        self.snd_way=snd_way</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sndMsg</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.snd_way.send(self.info)</span><br><span class="line"></span><br><span class="line"><span class="comment">#snd_way向客户发送信息的方式，该方式置为可设，即可根据业务来进行策略的选择。</span></span><br><span class="line"><span class="comment">#发送方式构建如下：</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">msgSender</span>:</span></span><br><span class="line">    dst_code=<span class="string">""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setCode</span><span class="params">(self,code)</span>:</span></span><br><span class="line">        self.dst_code=code</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(self,info)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">emailSender</span><span class="params">(msgSender)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(self,info)</span>:</span></span><br><span class="line">        print(<span class="string">"EMAIL_ADDRESS:%s EMAIL:%s"</span>%(self.dst_code,info))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">textSender</span><span class="params">(msgSender)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(self,info)</span>:</span></span><br><span class="line">        print(<span class="string">"TEXT_CODE:%s EMAIL:%s"</span>%(self.dst_code,info))</span><br><span class="line"></span><br><span class="line"><span class="comment">#业务场景中将发送方式作为策略</span></span><br><span class="line"><span class="keyword">if</span>  __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    customer_x=customer()</span><br><span class="line">    customer_x.setName(<span class="string">"CUSTOMER_X"</span>)</span><br><span class="line">    customer_x.setPhone(<span class="string">"10023456789"</span>)</span><br><span class="line">    customer_x.setEmail(<span class="string">"customer_x@xmail.com"</span>)</span><br><span class="line">    customer_x.setInfo(<span class="string">"Welcome to our new party!"</span>)</span><br><span class="line">    text_sender=textSender()</span><br><span class="line">    text_sender.setCode(customer_x.getPhone())</span><br><span class="line">    customer_x.setBrdWay(text_sender)</span><br><span class="line">    customer_x.sndMsg()</span><br><span class="line">    mail_sender=emailSender()</span><br><span class="line">    mail_sender.setCode(customer_x.getEmail())</span><br><span class="line">    customer_x.setBrdWay(mail_sender)</span><br><span class="line">    customer_x.sndMsg()</span><br></pre></td></tr></table></figure>
-<h4 id="2、应用场景"><a href="#2、应用场景" class="headerlink" title="2、应用场景"></a>2、应用场景</h4>
+        <p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/IMG_0015.JPG" width=500 height=350></p>
+<div class="note success">
+            <ul><li><p>出来如花，又被割下，飞去如影，不能存留。</p><pre><code>                          (约伯记 14:2 和合本)</code></pre></li><li><p>你们以为可记念的箴言是炉灰的箴言；你们以为可靠的坚垒是淤泥的坚垒。</p><pre><code>                          (约伯记 13:12 和合本)</code></pre></li><li>惟有两件不要向我施行，我就不躲开你的面：<br>就是把你的手缩回，远离我身；又不使你的惊惶威吓我。<pre><code>                          (约伯记 13:20-21 和合本)</code></pre></li></ul>
+          </div>
+<h3 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h3><hr>
+<p>从读<code>约伯记</code>开始，一直给自己一种很空的感觉，平时读的也很随意，很多时候对于约伯那种“固执”很不明白，就像今天读到了，他对于三个朋友的回答中<code>他必杀我；我虽无指望，然而我在他面前还要辩明我所行的。(约伯记 13:15 和合本)</code>开始的时候也很迷惑，前面读到的约伯身上的苦难是神的试炼，那么我们不也一直不也被教导要去顺服吗？看了点解释，发现结合前面的内容，和神试炼的意义就看到了不一样的一点。</p>
+<p>首先，三个朋友用一大堆的<code>教义</code>去劝约伯，确没有讲到试炼的意义，也就是神为什么这样做，就像上面分享的第二句一样，神给我们试炼是为了让我们看到自己里面的<code>罪</code>,让我们认识到自己的问题，并在神的面前坦然无惧的悔改，刚强自己，而不是让自己一味的依靠神，而不求自己的长进。</p>
+<p>最近看了一句话说<code>时代的一粒灰，落在个人头上，就是一座山</code>,不知道为什么特别想放在这个分享中，很多时候平凡又不平凡的我们在这个时代都在负重前行，我们需要去有约伯的那种<code>不认命</code>,要学会在逆境中去成长，在神的带领下不断提升自己，而不是只做一个只会”顺服”的基督徒。</p>
+
     </div>
 
     
@@ -317,7 +331,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"><i class="fa fa-tag"></i> 设计模式</a>
+              <a href="/tags/%E5%88%86%E4%BA%AB/" rel="tag"><i class="fa fa-tag"></i> 分享</a>
           </div>
 
         
@@ -326,13 +340,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F7/" rel="prev" title="Python设计模式7">
-      <i class="fa fa-chevron-left"></i> Python设计模式7
+    <a href="/2020/02/06/%E6%96%B0%E5%9E%8B%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92%E7%88%86%E5%8F%91%E6%9C%89%E6%84%9F1-%E8%B4%A3%E4%BB%BB%E4%B9%8B%E7%88%B1/" rel="prev" title="新型冠状病毒爆发有感1-责任之爱">
+      <i class="fa fa-chevron-left"></i> 新型冠状病毒爆发有感1-责任之爱
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F11/" rel="next" title="Python设计模式11">
-      Python设计模式11 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -393,7 +404,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python设计模式12-策略模式-行为型"><span class="nav-number">1.</span> <span class="nav-text">Python设计模式12(策略模式-行为型)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、实例"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、应用场景"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、应用场景</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#分享"><span class="nav-number">1.</span> <span class="nav-text">分享</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -160,7 +160,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">33</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">35</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -211,6 +211,233 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F10/" class="post-title-link" itemprop="url">Python设计模式10</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-13 15:54:13 / 修改时间：13:06:09" itemprop="dateCreated datePublished" datetime="2019-12-13T15:54:13+08:00">2019-12-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">Python设计模式</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">结构型</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F10/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式10" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F10/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F10/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Python设计模式10-代理模式-结构型"><a href="#Python设计模式10-代理模式-结构型" class="headerlink" title="Python设计模式10(代理模式-结构型)"></a>Python设计模式10(代理模式-结构型)</h2><blockquote>
+<p>在某些应用中，我们想要在访问某个对象之前执行一个或者多个重要的操作，例如，访问敏感信息 — 在允许用户访问敏感信息之前，我们希望确保用户具备足够的去权限。同时在网络访问时，限制某些网络的访问等操作。</p>
+</blockquote>
+<ul>
+<li><p>真实的对象（执行业务逻辑，被代理的对象）</p>
+</li>
+<li><p>代理类（用户请求的一个接口，对真实目标的保护）</p>
+</li>
+<li><p>用户（获取任务的用户请求）</p>
+</li>
+</ul>
+<h4 id="1、实例"><a href="#1、实例" class="headerlink" title="1、实例"></a>1、实例</h4><p>例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">## 以下是来自于github的代码：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SalesManager</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"Sales Manager ready to talk"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Proxy</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.busy = <span class="string">'No'</span></span><br><span class="line">        self.sales = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"Proxy checking for Sales Manager availability"</span>)</span><br><span class="line">        <span class="keyword">if</span> self.busy == <span class="string">'No'</span>:</span><br><span class="line">            self.sales = SalesManager()</span><br><span class="line">            time.sleep(<span class="number">0.1</span>)</span><br><span class="line">            self.sales.talk()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            time.sleep(<span class="number">0.1</span>)</span><br><span class="line">            print(<span class="string">"Sales Manager is busy"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NoTalkProxy</span><span class="params">(Proxy)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"Proxy checking for Sales Manager availability"</span>)</span><br><span class="line">        time.sleep(<span class="number">0.1</span>)</span><br><span class="line">        print(<span class="string">"This Sales Manager will not talk to you whether he/she is busy or not"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Proxy()</span><br><span class="line">    p.talk()</span><br><span class="line">    p.busy = <span class="string">'Yes'</span></span><br><span class="line">    p.talk()</span><br><span class="line">    p = NoTalkProxy()</span><br><span class="line">    p.talk()</span><br><span class="line">    p.busy = <span class="string">'Yes'</span></span><br><span class="line">    p.talk()</span><br><span class="line"></span><br><span class="line"><span class="comment">### OUTPUT ###</span></span><br><span class="line"><span class="comment"># Proxy checking for Sales Manager availability</span></span><br><span class="line"><span class="comment"># Sales Manager ready to talk</span></span><br><span class="line"><span class="comment"># Proxy checking for Sales Manager availability</span></span><br><span class="line"><span class="comment"># Sales Manager is busy</span></span><br><span class="line"><span class="comment"># Proxy checking for Sales Manager availability</span></span><br><span class="line"><span class="comment"># This Sales Manager will not talk to you whether he/she is busy or not</span></span><br><span class="line"><span class="comment"># Proxy checking for Sales Manager availability</span></span><br><span class="line"><span class="comment"># This Sales Manager will not talk to you whether he/she is busy or not</span></span><br></pre></td></tr></table></figure>
+<h4 id="2、应用场景"><a href="#2、应用场景" class="headerlink" title="2、应用场景"></a>2、应用场景</h4><ul>
+<li><p>远程代理，也就是为一个对象在不同的地址空间提供局部代表。这样可以隐藏一个对象存在于不同地址空间的事实。</p>
+</li>
+<li><p>虚拟代理，是根据需要创建开销大的对象。通过它来存放实例化需要很长时间的真是对象。用于惰性求值，将一个大计算量对象的创建延迟到真正需要的时候进行。例如html中，图片需要load很久，所以通过虚拟代理来代替真实的图片</p>
+</li>
+<li><p>安全代理，或叫保护/防护代理：控制对敏感对象的访问。用来控制真实对象访问时的权限</p>
+</li>
+<li><p>智能（引用）代理：在对象被访问时执行额外的动作。此类代理的例子包括引用计数和线程安全检查。是指当调用真实的对象时，代理处理另外一些事</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F11/" class="post-title-link" itemprop="url">Python设计模式11</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-13 15:54:13 / 修改时间：13:06:05" itemprop="dateCreated datePublished" datetime="2019-12-13T15:54:13+08:00">2019-12-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">Python设计模式</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">行为型</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F11/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式11" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F11/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F11/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Python设计模式11-观察者模式-行为型"><a href="#Python设计模式11-观察者模式-行为型" class="headerlink" title="Python设计模式11(观察者模式-行为型)"></a>Python设计模式11(观察者模式-行为型)</h2><blockquote>
+<p>观察者模式是一种行为型模式，在观察者模式当中，主题维护了一个依赖（观察者）列表，以便主题可以使用观察者定义的任何方法通知所有观察者它所发生的变化。</p>
+<p>简单理解：观察者模式即为许多对象等待着某个主题对象的新消息，当主题对象有了新消息的时候，它就会通知所有的观察着它的对象，就像是很多的用户都订阅了一位新闻发布者，当新闻发布者发布了一个新的新闻后，他就会通知它的所有订阅者，就像是手机上一些应用的通知栏通知.</p>
+</blockquote>
+<h4 id="1、实例"><a href="#1、实例" class="headerlink" title="1、实例"></a>1、实例</h4><p>例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 观察者</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Observer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AlarmSensor</span><span class="params">(Observer)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(self,action)</span>:</span></span><br><span class="line">        print(<span class="string">"Alarm Got: %s"</span> % action)</span><br><span class="line">        self.runAlarm()</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">runAlarm</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"Alarm Ring..."</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WaterSprinker</span><span class="params">(Observer)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(self,action)</span>:</span></span><br><span class="line">        print(<span class="string">"Sprinker Got: %s"</span> % action)</span><br><span class="line">        self.runSprinker()</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">runSprinker</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"Spray Water..."</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EmergencyDialer</span><span class="params">(Observer)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(self,action)</span>:</span></span><br><span class="line">        print(<span class="string">"Dialer Got: %s"</span>%action)</span><br><span class="line">        self.runDialer()</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">runDialer</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"Dial 119..."</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被观察者</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Observed</span>:</span></span><br><span class="line">    observers=[]</span><br><span class="line">    action=<span class="string">""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addObserver</span><span class="params">(self,observer)</span>:</span></span><br><span class="line">        self.observers.append(observer)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">notifyAll</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> obs <span class="keyword">in</span> self.observers:</span><br><span class="line">            obs.update(self.action)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">smokeSensor</span><span class="params">(Observed)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setAction</span><span class="params">(self,action)</span>:</span></span><br><span class="line">        self.action=action</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isFire</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 业务代码</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    alarm=AlarmSensor()</span><br><span class="line">    sprinker=WaterSprinker()</span><br><span class="line">    dialer=EmergencyDialer()</span><br><span class="line"></span><br><span class="line">    smoke_sensor=smokeSensor()</span><br><span class="line">    smoke_sensor.addObserver(alarm)</span><br><span class="line">    smoke_sensor.addObserver(sprinker)</span><br><span class="line">    smoke_sensor.addObserver(dialer)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> smoke_sensor.isFire():</span><br><span class="line">        smoke_sensor.setAction(<span class="string">"On Fire!"</span>)</span><br><span class="line">        smoke_sensor.notifyAll()</span><br></pre></td></tr></table></figure>
+<h4 id="2、应用场景"><a href="#2、应用场景" class="headerlink" title="2、应用场景"></a>2、应用场景</h4><ul>
+<li>消息监听更新</li>
+<li>多级触发的场景</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -528,225 +755,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三毛的小窝">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F7/" class="post-title-link" itemprop="url">Python设计模式7</a>
-        </h1>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-13 15:54:13" itemprop="dateCreated datePublished" datetime="2019-12-13T15:54:13+08:00">2019-12-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-12 23:43:11" itemprop="dateModified" datetime="2019-12-12T23:43:11+08:00">2019-12-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">Python设计模式</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">结构型</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F7/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式7" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F7/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F7/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Python设计模式7-桥接模式-结构型"><a href="#Python设计模式7-桥接模式-结构型" class="headerlink" title="Python设计模式7(桥接模式-结构型)"></a>Python设计模式7(桥接模式-结构型)</h2><blockquote>
-<p>桥接（Bridge）是用于把抽象化与实现化解耦，使得二者可以独立变化。这种类型的设计模式属于结构型模式，它通过提供抽象化和实现化之间的桥接结构，来实现二者的解耦.</p>
-<p>这种模式涉及到一个作为桥接的接口，使得实体类的功能独立于接口实现类。这两种类型的类可被结构化改变而互不影响.</p>
-</blockquote>
-<h4 id="1、实例"><a href="#1、实例" class="headerlink" title="1、实例"></a>1、实例</h4><p>例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        print(<span class="string">"my name is :&#123;&#125;"</span>.format(name))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        print(<span class="string">"我的名字是：&#123;&#125;"</span>.format(name))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bridge</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, ager, classname)</span>:</span></span><br><span class="line">        self.ager = ager</span><br><span class="line">        self.classname = classname</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bridge_run</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.classname.run(self.ager)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    test = Bridge(<span class="string">'李华'</span>, A())</span><br><span class="line">    test.bridge_run()</span><br><span class="line">    test.ager = <span class="string">'Tome'</span></span><br><span class="line">    test.bridge_run()</span><br><span class="line">    test.classname = B()</span><br><span class="line">    test.bridge_run()</span><br><span class="line">    test.ager = <span class="string">'李华'</span></span><br><span class="line">    test.bridge_run()</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>从上面代码可以看出来抽象的两个A、B类和实例类在桥接后可以实现独立的控制变化，这样实现了代码的脱耦。</p>
-</blockquote>
-<h4 id="2、应用场景"><a href="#2、应用场景" class="headerlink" title="2、应用场景"></a>2、应用场景</h4><p>待补充</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三毛的小窝">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F9/" class="post-title-link" itemprop="url">Python设计模式9</a>
-        </h1>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-12-13 15:54:13 / 修改时间：23:56:38" itemprop="dateCreated datePublished" datetime="2019-12-13T15:54:13+08:00">2019-12-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">Python设计模式</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">结构型</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F9/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式9" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F9/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F9/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Python设计模式9-组合模式-结构型"><a href="#Python设计模式9-组合模式-结构型" class="headerlink" title="Python设计模式9(组合模式-结构型)"></a>Python设计模式9(组合模式-结构型)</h2><blockquote>
-<p>将对象组合成树状结构，来表示业务逻辑上的[部分-整体]层次，这种组合使单个对象和组合对象的使用方法一样</p>
-</blockquote>
-<h4 id="1、实例"><a href="#1、实例" class="headerlink" title="1、实例"></a>1、实例</h4><p>例子:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComponentBases</span>:</span></span><br><span class="line">    <span class="string">"""部门抽象出来的基类"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        slef.name = name</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">display</span><span class="params">(self, number)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(ComponentBases)</span>:</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, duty)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.duty = duty</span><br><span class="line">        self.children = []</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        self.children.append(obj)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        self.children.remove(obj)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">display</span><span class="params">(self, number=<span class="number">1</span>)</span>:</span></span><br><span class="line">        print(<span class="string">"部门：&#123;&#125; 级别：&#123;&#125; 职责：&#123;&#125;"</span>.format(self.name, number, self.duty))</span><br><span class="line">        n = number+<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> obj <span class="keyword">in</span> self.children:</span><br><span class="line">            obj.display(n)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    root = Node(<span class="string">"总经理办公室"</span>, <span class="string">"总负责人"</span>)</span><br><span class="line">    node1 = Node(<span class="string">"财务部门"</span>, <span class="string">"公司财务管理"</span>)</span><br><span class="line">    root.add(node1)</span><br><span class="line">    node2 = Node(<span class="string">"业务部门"</span>, <span class="string">"销售产品"</span>)</span><br><span class="line">    root.add(node2)</span><br><span class="line">    node3 = Node(<span class="string">"生产部门"</span>, <span class="string">"生产产品"</span>)</span><br><span class="line">    root.add(node3)</span><br><span class="line">    node4 = Node(<span class="string">"销售事业一部门"</span>, <span class="string">"A产品销售"</span>)</span><br><span class="line">    node2.add(node4)</span><br><span class="line">    node5 = Node(<span class="string">"销售事业二部门"</span>, <span class="string">"B产品销售"</span>)</span><br><span class="line">    node2.add(node5)</span><br><span class="line">    root.display()</span><br><span class="line"> </span><br><span class="line">----------输出-----------</span><br><span class="line">部门：总经理办公室 级别：<span class="number">1</span> 职责：总负责人</span><br><span class="line">部门：财务部门 级别：<span class="number">2</span> 职责：公司财务管理</span><br><span class="line">部门：业务部门 级别：<span class="number">2</span> 职责：销售产品</span><br><span class="line">部门：销售事业一部门 级别：<span class="number">3</span> 职责：A产品销售</span><br><span class="line">部门：销售事业二部门 级别：<span class="number">3</span> 职责：B产品销售</span><br><span class="line">部门：生产部门 级别：<span class="number">2</span> 职责：生产产品</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>就是建立节点的方法，用于树状分支</p>
-</blockquote>
-<h4 id="2、应用实例"><a href="#2、应用实例" class="headerlink" title="2、应用实例"></a>2、应用实例</h4><p>待补充</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -819,7 +827,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -874,7 +882,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">19k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

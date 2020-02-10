@@ -160,7 +160,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">33</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">35</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -211,6 +211,258 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/10/16/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/16/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F2/" class="post-title-link" itemprop="url">Python设计模式2</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-16 18:57:20" itemprop="dateCreated datePublished" datetime="2019-10-16T18:57:20+08:00">2019-10-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-13 10:32:46" itemprop="dateModified" datetime="2019-12-13T10:32:46+08:00">2019-12-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">Python设计模式</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%88%9B%E5%BB%BA%E5%9E%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">创建型</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/10/16/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F2/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式2" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/10/16/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/10/16/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Python设计模式2-原型模式"><a href="#Python设计模式2-原型模式" class="headerlink" title="Python设计模式2(原型模式)"></a>Python设计模式2(原型模式)</h2><blockquote>
+<p>原型模式关注的是大量相同对象或相似对象的创建问题，意图在于通过复制一个已经存在的实例来获得一个新的实例，以避免重复创建此类实例带来的开销。被复制的实例就是这个“原型”，这个原型是可定制的。</p>
+</blockquote>
+<h3 id="一-浅拷贝与深拷贝"><a href="#一-浅拷贝与深拷贝" class="headerlink" title="一 浅拷贝与深拷贝"></a>一 浅拷贝与深拷贝</h3><blockquote>
+<p>在浅拷贝时，拷贝出来的新对象的地址和原对象是不一样的，但是新对象里面的可变元素（如列表）的地址和原对象里的可变元素的地址是相同的，也就是说浅拷贝它拷贝的是浅层次的数据结构（不可变元素），对象里的可变元素作为深层次的数据结构并没有被拷贝到新地址里面去，而是和原对象里的可变元素指向同一个地址，所以在新对象或原对象里对这个可变元素做修改时，两个对象是同时改变的，但是深拷贝不会这样，这个是浅拷贝相对于深拷贝最根本的区别。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,[<span class="string">'a'</span>,<span class="string">'b'</span>]]</span><br><span class="line"><span class="comment">#原始对象</span></span><br><span class="line">b=a<span class="comment">#赋值，传对象的引用</span></span><br><span class="line">c=copy.copy(a)<span class="comment">#对象拷贝，浅拷贝</span></span><br><span class="line">d=copy.deepcopy(a)<span class="comment">#对象拷贝，深拷贝</span></span><br><span class="line"></span><br><span class="line">a.append(<span class="number">6</span>)<span class="comment">#修改对象a</span></span><br><span class="line">a[<span class="number">5</span>].append(<span class="string">'c'</span>)<span class="comment">#修改对象a中的['a','b']数组对象</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>b = a是赋值操作符，所以a和b都是同一块地址的不同引用，无论a怎么变b和a的对象地址和元素地址始终指相同；<br>c = c=copy.copy(a)是浅拷贝，只拷贝可变元素的地址如这里的a[5],所以是浅层的拷贝，如果深层的数据变化 ，因为地址指向一样，所以也会发生变化；<br>d=copy.deepcopy(a) 是深拷贝，会递归拷贝所有对象(这里的拷贝意思是放入新的地址)，所以地址都不一样<br>补充：1、列表切片拷贝属于浅拷贝 2、字典中的copy也是浅拷贝 3、列表作为函数参数传递也是浅拷贝</p>
+</blockquote>
+<h3 id="二、原型模式的实现"><a href="#二、原型模式的实现" class="headerlink" title="二、原型模式的实现"></a>二、原型模式的实现</h3><h4 id="1-简单类图"><a href="#1-简单类图" class="headerlink" title="1 简单类图"></a>1 简单类图</h4><p><img src="http://ww1.sinaimg.cn/large/006QuJaKly1g80a4ow12mj30cw05rgm8.jpg" alt="undefined"></p>
+<blockquote>
+<p>原型模式的核心就是clone()函数，</p>
+</blockquote>
+<h4 id="2-使用举例"><a href="#2-使用举例" class="headerlink" title="2 使用举例"></a>2 使用举例</h4><p>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"><span class="comment">#步骤1: 定义object复制类Prototype</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Prototype</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self._objects = &#123;&#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">register_object</span><span class="params">(self, name, obj)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        注册对象实例</span></span><br><span class="line"><span class="string">        :param name: obj_name -&gt; str</span></span><br><span class="line"><span class="string">        :param obj: object -&gt; object</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self._objects[name] = obj</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">unregister_object</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        删除对象</span></span><br><span class="line"><span class="string">        :param name: object_name -&gt; str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">del</span> self._objects[name]</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clone</span><span class="params">(self, name, **attrs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        从已存在的实例深拷贝一个新实例</span></span><br><span class="line"><span class="string">        :param name: 被copy的实例</span></span><br><span class="line"><span class="string">        :param attrs: 新对象属性</span></span><br><span class="line"><span class="string">        :return: 新对象</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        old_obj = self._objects.get(name)</span><br><span class="line">        obj_new = copy.deepcopy(old_obj)</span><br><span class="line">        obj_new.__dict__.update(attrs)</span><br><span class="line">        <span class="keyword">return</span> obj_new</span><br><span class="line"> </span><br><span class="line"><span class="comment">#步骤2: 定义产品类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span><span class="params">(object)</span>:</span></span><br><span class="line">    value = <span class="string">"Default"</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">()</span>:</span></span><br><span class="line">    instance_a = Demo()</span><br><span class="line">    prototype = Prototype()</span><br><span class="line">    prototype.register_object(<span class="string">'instance_a'</span>, instance_a)</span><br><span class="line">    instance_b = prototype.clone(<span class="string">'instance_a'</span>, value=<span class="string">"Hello"</span>, test=<span class="string">"demo"</span>)</span><br><span class="line">    print(instance_a.value)</span><br><span class="line">    print(instance_b.value, instance_b.test)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    run()</span><br></pre></td></tr></table></figure></p>
+<p>运行结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Default</span><br><span class="line">Hello demo</span><br></pre></td></tr></table></figure>
+<h4 id="3-实际应用"><a href="#3-实际应用" class="headerlink" title="3 实际应用"></a>3 实际应用</h4><blockquote>
+<p>很多畅销书籍会经历多个版本的迭代。<br>有变化的信息：价格、长度(页数)以及出版日期。<br>但也有很多相似之处：作者、出版商以及描述该书的标签/关键词都是完全一样的。这表明从头创建一版新书并不总是最佳方式。<br>如果知道两个版本之间的诸多相似之处，则可以先克隆一份，然后仅修改新版本与旧版本之间的不同之处</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Prototype</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self._objects = &#123;&#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">register_object</span><span class="params">(self, name, obj)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        注册对象实例</span></span><br><span class="line"><span class="string">        :param name: obj_name -&gt; str</span></span><br><span class="line"><span class="string">        :param obj: object -&gt; object</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self._objects[name] = obj</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">unregister_object</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        删除对象</span></span><br><span class="line"><span class="string">        :param name: object_name -&gt; str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">del</span> self._objects[name]</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clone</span><span class="params">(self, id, **attrs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        从已存在的实例深拷贝一个新实例</span></span><br><span class="line"><span class="string">        :param name: 被copy的实例</span></span><br><span class="line"><span class="string">        :param attrs: 新对象属性</span></span><br><span class="line"><span class="string">        :return: 新对象</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        old_obj = self._objects.get(id)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> old_obj:</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">"Incorrect object name"</span>)</span><br><span class="line">        obj_new = copy.deepcopy(old_obj)</span><br><span class="line">        obj_new.__dict__.update(attrs)</span><br><span class="line">        <span class="keyword">return</span> obj_new</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, authors, price, **kwargs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        初始化书籍公用信息</span></span><br><span class="line"><span class="string">        :param name: 书名</span></span><br><span class="line"><span class="string">        :param authors: 作者</span></span><br><span class="line"><span class="string">        :param price: 价格</span></span><br><span class="line"><span class="string">        :param kwargs: 其他信息</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.authors = authors</span><br><span class="line">        self.price = price</span><br><span class="line">        self.__dict__.update(kwargs)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        调用print()时自动打印书籍信息</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        mylist = []</span><br><span class="line">        ordered = OrderedDict(sorted(self.__dict__.items()))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> ordered.keys():</span><br><span class="line">            mylist.append(<span class="string">'&#123;&#125;: &#123;&#125;'</span>.format(i, ordered[i]))</span><br><span class="line">            <span class="keyword">if</span> i == <span class="string">'price'</span>:</span><br><span class="line">                mylist.append(<span class="string">'$'</span>)</span><br><span class="line">            mylist.append(<span class="string">'\n'</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>.join(mylist)</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">()</span>:</span></span><br><span class="line"> </span><br><span class="line">    book_1 = Book(<span class="string">"Python核心编程（第一版）"</span>, <span class="string">"宋吉广"</span>, <span class="string">"45.9"</span>, publisher=<span class="string">"邮电出版社"</span>, length=<span class="string">"350页"</span>)</span><br><span class="line">    prototype = Prototype()</span><br><span class="line">    prototype.register_object(<span class="string">'book_1'</span>, book_1)</span><br><span class="line">    book_2 = prototype.clone(<span class="string">'book_1'</span>, name=<span class="string">"Python核心编程（第二版）"</span>, authors=<span class="string">"宋吉广"</span>,</span><br><span class="line">                             price=<span class="string">"75.9"</span>, publisher=<span class="string">"邮电出版社"</span>, length=<span class="string">"550页"</span>)</span><br><span class="line">    print(book_1)</span><br><span class="line">    print(book_2)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    run()</span><br></pre></td></tr></table></figure>
+<h3 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h3><blockquote>
+<p>原型模式多用于对象创建比较麻烦的，且需要大量创建，但是对象属性只有一部分改变的类中，但是每个类都要有clone方法，如果项目过大就要在设计之前优先考虑了</p>
+</blockquote>
+<h3 id="四、参考文章"><a href="#四、参考文章" class="headerlink" title="四、参考文章"></a>四、参考文章</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/biheyu828/</span>article<span class="regexp">/details/</span><span class="number">92798805</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/" class="post-title-link" itemprop="url">Python设计模式1</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-15 21:57:58" itemprop="dateCreated datePublished" datetime="2019-10-15T21:57:58+08:00">2019-10-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-16 14:37:48" itemprop="dateModified" datetime="2019-12-16T14:37:48+08:00">2019-12-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">Python设计模式</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%88%9B%E5%BB%BA%E5%9E%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">创建型</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式1" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h2 id="Python设计模式1-单例模式"><a href="#Python设计模式1-单例模式" class="headerlink" title="Python设计模式1(单例模式)"></a>Python设计模式1(单例模式)</h2><hr>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><blockquote>
+<p>单例模式就是确保一个类只有一个实例.当你希望整个系统中,某个类只有一个实例时,单例模式就派上了用场。比如,某个服务器的配置信息存在在一个文件中,客户端通过AppConfig类来读取配置文件的信息.如果程序的运行的过程中,很多地方都会用到配置文件信息,则就需要创建很多的AppConfig实例,这样就导致内存中有很多AppConfig对象的实例,造成资源的浪费.其实这个时候AppConfig我们希望它只有一份,就可以使用单例模式.</p>
+</blockquote>
+<h3 id="单例模式实现"><a href="#单例模式实现" class="headerlink" title="单例模式实现"></a>单例模式实现</h3><h4 id="1-使用模块"><a href="#1-使用模块" class="headerlink" title="1 使用模块"></a>1 使用模块</h4><blockquote>
+<p>python模块就是单例模式的一个体现、因为第一次导入模块的时候会生成.pyc文件，第二次导入时就会加载.pyc文件</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">singleton = Singleton()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过模块调用</span></span><br><span class="line"><span class="keyword">from</span> test <span class="keyword">import</span> singleton</span><br></pre></td></tr></table></figure>
+<h4 id="2-装饰器"><a href="#2-装饰器" class="headerlink" title="2 装饰器"></a>2 装饰器</h4><blockquote>
+<p>装饰器里面的外层变量定义一个字典,里面存放这个类的实例.当第一次创建的收,就将这个实例保存到这个字典中.然后以后每次创建对象的时候,都去这个字典中判断一下,如果已经被实例化,就直接取这个实例对象.如果不存在就保存到字典中.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    _instance = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_singleton</span><span class="params">(*args, **kargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> _instance:</span><br><span class="line">            _instance[cls] = cls(*args, **kargs)</span><br><span class="line">        <span class="keyword">return</span> _instance[cls]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> _singleton</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Singleton</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span></span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, a)</span>:</span></span><br><span class="line">        self.a = a</span><br><span class="line"></span><br><span class="line">a1 = A(<span class="number">2</span>)</span><br><span class="line">a2 = A(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="3-加锁类方法"><a href="#3-加锁类方法" class="headerlink" title="3 加锁类方法"></a>3 加锁类方法</h4><blockquote>
+<p>多线程调用如果出现堵塞，单纯的类方法无法实现单例模式，这里需要加锁</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    _instance_lock = threading.Lock()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,*args,**kwargs)</span>:</span></span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_instance</span><span class="params">(cls,*args,**kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(Singleton,<span class="string">'_instance'</span>):</span><br><span class="line">            <span class="keyword">with</span> Singleton._instance_lock:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> hasattr(Singleton,<span class="string">'_instance'</span>):</span><br><span class="line">                    Singleton._instance = Singleton(*args,**kwargs)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Singleton._instance</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">(arg)</span>:</span></span><br><span class="line">    obj = Singleton.get_instance(arg)</span><br><span class="line">    print(obj)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    t = threading.Thread(target=task,args=[i,])</span><br><span class="line">    t.start()</span><br><span class="line"></span><br><span class="line">obj = Singleton.get_instance()</span><br><span class="line">print(obj)</span><br></pre></td></tr></table></figure>
+<h4 id="4-基于new方法实现的单例模式"><a href="#4-基于new方法实现的单例模式" class="headerlink" title="4 基于new方法实现的单例模式"></a>4 基于<strong>new</strong>方法实现的单例模式</h4><blockquote>
+<p>一个对象的实例化过程是先执行类的<strong>new</strong>方法,如果我们没有写,默认会调用object的<strong>new</strong>方法,返回一个实例化对象,然后再调用<strong>init</strong>方法,对这个对象进行初始化,我们可以根据这个实现单例.在一个类的<strong>new</strong>方法中先判断是不是存在实例,如果存在实例,就直接返回,如果不存在实例就创建.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    _instance_lock = threading.Lock()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(Singleton, <span class="string">"_instance"</span>):</span><br><span class="line">            <span class="keyword">with</span> Singleton._instance_lock:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> hasattr(Singleton, <span class="string">"_instance"</span>):</span><br><span class="line">                    Singleton._instance = object.__new__(cls)  </span><br><span class="line">        <span class="keyword">return</span> Singleton._instance</span><br><span class="line"></span><br><span class="line">obj1 = Singleton()</span><br><span class="line">obj2 = Singleton()</span><br><span class="line">print(obj1,obj2)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">(arg)</span>:</span></span><br><span class="line">    obj = Singleton()</span><br><span class="line">    print(obj)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    t = threading.Thread(target=task,args=[i,])</span><br><span class="line">    t.start()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -552,227 +804,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%80%E6%89%8B%E6%9C%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三毛的小窝">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%80%E6%89%8B%E6%9C%AD/" class="post-title-link" itemprop="url">人间失格第一手札</a>
-        </h1>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-29 17:44:29" itemprop="dateCreated datePublished" datetime="2019-09-29T17:44:29+08:00">2019-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%80%E6%89%8B%E6%9C%AD/" class="post-meta-item leancloud_visitors" data-flag-title="人间失格第一手札" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%80%E6%89%8B%E6%9C%AD/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%80%E6%89%8B%E6%9C%AD/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="我这一生，尽是可耻的过往"><a href="#我这一生，尽是可耻的过往" class="headerlink" title="我这一生，尽是可耻的过往"></a>我这一生，尽是可耻的过往</h2><h4 id="一、表面上我不断地强装出笑脸，可内心里却是对人类拼死拼活的服务，汗流浃背的服务。"><a href="#一、表面上我不断地强装出笑脸，可内心里却是对人类拼死拼活的服务，汗流浃背的服务。" class="headerlink" title="一、表面上我不断地强装出笑脸，可内心里却是对人类拼死拼活的服务，汗流浃背的服务。"></a>一、表面上我不断地强装出笑脸，可内心里却是对人类拼死拼活的服务，汗流浃背的服务。</h4><p>（辛苦的逢迎，背后总有些各样的无奈，当你因为各样原因放下自己的那份身段去强装出那种令人厌恶的姿态时，什么讥笑言语都是过眼云烟罢了。）</p>
-<h4 id="二、不公平现象是必然存在的。这一点是明摆着的事实。本来诉诸于人就是徒劳无益的。所以我依旧对真实的事情一言不发，默默忍耐着除了继续扮演滑稽逗笑角色之外已经别无选择。"><a href="#二、不公平现象是必然存在的。这一点是明摆着的事实。本来诉诸于人就是徒劳无益的。所以我依旧对真实的事情一言不发，默默忍耐着除了继续扮演滑稽逗笑角色之外已经别无选择。" class="headerlink" title="二、不公平现象是必然存在的。这一点是明摆着的事实。本来诉诸于人就是徒劳无益的。所以我依旧对真实的事情一言不发，默默忍耐着除了继续扮演滑稽逗笑角色之外已经别无选择。"></a>二、不公平现象是必然存在的。这一点是明摆着的事实。本来诉诸于人就是徒劳无益的。所以我依旧对真实的事情一言不发，默默忍耐着除了继续扮演滑稽逗笑角色之外已经别无选择。</h4><p>（绝对的公平是不存在的，当你因为遭遇了一个不公平待遇而去原地谩骂的时候，你已经陷入这样的泥潭，为何不依靠自己的能力去改变，去证明自己，而麻木于这样的不公平更是可悲的，你的心会随着时间而慢慢变老变枯竭）</p>
-<h4 id="三、这仅仅是其中一个微不足道的事例。相互欺骗，却又令人惊奇地不受到任何伤害，甚至于就好像没有察觉到彼此在欺骗似的，这种不加掩饰从而显得清冽、豁达的互不信任的例子，在人类生活中比比皆是。"><a href="#三、这仅仅是其中一个微不足道的事例。相互欺骗，却又令人惊奇地不受到任何伤害，甚至于就好像没有察觉到彼此在欺骗似的，这种不加掩饰从而显得清冽、豁达的互不信任的例子，在人类生活中比比皆是。" class="headerlink" title="三、这仅仅是其中一个微不足道的事例。相互欺骗，却又令人惊奇地不受到任何伤害，甚至于就好像没有察觉到彼此在欺骗似的，这种不加掩饰从而显得清冽、豁达的互不信任的例子，在人类生活中比比皆是。"></a>三、这仅仅是其中一个微不足道的事例。相互欺骗，却又令人惊奇地不受到任何伤害，甚至于就好像没有察觉到彼此在欺骗似的，这种不加掩饰从而显得清冽、豁达的互不信任的例子，在人类生活中比比皆是。</h4><p>（伪装这种东西说绝对的坏也是不恰当的，毕竟在这样一个时代，完全活出自己的模样真的是太困难了，人们往往都活在一个甚至多个角色之中，而当我们习惯这种角色的切换后，一切都变得我理所当然了，包括谎言，欺骗等等，真实这种东西，太奢侈了。。。）</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三毛的小窝">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">linux下ss搭建</a>
-        </h1>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-29 17:41:38" itemprop="dateCreated datePublished" datetime="2019-09-29T17:41:38+08:00">2019-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/" class="post-meta-item leancloud_visitors" data-flag-title="linux下ss搭建" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Linux-Mint配置2（ss科学上网）"><a href="#Linux-Mint配置2（ss科学上网）" class="headerlink" title="Linux Mint配置2（ss科学上网）"></a>Linux Mint配置2（ss科学上网）</h1><h2 id="一-服务器的搭建（VPS）"><a href="#一-服务器的搭建（VPS）" class="headerlink" title="一 . 服务器的搭建（VPS）"></a>一 . 服务器的搭建（VPS）</h2><h3 id="1-在合适的VPS网站上购买VPS（vultr推荐），记住ip，password"><a href="#1-在合适的VPS网站上购买VPS（vultr推荐），记住ip，password" class="headerlink" title="1. 在合适的VPS网站上购买VPS（vultr推荐），记住ip，password"></a>1. 在合适的VPS网站上购买VPS（vultr推荐），记住ip，password</h3><h3 id="2-进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）"><a href="#2-进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）" class="headerlink" title="2. 进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）"></a>2. 进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）</h3><pre><code>  命令格式：ssh root@ip（这里第一次登陆时可能会让你输入用户名和密码，需要你输入你买VPS注册得账号密码）
-</code></pre><p><img src="https://cdn-images-1.medium.com/max/1600/0*VK1s3NgNSJKpbvUD.jpg" alt="ssh"></p>
-<h3 id="3-输入密码一路回车到出现root-···即可"><a href="#3-输入密码一路回车到出现root-···即可" class="headerlink" title="3. 输入密码一路回车到出现root@···即可"></a>3. 输入密码一路回车到出现root@···即可</h3><h3 id="4-部署服务器端（这里有代码）"><a href="#4-部署服务器端（这里有代码）" class="headerlink" title="4. 部署服务器端（这里有代码）"></a>4. 部署服务器端（这里有代码）</h3><pre><code>1. wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
-2. chmod +x shadowsocks.sh
-3. ./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log
-4.  剩下自己按照提示输入就行，结束后回到桌面会发现这个文件
-</code></pre><h2 id="二-Linux安装ss并配置开机启动"><a href="#二-Linux安装ss并配置开机启动" class="headerlink" title="二. Linux安装ss并配置开机启动"></a>二. Linux安装ss并配置开机启动</h2><h3 id="1-下载ss"><a href="#1-下载ss" class="headerlink" title="1. 下载ss"></a>1. 下载ss</h3><pre><code>1. sudo apt-get install python-pip //安装pip
-2. sudo apt-get install shadowsocks//安装ss
-</code></pre><h3 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2. 修改配置文件"></a>2. 修改配置文件</h3><pre><code>1. 在/etc/下创建文件ss.json (名字随意路径也可以自己选择）
-2. 编辑配置文件sudo vim /etc/ss.json
-</code></pre><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"server"</span>:<span class="string">"my_server_ip"</span>,<span class="comment">//代理ip</span></span><br><span class="line">	<span class="attr">"server_port"</span>:my_port,<span class="comment">//代理端口</span></span><br><span class="line">	<span class="attr">"password"</span>:<span class="string">"passwd"</span>,<span class="comment">//密码</span></span><br><span class="line">	<span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span><span class="comment">//没有逗号</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>3. 打开终端输入sslocal -c /etc/ss.json（如果不报错打开google测试即可）
-</code></pre><h3 id="3-可能出现问题"><a href="#3-可能出现问题" class="headerlink" title="3. 可能出现问题"></a>3. 可能出现问题</h3><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">运行sslocal 报错</span><br><span class="line"><span class="symbol">AttributeError:</span> /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">x86_64</span>-<span class="title">Linux</span>-<span class="title">gnu</span>/<span class="title">libcrypto</span>.<span class="title">so</span>.1.1: <span class="title">undefined</span> <span class="title">symbol</span>: <span class="title">EVP_CIPHER_CTX_cleanuphttp</span>://<span class="title">www</span>.<span class="title">cnblogs</span>.<span class="title">com</span>/<span class="title">lzhd24</span>/<span class="title">p</span>/6686803.<span class="title">html</span></span></span><br></pre></td></tr></table></figure>
-<pre><code>1. 用vi打开文件：vi /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
-2. 将第52行libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,) 改为libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
-3. 再次搜索cleanup（全文件共2处，此处位于111行），将libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx) 改为libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
-4.保存退出继续运行sslocal -c 命令
-</code></pre><h3 id="4-设置开机启动项"><a href="#4-设置开机启动项" class="headerlink" title="4.设置开机启动项"></a>4.设置开机启动项</h3><pre><code>系统有开机启动项设置，这里可以在开机启动项里设置加入启动命令即可（这里rc.local)出现问题，在新版本ubuntu中不执行
-</code></pre><h3 id="5-设置终端运行（前面设置的ss不是全局代理，终端无法ping-谷歌）"><a href="#5-设置终端运行（前面设置的ss不是全局代理，终端无法ping-谷歌）" class="headerlink" title="5.设置终端运行（前面设置的ss不是全局代理，终端无法ping 谷歌）"></a>5.设置终端运行（前面设置的ss不是全局代理，终端无法ping 谷歌）</h3><h4 id="1-安装polipo（支持socks6）"><a href="#1-安装polipo（支持socks6）" class="headerlink" title="(1)安装polipo（支持socks6）"></a>(1)安装polipo（支持socks6）</h4><pre><code>sudo apt install polipo
-</code></pre><h4 id="2-编辑配置文件，保存到-etc-polipo-config"><a href="#2-编辑配置文件，保存到-etc-polipo-config" class="headerlink" title="(2) 编辑配置文件，保存到/etc/polipo/config"></a>(2) 编辑配置文件，保存到/etc/polipo/config</h4><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This file only needs to list configuration variables that deviate</span></span><br><span class="line"><span class="comment"># from the default values.  See /usr/share/doc/polipo/examples/config.sample</span></span><br><span class="line"><span class="comment"># and "polipo -v" for variables you can tweak and further information.</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">logSyslog</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">logFile</span> = /var/log/polipo/polipo.log</span><br><span class="line"> </span><br><span class="line"><span class="attr">proxyAddress</span> = <span class="string">"0.0.0.0"</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">socksParentProxy</span> = <span class="string">"127.0.0.1:1080"</span></span><br><span class="line"><span class="attr">socksProxyType</span> = socks5</span><br><span class="line"> </span><br><span class="line"><span class="attr">chunkHighMark</span> = <span class="number">50331648</span></span><br><span class="line"><span class="attr">objectHighMark</span> = <span class="number">16384</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">serverMaxSlots</span> = <span class="number">64</span></span><br><span class="line"><span class="attr">serverSlots</span> = <span class="number">16</span></span><br><span class="line"><span class="attr">serverSlots1</span> = <span class="number">32</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-重启polipo"><a href="#3-重启polipo" class="headerlink" title="(3)重启polipo"></a>(3)重启polipo</h4><pre><code>sudo service polipo restart
-curl google.com（看看是否有用）
-</code></pre><h4 id="4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）"><a href="#4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）" class="headerlink" title="(4)添加环境变量，要不然只能这一个终端可以使用（vim ～/.bashrc)(添加后source /etc/profile 让环境变量立即生效）"></a>(4)添加环境变量，要不然只能这一个终端可以使用（vim ～/.bashrc)(添加后source /etc/profile 让环境变量立即生效）</h4><pre><code>export http_proxy=&quot;http://127.0.0.1:8123&quot;
-export https_proxy=&quot;https://127.0.0.1:8123&quot;
-</code></pre>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -845,7 +876,7 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -900,7 +931,7 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">19k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

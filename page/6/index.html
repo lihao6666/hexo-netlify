@@ -160,7 +160,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">35</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -211,6 +211,382 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/" class="post-title-link" itemprop="url">Python设计模式5</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-03 15:54:13" itemprop="dateCreated datePublished" datetime="2019-11-03T15:54:13+08:00">2019-11-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-04 01:22:10" itemprop="dateModified" datetime="2020-02-04T01:22:10+08:00">2020-02-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">Python设计模式</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">结构型</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式5" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Python设计模式5-适配器模式-结构型"><a href="#Python设计模式5-适配器模式-结构型" class="headerlink" title="Python设计模式5(适配器模式-结构型)"></a>Python设计模式5(适配器模式-结构型)</h2><blockquote>
+<p>当我们希望把一个老组件用于一个新组系统或者把一个新组件应用于老系统中，同时在代码无法修改的，或者说无法访问这些代码时（在实际开发中，旧系统的代码修改后牵一而动全身，很容易引起系统的崩溃。）。这时候，我们可以编写一个额外的代码层，该代码层包含让这两个接口之间能够通信需要进行的所有修改,通俗的来讲就是构建一个适配器可以将一个类接口转换为需要的一个接口</p>
+</blockquote>
+<h3 id="1-简单举例"><a href="#1-简单举例" class="headerlink" title="1 简单举例"></a>1 简单举例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Target</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">request</span><span class="params">(self)</span>:</span></span><br><span class="line">    print(<span class="string">"普通请求"</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adaptee</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">specific_request</span><span class="params">(self)</span>:</span></span><br><span class="line">    print(<span class="string">"特殊请求"</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adapter</span><span class="params">(Target)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.adaptee = Adaptee()</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">request</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.adaptee.specific_request()</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  target = Adapter()</span><br><span class="line">  target.request()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>从上面的例子中可以看出来两个类有不同的print需求，通过建立一个适配器Adapter类,将下一个类的print功能和Target类相契合</p>
+</blockquote>
+<h3 id="2-复杂一点的举例"><a href="#2-复杂一点的举例" class="headerlink" title="2 复杂一点的举例"></a>2 复杂一点的举例</h3><p>增加类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Synthesizer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'the &#123;&#125; synthesizer'</span>.format(self.name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">play</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'is playing an electronic song'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&#123;&#125; the human'</span>.format(self.name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">speak</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'says hello'</span></span><br></pre></td></tr></table></figure>
+<p>原有类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Computer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'the &#123;&#125; computer'</span>.format(self.name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">execute</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'executes a program'</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>从上面可以看出来，新增加的类主要在执行类play()和speak()和原始类不一样，而对于执行系统来说，都要使用obj.excute()来执行，这样就需要构建一个适配器来实现来设计类调用</p>
+</blockquote>
+<p>增加适配器:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adapter</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, obj, adapted_methods)</span>:</span></span><br><span class="line">        self.obj = obj</span><br><span class="line">        self.__dict__.update(adapted_methods)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> str(self.obj)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">new_main</span><span class="params">()</span>:</span></span><br><span class="line">    objects = [Computer(<span class="string">'Asus'</span>)]</span><br><span class="line">    synth = Synthesizer(<span class="string">'moog'</span>)</span><br><span class="line">    objects.append(Adapter(synth, dict(execute=synth.play)))</span><br><span class="line">    human = Human(<span class="string">'Bob'</span>)</span><br><span class="line">    objects.append(Adapter(human, dict(execute=human.speak)))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> objects:</span><br><span class="line">        print(<span class="string">'&#123;&#125; &#123;&#125;'</span>.format(str(i), i.execute()))</span><br><span class="line">        print(<span class="string">'type is &#123;&#125;'</span>.format(type(i)))</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">the Asus computer executes a program</span><br><span class="line">type <span class="keyword">is</span> &lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">Computer</span>'&gt;</span></span><br><span class="line"><span class="class"><span class="title">the</span> <span class="title">moog</span> <span class="title">synthesizer</span> <span class="title">is</span> <span class="title">playing</span> <span class="title">an</span> <span class="title">electronic</span> <span class="title">song</span></span></span><br><span class="line"><span class="class"><span class="title">type</span> <span class="title">is</span> &lt;<span class="title">class</span> '<span class="title">__main__</span>.<span class="title">Adapter</span>'&gt;</span></span><br><span class="line"><span class="class"><span class="title">Bob</span> <span class="title">the</span> <span class="title">human</span> <span class="title">says</span> <span class="title">hello</span></span></span><br><span class="line"><span class="class"><span class="title">type</span> <span class="title">is</span> &lt;<span class="title">class</span> '<span class="title">__main__</span>.<span class="title">Adapter</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里用到了python魔术方法中的<strong>dict</strong>,具体可参考我的文章。。。，这里主要的实现功能和上一个例子，就是只改适配器中内容而改变其它两个类中的功能函数</p>
+</blockquote>
+<h3 id="3-实际应用"><a href="#3-实际应用" class="headerlink" title="3 实际应用"></a>3 实际应用</h3><blockquote>
+<p>比如电商平台中，货币的支持这个功能，可能刚开始只支持pay一种货币，后面需要支持别的货币，这时候就需要针对不同货币的付款金额，实现pay的接口适配</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/10/18/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/18/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F4/" class="post-title-link" itemprop="url">Python设计模式4</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-18 09:17:15" itemprop="dateCreated datePublished" datetime="2019-10-18T09:17:15+08:00">2019-10-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-13 10:32:29" itemprop="dateModified" datetime="2019-12-13T10:32:29+08:00">2019-12-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">Python设计模式</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%88%9B%E5%BB%BA%E5%9E%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">创建型</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/10/18/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F4/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式4" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/10/18/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/10/18/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h2 id="Python设计模式4-建造模式"><a href="#Python设计模式4-建造模式" class="headerlink" title="Python设计模式4(建造模式)"></a>Python设计模式4(建造模式)</h2><blockquote>
+<p>我们想要创建一个由多个部分构成的对象，而且它的构成需要一步接一步地完成。 只有当各个部分都创建好，这个对象才算是完整的。这正是建造者设计模式。</p>
+<p>在建造模式中，主要有两个角色，一个是指挥者(Director)，一个是建造者(Builder),指挥者指挥建造者建造产品</p>
+</blockquote>
+<h3 id="1-引入"><a href="#1-引入" class="headerlink" title="1 引入"></a>1 引入</h3><blockquote>
+<p>假如要组装一台电脑，将主板，CPU，内存等部件按照某个稳定的步骤组合，基本过程是不变的，而组成电脑的各个部件却可以是不同性能的，不同价位，或者是不同版本的，当组成电脑的时只需要选择不同的组件就可以按照基本相同的过程造出不同配置的电脑。也就是说建造者模式的意图是将一个复杂对象的构建过程与表示分离，它使用相同的构建步骤作用于不同的子对象以构建出不同表现形式的“复杂对象”</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Computer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, serial_number)</span>:</span></span><br><span class="line">        self.serial = serial_number</span><br><span class="line">        self.memory = <span class="literal">None</span></span><br><span class="line">        self.hdd = <span class="literal">None</span></span><br><span class="line">        self.gpu = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        info = (<span class="string">'Model: &#123;&#125;'</span>.format(self.serial),</span><br><span class="line">                <span class="string">'Memory: &#123;&#125;GB'</span>.format(self.memory),</span><br><span class="line">                <span class="string">'Hard Disk: &#123;&#125;GB'</span>.format(self.hdd),</span><br><span class="line">                <span class="string">'Graphics Card: &#123;&#125;'</span>.format(self.gpu))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'\n'</span>.join(info)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComputerBuilder</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.computer = Computer(<span class="string">'AG23385193'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">configure_memory</span><span class="params">(self, amount)</span>:</span></span><br><span class="line">        self.computer.memory = amount</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">configure_hdd</span><span class="params">(self, amount)</span>:</span></span><br><span class="line">        self.computer.hdd = amount</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">configure_gpu</span><span class="params">(self, gpu_model)</span>:</span></span><br><span class="line">        self.computer.gpu = gpu_model</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HardwareEngineer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.builder = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">construct_computer</span><span class="params">(self, memory, hdd, gpu)</span>:</span></span><br><span class="line">        self.builder = ComputerBuilder()</span><br><span class="line">        self.builder.configure_memory(memory),</span><br><span class="line">        self.builder.configure_hdd(hdd),</span><br><span class="line">        self.builder.configure_gpu(gpu)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">computer</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.builder.computer</span><br><span class="line"></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">def main():</span></span><br><span class="line"><span class="string">    engineer = HardwareEngineer()</span></span><br><span class="line"><span class="string">    engineer.construct_computer(hdd=500, memory=8, gpu='GeForce GTX 650 Ti')</span></span><br><span class="line"><span class="string">    computer = engineer.computer</span></span><br><span class="line"><span class="string">    print(computer)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Out:</span></span><br><span class="line"><span class="string">    Model: AG23385193</span></span><br><span class="line"><span class="string">    Memory: 8GB</span></span><br><span class="line"><span class="string">    Hard Disk: 500GB</span></span><br><span class="line"><span class="string">    Graphics Card: GeForce GTX 650 T</span></span><br><span class="line"><span class="string">    """</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>从上面代码可以看出建造者模式对于产品建造的细节都在Director(HardwareEngineer)中定义，这里可以控制产品的细节</p>
+</blockquote>
+<h3 id="2-和工厂模式的区别"><a href="#2-和工厂模式的区别" class="headerlink" title="2 和工厂模式的区别"></a>2 和工厂模式的区别</h3><blockquote>
+<p>工厂模式注重的是产品产生的结果，也就是类别上的产生模式，如上一篇文章中的支付方式，而建造模式更注重的是产品的创建方式，如这里面电脑配件的型号等等</p>
+</blockquote>
+<h3 id="3-实际应用场景"><a href="#3-实际应用场景" class="headerlink" title="3 实际应用场景"></a>3 实际应用场景</h3><blockquote>
+<p>比如网页中组件的构成，这里面需要考虑各个小组件的构成和使用，这里就可以使用建造者模式</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/10/17/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/10/17/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F3/" class="post-title-link" itemprop="url">Python设计模式3</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-17 08:41:30" itemprop="dateCreated datePublished" datetime="2019-10-17T08:41:30+08:00">2019-10-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-13 12:43:30" itemprop="dateModified" datetime="2019-12-13T12:43:30+08:00">2019-12-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">Python设计模式</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%88%9B%E5%BB%BA%E5%9E%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">创建型</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/10/17/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F3/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式3" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/10/17/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F3/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/10/17/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F3/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h2 id="Python设计模式3-工厂模式"><a href="#Python设计模式3-工厂模式" class="headerlink" title="Python设计模式3(工厂模式)"></a>Python设计模式3(工厂模式)</h2><h3 id="1-引入"><a href="#1-引入" class="headerlink" title="1 引入"></a>1 引入</h3><blockquote>
+<p>当实际应用，比如数据库连接是，我们输入mysql，就可以实现mysql连接，输入sqlserver就可以创建sqlserver的连接，这样我们只需要输入参数就可以创建相应的对象，实际的创建方法我们并不可见的模式就是工厂模式</p>
+</blockquote>
+<h3 id="2-简单工厂模式"><a href="#2-简单工厂模式" class="headerlink" title="2 简单工厂模式"></a>2 简单工厂模式</h3><blockquote>
+<p>在简单工厂模式中，只提供了一个工厂类，该工厂类处于对产品类进行实例化的中心位置，它知道每一个产品对象的创建细节，并决定何时实例化哪一个产品类</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,weight)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.weight = weight</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">product</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"这是&#123;&#125;,重量是&#123;&#125;吨，用来生产混合果汁的"</span>.format(self.name, self.weight))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apple</span><span class="params">(Fruit)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,weight)</span>:</span></span><br><span class="line">        super(Apple, self).__init__(name,weight)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">product</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"这是&#123;&#125;,重量是&#123;&#125;吨，用来生产&#123;&#125;罐头的"</span>.format(self.name, self.weight, self.name))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Peer</span><span class="params">(Fruit)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,weight)</span>:</span></span><br><span class="line">        super(Peer, self).__init__(name, weight)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">product</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"这是&#123;&#125;,重量是&#123;&#125;吨，用来生产&#123;&#125;罐头的"</span>.format(self.name, self.weight, self.name))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FruitFactory</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">make_apple</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">make_peer</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>问题：</p>
+<blockquote>
+<p>简单工厂模式最大的缺点是当有新产品要加入到系统中时，必须修改工厂类，加入必要的处理逻辑，这违背了“开闭原则”。在简单工厂模式中，所有的产品都是由同一个工厂创建，工厂类职责较重，业务逻辑较为复杂，具体产品与工厂类之间的耦合度高，严重影响了系统的灵活性和扩展性，而工厂方法模式则可以很好地解决这一问题。</p>
+</blockquote>
+<h3 id="3工厂方法"><a href="#3工厂方法" class="headerlink" title="3工厂方法"></a>3工厂方法</h3><blockquote>
+<p>工厂方法模式就是简单工厂模式的进一步抽像。由于面向对象多态性，工厂方法模式保持了简单工厂的有点同时克服了他的缺点。工厂方法模式中，核心的工厂被提升为一个抽象类，将具体的创建工作交给他的子类完成。这个抽象的工厂类仅规定具体工厂实现的接口，而不明确指出如何实例化一个产品类，这使得工厂方法模式允许系统在不修改原有产品结构的情况下轻松的引进新产品。</p>
+</blockquote>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 先定义不同的支付方式（对应工厂里具体的产品），及每个产品具体的生产细节</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BigCat</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 关于传参的处理方式一： 有构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,money)</span>:</span></span><br><span class="line">        self.money = money</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pay</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"收到大猫金融的支付金额&#123;0&#125;"</span>.format(self.money))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WeChat</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        self.money = money</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pay</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        print(<span class="string">"收到微信支付的金额&#123;0&#125;"</span>.format(money))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ZhiFuBao</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        self.money = money</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pay</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"收到支付宝支付的金额&#123;0&#125;"</span>.format(self.money))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 为每个支付方式(每个产品）定义特定的工厂,每个工厂都有具体的工厂方法函数，负责返回</span></span><br><span class="line"><span class="comment"># 具体的工厂方法函数，其实就是对每个产品具体的生产细节进行了包装，让外部使用者只能用，却不知道具体的生产过程细节</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 对外只提供这些特定的工厂（接口）</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BigCatFactory</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">create</span><span class="params">(self,money)</span>:</span></span><br><span class="line">        <span class="keyword">return</span>  BigCat(money)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WeChatFactory</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">create</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span>  WeChat()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ZhiFuBaoFactory</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">create</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        <span class="keyword">return</span>  ZhiFuBao(money)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### 4 抽象工厂模式</span></span><br><span class="line"></span><br><span class="line">&gt;抽象工厂模式是所有形式的工厂模式中最为抽象和最具一般性的一种形式。当系统所提供的工厂生产的具体产品并不是一个简单的对象，而是多个位于不同产品等级结构、属于不同类型的具体产品时就可以使用抽象工厂模式 ，抽象工厂模式中的具体工厂不只是创建一种产品，它负责创建一族产品 当一个工厂等级结构可以创建出分属于不同产品等级结构的一个产品族中的所有对象时，抽象工厂模式比工厂方法模式更为简单、更有效率</span><br><span class="line"></span><br><span class="line">基于工厂方法的例子：</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FactoryProducer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_factory</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> name == <span class="string">"BigCat"</span>:</span><br><span class="line">            <span class="keyword">return</span> BigCatFactory()</span><br><span class="line">        <span class="keyword">elif</span> name == <span class="string">"WeChat"</span></span><br><span class="line">            <span class="keyword">return</span> WeChatFactory()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> ZhiFuBaoFactory()</span><br><span class="line"><span class="comment"># 相对于工厂方法，抽象工厂方法具体创建了一个接口来访问整个工厂，这样更加具有封装性</span></span><br></pre></td></tr></table></figure>
+<h3 id="5总结"><a href="#5总结" class="headerlink" title="5总结"></a>5总结</h3><blockquote>
+<p>上面这些工厂方法的封装性都不断增强，这样符合开闭原则，但是会对底层修改带来很大麻烦。</p>
+</blockquote>
+<p>适用场景：</p>
+<blockquote>
+<p>一个系统不应当依赖于产品类实例如何被创建、组合和表达的细节 系统中有多于一个的产品族，但每次只使用其中某一产品族 属于同一个产品族的产品将在一起使用，这一约束必须在系统的设计中体现出来 产品等级结构稳定，设计完成之后，不会向系统中增加新的产品等级结构或者删除已有的产品等级结构</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -463,352 +839,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/10/14/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%BF%94%E5%9B%9E%E9%A1%B5%E9%9D%A2%E5%8F%91%E7%94%9F%E7%9A%84%E4%BA%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三毛的小窝">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/14/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%BF%94%E5%9B%9E%E9%A1%B5%E9%9D%A2%E5%8F%91%E7%94%9F%E7%9A%84%E4%BA%8B/" class="post-title-link" itemprop="url">从输入url到返回页面发生的事</a>
-        </h1>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-14 19:15:02" itemprop="dateCreated datePublished" datetime="2019-10-14T19:15:02+08:00">2019-10-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/10/14/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%BF%94%E5%9B%9E%E9%A1%B5%E9%9D%A2%E5%8F%91%E7%94%9F%E7%9A%84%E4%BA%8B/" class="post-meta-item leancloud_visitors" data-flag-title="从输入url到返回页面发生的事" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/10/14/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%BF%94%E5%9B%9E%E9%A1%B5%E9%9D%A2%E5%8F%91%E7%94%9F%E7%9A%84%E4%BA%8B/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/10/14/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E8%BF%94%E5%9B%9E%E9%A1%B5%E9%9D%A2%E5%8F%91%E7%94%9F%E7%9A%84%E4%BA%8B/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="从输入url到返回页面发生的事"><a href="#从输入url到返回页面发生的事" class="headerlink" title="从输入url到返回页面发生的事"></a>从输入url到返回页面发生的事</h1><h2 id="1-DNS解析"><a href="#1-DNS解析" class="headerlink" title="1.DNS解析"></a>1.DNS解析</h2><h3 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h3><blockquote>
-<p>DNS解析就是将网址解析成IP的过程</p>
-</blockquote>
-<h3 id="1-2-解析过程"><a href="#1-2-解析过程" class="headerlink" title="1.2 解析过程"></a>1.2 解析过程</h3><blockquote>
-<p>DNS解析是递归查询的过程，主要有以下先后关系</p>
-</blockquote>
-<ul>
-<li>先在本地域名服务器查询IP地址</li>
-<li>如果上一步未查到，到根域名服务器查询</li>
-<li>根域名服务器不存在，则本地域名会向com顶级域名服务器发送请求</li>
-</ul>
-<h3 id="1-3-DNS缓冲"><a href="#1-3-DNS缓冲" class="headerlink" title="1.3 DNS缓冲"></a>1.3 DNS缓冲</h3><blockquote>
-<p>如果每次都这么多查询步骤会特别麻烦，为了优化DNS解析，通过DNS缓冲技术减少请求步骤</p>
-</blockquote>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">DNS存在着多级缓存，从离浏览器的距离排序的话，有以下几种</span>: 浏览器缓存，系统缓存，路由器缓存，IPS服务器缓存，根域名服务器缓存，顶级域名服务器缓存，主域名服务器缓存。</span><br></pre></td></tr></table></figure>
-<h3 id="1-4-DNS负载均衡"><a href="#1-4-DNS负载均衡" class="headerlink" title="1.4 DNS负载均衡"></a>1.4 DNS负载均衡</h3><blockquote>
-<p>DNS可以返回一个合适的机器的IP给用户，例如可以根据每台机器的负载量，该机器离用户地理位置的距离等等，这种过程就是DNS负载均衡，又叫做DNS重定向，例子如CDN</p>
-</blockquote>
-<h2 id="2-TCP连接"><a href="#2-TCP连接" class="headerlink" title="2.TCP连接"></a>2.TCP连接</h2><blockquote>
-<p>在拿到域名对应的IP地址后，会以随机端口（1024~~65535）向WEB服务器程序80端口发起TCP的连接请求，这个连接请求进入到内核的TCP/IP协议栈（用于识别该连接请求，解封包，一层一层的剥开），还有可能要经过Netfilter防火墙（属于内核的模块）的过滤，最终到达WEB程序，最终建立了TCP/IP的连接，对于客户端与服务器的TCP链接，必然要说的就是『三次握手』</p>
-</blockquote>
-<p><img src="http://ww1.sinaimg.cn/large/006QuJaKly1g7xyonxwj2j30gg097a9w.jpg" alt="undefined"></p>
-<h2 id="3-http请求"><a href="#3-http请求" class="headerlink" title="3.http请求"></a>3.http请求</h2><blockquote>
-<p>建立TCP连接之后，发起HTTP请求，请求一般分为三部分</p>
-</blockquote>
-<ul>
-<li>请求方法URI协议/版本</li>
-<li>请求头(Request Header)</li>
-<li>请求正文</li>
-</ul>
-<h2 id="4-服务端处理"><a href="#4-服务端处理" class="headerlink" title="4.服务端处理"></a>4.服务端处理</h2><blockquote>
-<p>服务器端收到请求后的由web服务器（准确说应该是http服务器）处理请求，诸如Apache、Ngnix、IIS等。web服务器解析用户请求，知道了需要调度哪些资源文件，再通过相应的这些资源文件处理用户请求和参数，并调用数据库信息，最后将结果通过web服务器返回给浏览器客户端，这些返回结果以http响应报文形式，有以下几点组成：</p>
-</blockquote>
-<ul>
-<li>状态码</li>
-<li>响应头</li>
-<li>响应正文</li>
-</ul>
-<h3 id="4-1-状态码"><a href="#4-1-状态码" class="headerlink" title="4.1 状态码"></a>4.1 状态码</h3><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>xx：指示信息–表示请求已接收，继续处理。</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>xx：成功–表示请求已被成功接收、理解、接受。</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>xx：重定向–要完成请求必须进行更进一步的操作。</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>xx：客户端错误–请求有语法错误或请求无法实现。</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>xx：服务器端错误–服务器未能实现合法的请求。</span><br></pre></td></tr></table></figure>
-<h2 id="5-关闭TCP连接"><a href="#5-关闭TCP连接" class="headerlink" title="5.关闭TCP连接"></a>5.关闭TCP连接</h2><blockquote>
-<p>为了避免服务器与客户端双方的资源占用和损耗，当双方没有请求或响应传递时，任意一方都可以发起关闭请求。与创建TCP连接的3次握手类似，关闭TCP连接，需要4次握手。</p>
-</blockquote>
-<p><img src="http://ww1.sinaimg.cn/large/006QuJaKly1g7xyxx5lnoj30dl0aejr7.jpg" alt="undefined"></p>
-<h2 id="6-浏览器资源解析"><a href="#6-浏览器资源解析" class="headerlink" title="6.浏览器资源解析"></a>6.浏览器资源解析</h2><blockquote>
-<p>对于返回后的响应正文内容，如css/html/js等等资源，浏览器是一个边解析边渲染的过程。首先浏览器解析HTML文件构建DOM树，然后解析CSS文件构建渲染树，等到渲染树构建完成后，浏览器开始布局渲染树并将其绘制到屏幕上。这个过程比较复杂，涉及到两个概念: reflow(回流)和repain(重绘)。DOM节点中的各个元素都是以盒模型的形式存在，这些都需要浏览器去计算其位置和大小等，这个过程称为relow;当盒模型的位置,大小以及其他属性，如颜色,字体,等确定下来之后，浏览器便开始绘制内容，这个过程称为repain。页面在首次加载时必然会经历reflow和repain。reflow和repain过程是非常消耗性能的，尤其是在移动设备上，它会破坏用户体验，有时会造成页面卡顿。所以我们应该尽可能少的减少reflow和repain，下面是流程图：<br><img src="http://ww1.sinaimg.cn/large/006QuJaKly1g7xz1o7mjcj30hc081wem.jpg" alt="undefined"></p>
-</blockquote>
-<h2 id="7-总结"><a href="#7-总结" class="headerlink" title="7.总结"></a>7.总结</h2><blockquote>
-<p>这里面涉及到一些网页优化问题，后面学习后再次补充</p>
-</blockquote>
-<h2 id="8-参考文章"><a href="#8-参考文章" class="headerlink" title="8.参考文章"></a>8.参考文章</h2><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//segmentfault.com/a/1190000006879700</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//www.cnblogs.com/yuanzhiguo/p/8119470.html</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%89%E6%89%8B%E6%9C%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三毛的小窝">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%89%E6%89%8B%E6%9C%AD/" class="post-title-link" itemprop="url">人间失格第三手札</a>
-        </h1>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-29 17:49:07" itemprop="dateCreated datePublished" datetime="2019-09-29T17:49:07+08:00">2019-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%89%E6%89%8B%E6%9C%AD/" class="post-meta-item leancloud_visitors" data-flag-title="人间失格第三手札" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%89%E6%89%8B%E6%9C%AD/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%B8%89%E6%89%8B%E6%9C%AD/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="一、这世上所有人说话总是拐弯抹角，闪烁其词，他们总是试图用这种微妙复杂的说话方式来逃避责任，虽然近乎徒劳无功，但他们还是费尽心机地时刻防范着。"><a href="#一、这世上所有人说话总是拐弯抹角，闪烁其词，他们总是试图用这种微妙复杂的说话方式来逃避责任，虽然近乎徒劳无功，但他们还是费尽心机地时刻防范着。" class="headerlink" title="一、这世上所有人说话总是拐弯抹角，闪烁其词，他们总是试图用这种微妙复杂的说话方式来逃避责任，虽然近乎徒劳无功，但他们还是费尽心机地时刻防范着。"></a>一、这世上所有人说话总是拐弯抹角，闪烁其词，他们总是试图用这种微妙复杂的说话方式来逃避责任，虽然近乎徒劳无功，但他们还是费尽心机地时刻防范着。</h4><h4 id="二、那嗤笑的面影里潜藏着一种近于轻蔑却又不同于轻蔑的东西。倘若把人世间比作一片大海，那么，在大海的万丈深渊里就分明曳动着那种奇妙的影子。我正是透过那种嗤笑，管窥了成年人生活的深层奥秘。"><a href="#二、那嗤笑的面影里潜藏着一种近于轻蔑却又不同于轻蔑的东西。倘若把人世间比作一片大海，那么，在大海的万丈深渊里就分明曳动着那种奇妙的影子。我正是透过那种嗤笑，管窥了成年人生活的深层奥秘。" class="headerlink" title="二、那嗤笑的面影里潜藏着一种近于轻蔑却又不同于轻蔑的东西。倘若把人世间比作一片大海，那么，在大海的万丈深渊里就分明曳动着那种奇妙的影子。我正是透过那种嗤笑，管窥了成年人生活的深层奥秘。"></a>二、那嗤笑的面影里潜藏着一种近于轻蔑却又不同于轻蔑的东西。倘若把人世间比作一片大海，那么，在大海的万丈深渊里就分明曳动着那种奇妙的影子。我正是透过那种嗤笑，管窥了成年人生活的深层奥秘。</h4><h4 id="三、显露在外面的不一定是真的，每个人总有些不为人知的内幕。"><a href="#三、显露在外面的不一定是真的，每个人总有些不为人知的内幕。" class="headerlink" title="三、显露在外面的不一定是真的，每个人总有些不为人知的内幕。"></a>三、显露在外面的不一定是真的，每个人总有些不为人知的内幕。</h4><h4 id="四、同样的事日日反复，只需遵守昨日的惯例，倘若没有过度的欢喜，便不会有极度的悲伤，为了躲避前方的绊脚石，蟾蜍也会迂回前行"><a href="#四、同样的事日日反复，只需遵守昨日的惯例，倘若没有过度的欢喜，便不会有极度的悲伤，为了躲避前方的绊脚石，蟾蜍也会迂回前行" class="headerlink" title="四、同样的事日日反复，只需遵守昨日的惯例，倘若没有过度的欢喜，便不会有极度的悲伤，为了躲避前方的绊脚石，蟾蜍也会迂回前行"></a>四、同样的事日日反复，只需遵守昨日的惯例，倘若没有过度的欢喜，便不会有极度的悲伤，为了躲避前方的绊脚石，蟾蜍也会迂回前行</h4>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%BA%8C%E6%89%8B%E6%9C%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三毛的小窝">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%BA%8C%E6%89%8B%E6%9C%AD/" class="post-title-link" itemprop="url">人间失格第二手札</a>
-        </h1>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-29 17:47:33" itemprop="dateCreated datePublished" datetime="2019-09-29T17:47:33+08:00">2019-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%BA%8C%E6%89%8B%E6%9C%AD/" class="post-meta-item leancloud_visitors" data-flag-title="人间失格第二手札" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%BA%8C%E6%89%8B%E6%9C%AD/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/29/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC/%E4%BA%BA%E9%97%B4%E5%A4%B1%E6%A0%BC%E7%AC%AC%E4%BA%8C%E6%89%8B%E6%9C%AD/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="一、越是容易对事物感到胆怯的神经质的人，就越是渴望暴风雨降临得更加猛烈"><a href="#一、越是容易对事物感到胆怯的神经质的人，就越是渴望暴风雨降临得更加猛烈" class="headerlink" title="一、越是容易对事物感到胆怯的神经质的人，就越是渴望暴风雨降临得更加猛烈"></a>一、越是容易对事物感到胆怯的神经质的人，就越是渴望暴风雨降临得更加猛烈</h4><h4 id="二、而且他是在无意识种实施着逗笑的丑角行为（伪装），全然没有觉察到这种丑角行为的悲惨。这正是他与我本质上迥然相异的地方"><a href="#二、而且他是在无意识种实施着逗笑的丑角行为（伪装），全然没有觉察到这种丑角行为的悲惨。这正是他与我本质上迥然相异的地方" class="headerlink" title="二、而且他是在无意识种实施着逗笑的丑角行为（伪装），全然没有觉察到这种丑角行为的悲惨。这正是他与我本质上迥然相异的地方"></a>二、而且他是在无意识种实施着逗笑的丑角行为（伪装），全然没有觉察到这种丑角行为的悲惨。这正是他与我本质上迥然相异的地方</h4><h4 id="三、我不敢面对生活中的很多交际，尽量回避那过多的交往"><a href="#三、我不敢面对生活中的很多交际，尽量回避那过多的交往" class="headerlink" title="三、我不敢面对生活中的很多交际，尽量回避那过多的交往"></a>三、我不敢面对生活中的很多交际，尽量回避那过多的交往</h4><h4 id="四、有时候无法面对，就选择逃避（没有欲望，没有感情），只是为了逃离，堕落堕落。"><a href="#四、有时候无法面对，就选择逃避（没有欲望，没有感情），只是为了逃离，堕落堕落。" class="headerlink" title="四、有时候无法面对，就选择逃避（没有欲望，没有感情），只是为了逃离，堕落堕落。"></a>四、有时候无法面对，就选择逃避（没有欲望，没有感情），只是为了逃离，堕落堕落。</h4>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -876,7 +911,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -931,12 +966,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">19k</span>
+    <span title="站点总字数">20k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">19 分钟</span>
 </div>
 
         

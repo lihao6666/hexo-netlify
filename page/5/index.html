@@ -160,7 +160,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">35</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -211,6 +211,389 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/11/27/Cookie%E7%88%AC%E5%8F%96Ajax%E6%95%B0%E6%8D%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/27/Cookie%E7%88%AC%E5%8F%96Ajax%E6%95%B0%E6%8D%AE/" class="post-title-link" itemprop="url">Cookie爬取Ajax数据</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-27 17:27:11" itemprop="dateCreated datePublished" datetime="2019-11-27T17:27:11+08:00">2019-11-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 14:44:48" itemprop="dateModified" datetime="2020-02-02T14:44:48+08:00">2020-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%88%AC%E8%99%AB/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/11/27/Cookie%E7%88%AC%E5%8F%96Ajax%E6%95%B0%E6%8D%AE/" class="post-meta-item leancloud_visitors" data-flag-title="Cookie爬取Ajax数据" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/11/27/Cookie%E7%88%AC%E5%8F%96Ajax%E6%95%B0%E6%8D%AE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/27/Cookie%E7%88%AC%E5%8F%96Ajax%E6%95%B0%E6%8D%AE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="纪念一次心血来潮的爬虫测试"><a href="#纪念一次心血来潮的爬虫测试" class="headerlink" title="纪念一次心血来潮的爬虫测试"></a>纪念一次心血来潮的爬虫测试</h2><blockquote>
+<p>上次做完行政，心里真的是很不爽，一方面学校网站不给力，一方面那个题也是很难受的，虽然后来发现了懵搜小助手，但还是效率很慢，想着自己可以不可以搞得快一点，当时第一想法就是把题爬出来，然后发给萌搜小助手，到时候自己对着消息写答案不是美滋滋，哈哈哈，下面记录一下自己的这次心血来潮。</p>
+</blockquote>
+<h4 id="1、网站分析"><a href="#1、网站分析" class="headerlink" title="1、网站分析"></a>1、网站分析</h4><blockquote>
+<p>之前爬过学校的图书馆，因为为了实现自动化所以用的selenium(一个webdriver测试工具)，也是为了用来解决验证码问题和js渲染，这里分析了一下两个网站登录的区别，发现学堂云的网站基本上所有数据都是基于js渲染的。这样的话想要直接获取数据是比较困难的</p>
+</blockquote>
+<p>网站截图(已经进入课程):<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-27_17-50-32.jpg" alt="学堂云"></p>
+<p>这是我直接get网站的结果:</p>
+<p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-27_17-41-30.jpg" alt="get结果"></p>
+<blockquote>
+<p>所以接下来的问题就在于如何获取js渲染的数据呢，我们知道很多时候为了实现数据的及时刷新，都会使用Ajax，那我们展示的数据就会存放在ajax的数据中，所以接下来我们的目标就是找到带题目数据的ajax数据</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/11/27/Cookie%E7%88%AC%E5%8F%96Ajax%E6%95%B0%E6%8D%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/11/19/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/19/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F6/" class="post-title-link" itemprop="url">Python设计模式6</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-19 10:37:42" itemprop="dateCreated datePublished" datetime="2019-11-19T10:37:42+08:00">2019-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-04 01:22:08" itemprop="dateModified" datetime="2020-02-04T01:22:08+08:00">2020-02-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">Python设计模式</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">结构型</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/11/19/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F6/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式6" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/11/19/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/19/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F6/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Python设计模式6-装饰器模式"><a href="#Python设计模式6-装饰器模式" class="headerlink" title="Python设计模式6(装饰器模式)"></a>Python设计模式6(装饰器模式)</h2><h3 id="一、python闭包"><a href="#一、python闭包" class="headerlink" title="一、python闭包"></a>一、python闭包</h3><blockquote>
+<p>在一个外函数中定义了一个内函数，内函数里运用了外函数的临时变量，并且外函数的返回值是内函数的引用。这样就构成了一个闭包</p>
+</blockquote>
+<p>举例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># print_msg是外围函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_msg</span><span class="params">()</span>:</span></span><br><span class="line">    msg = <span class="string">"I'm closure"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># printer是嵌套函数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">printer</span><span class="params">()</span>:</span></span><br><span class="line">        print(msg)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> printer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里获得的就是一个闭包</span></span><br><span class="line">closure = print_msg()</span><br><span class="line"><span class="comment">#外函数结束的时候发现内部函数将会用到自己的临时变量，这两个临时变量就不会释放，会绑定给这个内部函数</span></span><br><span class="line">print(<span class="number">123</span>)</span><br><span class="line"><span class="comment">#先输出123</span></span><br><span class="line"><span class="comment"># 输出 I'm closure</span></span><br><span class="line">closure()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>闭包的作用就是保存上下文内容，脱离了原本的作用域，可以用于装饰器的构建</p>
+</blockquote>
+<h3 id="二、python装饰器"><a href="#二、python装饰器" class="headerlink" title="二、python装饰器"></a>二、python装饰器</h3><h4 id="1、引入"><a href="#1、引入" class="headerlink" title="1、引入"></a>1、引入</h4><blockquote>
+<p>当我们想统计一段代码的运行时间时，很多时候我们需要侵入到代码内部去修改，，就像下面一样</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">    start_time = time.time()</span><br><span class="line">    print(<span class="string">"hello"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"world"</span>)</span><br><span class="line">    end_time = time.time()</span><br><span class="line"></span><br><span class="line">    execution_time = (end_time - start_time)*<span class="number">1000</span></span><br><span class="line">    print(<span class="string">"time is %d ms"</span> %execution_time)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这样往往会很不规范，python可以实现函数的传参，所以我们可以再定义一个函数去调用，如下</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(func)</span>:</span></span><br><span class="line">    start_time = time.time()</span><br><span class="line">    f()</span><br><span class="line">    end_time = time.time()</span><br><span class="line">    execution_time = (end_time - start_time)*<span class="number">1000</span></span><br><span class="line">    print(<span class="string">"time is %d ms"</span> %execution_time)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"hello"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"world"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    deco(f)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这样每次都要调用deco(),如果使用过多会很麻烦。这样装饰器就出现了</p>
+</blockquote>
+<h4 id="2、简单装饰器"><a href="#2、简单装饰器" class="headerlink" title="2、简单装饰器"></a>2、简单装饰器</h4><p>例子:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">()</span>:</span></span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f()</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        execution_time = (end_time - start_time)*<span class="number">1000</span></span><br><span class="line">        print(<span class="string">"time is %d ms"</span> %execution_time )</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"hello"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"world"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    f()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里面使用了闭包的方法，外部函数传入要装饰函数名，内部函数返回装饰函数的名字，这里没有对被装饰的函数进行任何修改，其实加入@desc很像java中的注解方法，这里相当于不用再调用deco(f())了，可以直接调用要被装饰的函数</p>
+</blockquote>
+<h4 id="3、带固定参装饰器"><a href="#3、带固定参装饰器" class="headerlink" title="3、带固定参装饰器"></a>3、带固定参装饰器</h4><p>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(a,b)</span>:</span></span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f(a,b)</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        execution_time = (end_time - start_time)*<span class="number">1000</span></span><br><span class="line">        print(<span class="string">"time is %d ms"</span> % execution_time)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    print(<span class="string">"be on"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"result is %d"</span> %(a+b))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    f(<span class="number">3</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="4、无固定参数传递"><a href="#4、无固定参数传递" class="headerlink" title="4、无固定参数传递"></a>4、无固定参数传递</h4><p>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f(*args, **kwargs)</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        execution_time_ = (end_time - start_time)*<span class="number">1000</span></span><br><span class="line">        print(<span class="string">"time is %d ms"</span> %execution_time)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@deco</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    print(<span class="string">"be on"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"result is %d"</span> %(a+b))</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(a,b,c)</span>:</span></span><br><span class="line">    print(<span class="string">"be on"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"result is %d"</span> %(a+b+c))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    f2(<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">    f(<span class="number">3</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="5、多个装饰器装饰一个函数"><a href="#5、多个装饰器装饰一个函数" class="headerlink" title="5、多个装饰器装饰一个函数"></a>5、多个装饰器装饰一个函数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco01</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"this is deco01"</span>)</span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f(*args, **kwargs)</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        execution_time = (end_time - start_time)*<span class="number">1000</span></span><br><span class="line">        print(<span class="string">"time is %d ms"</span> % execution_time)</span><br><span class="line">        print(<span class="string">"deco01 end here"</span>)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco02</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"this is deco02"</span>)</span><br><span class="line">        f(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">        print(<span class="string">"deco02 end here"</span>)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco01</span></span><br><span class="line"><span class="meta">@deco02</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    print(<span class="string">"be on"</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"result is %d"</span> %(a+b))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    f(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># result:</span></span><br><span class="line">this <span class="keyword">is</span> deco01</span><br><span class="line">this <span class="keyword">is</span> deco02</span><br><span class="line">be on</span><br><span class="line">result <span class="keyword">is</span> <span class="number">7</span></span><br><span class="line">deco02 end here</span><br><span class="line">time <span class="keyword">is</span> <span class="number">1001</span> ms</span><br><span class="line">deco01 end here</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>从上面结果可以看出来多个装饰器的执行是有顺序的，相当于执行deco01(deco02(f(3,4)))</p>
+</blockquote>
+<h4 id="6、类装饰器"><a href="#6、类装饰器" class="headerlink" title="6、类装饰器"></a>6、类装饰器</h4><blockquote>
+<p>装饰器不仅可以是函数，还可以是类，相比函数装饰器，类装饰器具有灵活度大、高内聚、封装性等优点。使用类装饰器主要依靠类的<strong>call</strong>方法</p>
+</blockquote>
+<p>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func)</span>:</span></span><br><span class="line">        self._func = func</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'class decorator runing'</span>)</span><br><span class="line">        self._func()</span><br><span class="line">        print(<span class="string">'class decorator ending'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Foo　　# bar = Foo(bar)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'bar'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bar()　　<span class="comment"># Foo(bar)()</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果</span></span><br><span class="line"><span class="comment"># class decorator runing</span></span><br><span class="line"><span class="comment"># bar</span></span><br><span class="line"><span class="comment"># class decorator ending</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这里的<strong>call</strong>魔术方法，相当于实现闭包功能，可以参照之前魔术方法那一篇文章</p>
+</blockquote>
+<h3 id="三、python内置装饰器"><a href="#三、python内置装饰器" class="headerlink" title="三、python内置装饰器"></a>三、python内置装饰器</h3><h4 id="1、property"><a href="#1、property" class="headerlink" title="1、property"></a>1、property</h4><blockquote>
+<p>property可以将python定义的函数当做属性访问，从而提供更加友好访问方式，但是有时候setter/deleter也是需要的<br>只有@property表示只读。<br>同时有@property和@x.setter表示可读可写。<br>同时有@property和@x.setter和@x.deleter表示可读可写可删除。</p>
+</blockquote>
+<p>例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.__name = name</span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__name</span><br><span class="line"><span class="meta">    @name.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> isinstance(value, str):</span><br><span class="line">            <span class="keyword">raise</span> TypeError(<span class="string">'name must be str'</span>)</span><br><span class="line">        self.__name = value</span><br><span class="line"><span class="meta">    @name.deleter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">raise</span> TypeError(<span class="string">'can not delete'</span>)</span><br><span class="line">f = Foo(<span class="string">'jack'</span>)</span><br><span class="line">print(f.name)  <span class="comment"># jack</span></span><br><span class="line">f.name = <span class="string">'hanmeimei'</span></span><br><span class="line">print(f.name)  <span class="comment"># hanmeimei</span></span><br><span class="line"><span class="comment"># del f.name  # TypeError: can not delete</span></span><br></pre></td></tr></table></figure>
+<h4 id="2、类方法"><a href="#2、类方法" class="headerlink" title="2、类方法"></a>2、类方法</h4><blockquote>
+<p>仅仅与类交互而不和实例交互，类在使用时会将类本身当做参数传给类方法的第一个参数</p>
+</blockquote>
+<p>例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span></span><br><span class="line">    car = <span class="string">'audi'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">value</span><span class="params">(cls, category)</span>:</span></span><br><span class="line">        print(<span class="string">'%s is the %s'</span> % (category, cls.car))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bmw</span><span class="params">(Car)</span>:</span></span><br><span class="line">    car = <span class="string">'Bmw'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Benz</span><span class="params">(Car)</span>:</span></span><br><span class="line">    car = <span class="string">'Benz'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(<span class="string">'通过实例进行调用'</span>)</span><br><span class="line">b = Bmw()</span><br><span class="line">b.value(<span class="string">'normal'</span>)</span><br><span class="line">print(<span class="string">'直接用类名进行调用'</span>)</span><br><span class="line">Benz.value(<span class="string">'NOnormal'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="3、静态方法"><a href="#3、静态方法" class="headerlink" title="3、静态方法"></a>3、静态方法</h4><blockquote>
+<p>将类中的方法设置为静态方法，就是在不需要创建实例对象的情况下，可以通过类名来进行直接引用，来达到将函数功能与实例解绑的效果</p>
+</blockquote>
+<p>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(x, y)</span>:</span></span><br><span class="line">        print(<span class="string">'x + y = %s'</span> % (x+y))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cls = Test()</span><br><span class="line">print(<span class="string">'可以通过实例对象来引用'</span>)</span><br><span class="line">cls.index(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">print(<span class="string">'通过类名直接引用静态方法'</span>)</span><br><span class="line">Test.index(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">可以通过实例对象来引用</span></span><br><span class="line"><span class="string">x + y = 3</span></span><br><span class="line"><span class="string">通过类名直接引用静态方法</span></span><br><span class="line"><span class="string">x + y = 3</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="4、实例方法、类方法、和静态方法区别"><a href="#4、实例方法、类方法、和静态方法区别" class="headerlink" title="4、实例方法、类方法、和静态方法区别"></a>4、实例方法、类方法、和静态方法区别</h4><blockquote>
+<p>实例方法调用时有一个隐含参数self，实例调用时可以不传self，self是实例本身<br>类方法调用时有一个隐含参数cls，类调用时可以不传cls，cls是实例本身<br>静态方法没有隐含参数<br>类方法和静态方法可以通过函数名直接调用方法，实例方法必须通过实例</p>
+</blockquote>
+<h3 id="四、装饰器模式"><a href="#四、装饰器模式" class="headerlink" title="四、装饰器模式"></a>四、装饰器模式</h3><blockquote>
+<p>在面向对象中，装饰模式指：动态地给一个对象添加一些额外的职责。就增加一些功能来说，装饰模式比生成子类更为灵活。<br>装饰器模式就是利用装饰器实现对一些对象功能扩展，例如在django项目登录模块中对一些需要登录功能的限制就使用到了这个模式，通过添加装饰器对功能限制，这样一方面实现了功能扩展，也让代码更加规范易懂</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/11/18/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/18/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB2/" class="post-title-link" itemprop="url">读经分享2</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-18 22:15:53" itemprop="dateCreated datePublished" datetime="2019-11-18T22:15:53+08:00">2019-11-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BF%A1%E4%BB%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">信仰</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BF%A1%E4%BB%B0/%E5%88%86%E4%BA%AB/" itemprop="url" rel="index">
+                    <span itemprop="name">分享</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/11/18/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB2/" class="post-meta-item leancloud_visitors" data-flag-title="读经分享2" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/11/18/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/18/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="忍耐与喜乐"><a href="#忍耐与喜乐" class="headerlink" title="忍耐与喜乐"></a>忍耐与喜乐</h2><blockquote>
+<p>在指望中要喜乐；在患难中要忍耐；祷告要恒切。<br>(罗马书 12:12 和合本)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">一直认为一个基督徒活出的生命应该是满有喜乐的，应该对神和生活都充满着希望。</span><br><span class="line">感觉从大学进入团契到现在，神借着他的话语给了自己很多的改变，其中我感觉很重要的一点就是喜乐的生命。虽然生活并不是总是一帆风顺，但是自己知道有那一位可以依靠，就可以少了很多忧愁和烦恼，自己在学校或者团契中很多时候也很开心，因为自己感觉只有自己在生活中有一颗喜乐的心，才会更加愿意与神亲近，才能托住自己的信仰生活，让自己避免很多软弱的破口。除了喜乐的心，还有很重要的一点就是忍耐的心，往往这也是很容易让我们软弱的破口。对于我们来说理性和急促的生活方式，往往让我们面对问题的时候，都不会会去等候或者向神寻求帮助，即使当时向神祷告寻求帮助，如果神没有马上回应，自己的心也会有所波动，所以学会忍耐，学会去等候神真的很重要。</span><br><span class="line"></span><br><span class="line">希望每一个爱神的人都能多一点快乐，少一点忧愁，多一点忍耐，少一点急躁。。。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -464,387 +847,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三毛的小窝">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/" class="post-title-link" itemprop="url">Python设计模式5</a>
-        </h1>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-03 15:54:13" itemprop="dateCreated datePublished" datetime="2019-11-03T15:54:13+08:00">2019-11-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-04 01:22:10" itemprop="dateModified" datetime="2020-02-04T01:22:10+08:00">2020-02-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">Python设计模式</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">结构型</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式5" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Python设计模式5-适配器模式-结构型"><a href="#Python设计模式5-适配器模式-结构型" class="headerlink" title="Python设计模式5(适配器模式-结构型)"></a>Python设计模式5(适配器模式-结构型)</h2><blockquote>
-<p>当我们希望把一个老组件用于一个新组系统或者把一个新组件应用于老系统中，同时在代码无法修改的，或者说无法访问这些代码时（在实际开发中，旧系统的代码修改后牵一而动全身，很容易引起系统的崩溃。）。这时候，我们可以编写一个额外的代码层，该代码层包含让这两个接口之间能够通信需要进行的所有修改,通俗的来讲就是构建一个适配器可以将一个类接口转换为需要的一个接口</p>
-</blockquote>
-<h3 id="1-简单举例"><a href="#1-简单举例" class="headerlink" title="1 简单举例"></a>1 简单举例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Target</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">request</span><span class="params">(self)</span>:</span></span><br><span class="line">    print(<span class="string">"普通请求"</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adaptee</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">specific_request</span><span class="params">(self)</span>:</span></span><br><span class="line">    print(<span class="string">"特殊请求"</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adapter</span><span class="params">(Target)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.adaptee = Adaptee()</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">request</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.adaptee.specific_request()</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  target = Adapter()</span><br><span class="line">  target.request()</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>从上面的例子中可以看出来两个类有不同的print需求，通过建立一个适配器Adapter类,将下一个类的print功能和Target类相契合</p>
-</blockquote>
-<h3 id="2-复杂一点的举例"><a href="#2-复杂一点的举例" class="headerlink" title="2 复杂一点的举例"></a>2 复杂一点的举例</h3><p>增加类：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Synthesizer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'the &#123;&#125; synthesizer'</span>.format(self.name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">play</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'is playing an electronic song'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&#123;&#125; the human'</span>.format(self.name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">speak</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'says hello'</span></span><br></pre></td></tr></table></figure>
-<p>原有类：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Computer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'the &#123;&#125; computer'</span>.format(self.name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">execute</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'executes a program'</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>从上面可以看出来，新增加的类主要在执行类play()和speak()和原始类不一样，而对于执行系统来说，都要使用obj.excute()来执行，这样就需要构建一个适配器来实现来设计类调用</p>
-</blockquote>
-<p>增加适配器:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adapter</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, obj, adapted_methods)</span>:</span></span><br><span class="line">        self.obj = obj</span><br><span class="line">        self.__dict__.update(adapted_methods)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> str(self.obj)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">new_main</span><span class="params">()</span>:</span></span><br><span class="line">    objects = [Computer(<span class="string">'Asus'</span>)]</span><br><span class="line">    synth = Synthesizer(<span class="string">'moog'</span>)</span><br><span class="line">    objects.append(Adapter(synth, dict(execute=synth.play)))</span><br><span class="line">    human = Human(<span class="string">'Bob'</span>)</span><br><span class="line">    objects.append(Adapter(human, dict(execute=human.speak)))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> objects:</span><br><span class="line">        print(<span class="string">'&#123;&#125; &#123;&#125;'</span>.format(str(i), i.execute()))</span><br><span class="line">        print(<span class="string">'type is &#123;&#125;'</span>.format(type(i)))</span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">the Asus computer executes a program</span><br><span class="line">type <span class="keyword">is</span> &lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">Computer</span>'&gt;</span></span><br><span class="line"><span class="class"><span class="title">the</span> <span class="title">moog</span> <span class="title">synthesizer</span> <span class="title">is</span> <span class="title">playing</span> <span class="title">an</span> <span class="title">electronic</span> <span class="title">song</span></span></span><br><span class="line"><span class="class"><span class="title">type</span> <span class="title">is</span> &lt;<span class="title">class</span> '<span class="title">__main__</span>.<span class="title">Adapter</span>'&gt;</span></span><br><span class="line"><span class="class"><span class="title">Bob</span> <span class="title">the</span> <span class="title">human</span> <span class="title">says</span> <span class="title">hello</span></span></span><br><span class="line"><span class="class"><span class="title">type</span> <span class="title">is</span> &lt;<span class="title">class</span> '<span class="title">__main__</span>.<span class="title">Adapter</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这里用到了python魔术方法中的<strong>dict</strong>,具体可参考我的文章。。。，这里主要的实现功能和上一个例子，就是只改适配器中内容而改变其它两个类中的功能函数</p>
-</blockquote>
-<h3 id="3-实际应用"><a href="#3-实际应用" class="headerlink" title="3 实际应用"></a>3 实际应用</h3><blockquote>
-<p>比如电商平台中，货币的支持这个功能，可能刚开始只支持pay一种货币，后面需要支持别的货币，这时候就需要针对不同货币的付款金额，实现pay的接口适配</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/10/18/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三毛的小窝">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/18/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F4/" class="post-title-link" itemprop="url">Python设计模式4</a>
-        </h1>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-18 09:17:15" itemprop="dateCreated datePublished" datetime="2019-10-18T09:17:15+08:00">2019-10-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-13 10:32:29" itemprop="dateModified" datetime="2019-12-13T10:32:29+08:00">2019-12-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">Python设计模式</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%88%9B%E5%BB%BA%E5%9E%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">创建型</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/10/18/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F4/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式4" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/10/18/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F4/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/10/18/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F4/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h2 id="Python设计模式4-建造模式"><a href="#Python设计模式4-建造模式" class="headerlink" title="Python设计模式4(建造模式)"></a>Python设计模式4(建造模式)</h2><blockquote>
-<p>我们想要创建一个由多个部分构成的对象，而且它的构成需要一步接一步地完成。 只有当各个部分都创建好，这个对象才算是完整的。这正是建造者设计模式。</p>
-<p>在建造模式中，主要有两个角色，一个是指挥者(Director)，一个是建造者(Builder),指挥者指挥建造者建造产品</p>
-</blockquote>
-<h3 id="1-引入"><a href="#1-引入" class="headerlink" title="1 引入"></a>1 引入</h3><blockquote>
-<p>假如要组装一台电脑，将主板，CPU，内存等部件按照某个稳定的步骤组合，基本过程是不变的，而组成电脑的各个部件却可以是不同性能的，不同价位，或者是不同版本的，当组成电脑的时只需要选择不同的组件就可以按照基本相同的过程造出不同配置的电脑。也就是说建造者模式的意图是将一个复杂对象的构建过程与表示分离，它使用相同的构建步骤作用于不同的子对象以构建出不同表现形式的“复杂对象”</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Computer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, serial_number)</span>:</span></span><br><span class="line">        self.serial = serial_number</span><br><span class="line">        self.memory = <span class="literal">None</span></span><br><span class="line">        self.hdd = <span class="literal">None</span></span><br><span class="line">        self.gpu = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        info = (<span class="string">'Model: &#123;&#125;'</span>.format(self.serial),</span><br><span class="line">                <span class="string">'Memory: &#123;&#125;GB'</span>.format(self.memory),</span><br><span class="line">                <span class="string">'Hard Disk: &#123;&#125;GB'</span>.format(self.hdd),</span><br><span class="line">                <span class="string">'Graphics Card: &#123;&#125;'</span>.format(self.gpu))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'\n'</span>.join(info)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComputerBuilder</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.computer = Computer(<span class="string">'AG23385193'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">configure_memory</span><span class="params">(self, amount)</span>:</span></span><br><span class="line">        self.computer.memory = amount</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">configure_hdd</span><span class="params">(self, amount)</span>:</span></span><br><span class="line">        self.computer.hdd = amount</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">configure_gpu</span><span class="params">(self, gpu_model)</span>:</span></span><br><span class="line">        self.computer.gpu = gpu_model</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HardwareEngineer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.builder = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">construct_computer</span><span class="params">(self, memory, hdd, gpu)</span>:</span></span><br><span class="line">        self.builder = ComputerBuilder()</span><br><span class="line">        self.builder.configure_memory(memory),</span><br><span class="line">        self.builder.configure_hdd(hdd),</span><br><span class="line">        self.builder.configure_gpu(gpu)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">computer</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.builder.computer</span><br><span class="line"></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">def main():</span></span><br><span class="line"><span class="string">    engineer = HardwareEngineer()</span></span><br><span class="line"><span class="string">    engineer.construct_computer(hdd=500, memory=8, gpu='GeForce GTX 650 Ti')</span></span><br><span class="line"><span class="string">    computer = engineer.computer</span></span><br><span class="line"><span class="string">    print(computer)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Out:</span></span><br><span class="line"><span class="string">    Model: AG23385193</span></span><br><span class="line"><span class="string">    Memory: 8GB</span></span><br><span class="line"><span class="string">    Hard Disk: 500GB</span></span><br><span class="line"><span class="string">    Graphics Card: GeForce GTX 650 T</span></span><br><span class="line"><span class="string">    """</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>从上面代码可以看出建造者模式对于产品建造的细节都在Director(HardwareEngineer)中定义，这里可以控制产品的细节</p>
-</blockquote>
-<h3 id="2-和工厂模式的区别"><a href="#2-和工厂模式的区别" class="headerlink" title="2 和工厂模式的区别"></a>2 和工厂模式的区别</h3><blockquote>
-<p>工厂模式注重的是产品产生的结果，也就是类别上的产生模式，如上一篇文章中的支付方式，而建造模式更注重的是产品的创建方式，如这里面电脑配件的型号等等</p>
-</blockquote>
-<h3 id="3-实际应用场景"><a href="#3-实际应用场景" class="headerlink" title="3 实际应用场景"></a>3 实际应用场景</h3><blockquote>
-<p>比如网页中组件的构成，这里面需要考虑各个小组件的构成和使用，这里就可以使用建造者模式</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/10/17/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三毛的小窝">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/17/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F3/" class="post-title-link" itemprop="url">Python设计模式3</a>
-        </h1>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-17 08:41:30" itemprop="dateCreated datePublished" datetime="2019-10-17T08:41:30+08:00">2019-10-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-13 12:43:30" itemprop="dateModified" datetime="2019-12-13T12:43:30+08:00">2019-12-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">Python设计模式</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%88%9B%E5%BB%BA%E5%9E%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">创建型</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/10/17/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F3/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式3" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/10/17/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F3/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/10/17/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h2 id="Python设计模式3-工厂模式"><a href="#Python设计模式3-工厂模式" class="headerlink" title="Python设计模式3(工厂模式)"></a>Python设计模式3(工厂模式)</h2><h3 id="1-引入"><a href="#1-引入" class="headerlink" title="1 引入"></a>1 引入</h3><blockquote>
-<p>当实际应用，比如数据库连接是，我们输入mysql，就可以实现mysql连接，输入sqlserver就可以创建sqlserver的连接，这样我们只需要输入参数就可以创建相应的对象，实际的创建方法我们并不可见的模式就是工厂模式</p>
-</blockquote>
-<h3 id="2-简单工厂模式"><a href="#2-简单工厂模式" class="headerlink" title="2 简单工厂模式"></a>2 简单工厂模式</h3><blockquote>
-<p>在简单工厂模式中，只提供了一个工厂类，该工厂类处于对产品类进行实例化的中心位置，它知道每一个产品对象的创建细节，并决定何时实例化哪一个产品类</p>
-</blockquote>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,weight)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.weight = weight</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">product</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"这是&#123;&#125;,重量是&#123;&#125;吨，用来生产混合果汁的"</span>.format(self.name, self.weight))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apple</span><span class="params">(Fruit)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,weight)</span>:</span></span><br><span class="line">        super(Apple, self).__init__(name,weight)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">product</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"这是&#123;&#125;,重量是&#123;&#125;吨，用来生产&#123;&#125;罐头的"</span>.format(self.name, self.weight, self.name))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Peer</span><span class="params">(Fruit)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,weight)</span>:</span></span><br><span class="line">        super(Peer, self).__init__(name, weight)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">product</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"这是&#123;&#125;,重量是&#123;&#125;吨，用来生产&#123;&#125;罐头的"</span>.format(self.name, self.weight, self.name))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FruitFactory</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">make_apple</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">make_peer</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<p>问题：</p>
-<blockquote>
-<p>简单工厂模式最大的缺点是当有新产品要加入到系统中时，必须修改工厂类，加入必要的处理逻辑，这违背了“开闭原则”。在简单工厂模式中，所有的产品都是由同一个工厂创建，工厂类职责较重，业务逻辑较为复杂，具体产品与工厂类之间的耦合度高，严重影响了系统的灵活性和扩展性，而工厂方法模式则可以很好地解决这一问题。</p>
-</blockquote>
-<h3 id="3工厂方法"><a href="#3工厂方法" class="headerlink" title="3工厂方法"></a>3工厂方法</h3><blockquote>
-<p>工厂方法模式就是简单工厂模式的进一步抽像。由于面向对象多态性，工厂方法模式保持了简单工厂的有点同时克服了他的缺点。工厂方法模式中，核心的工厂被提升为一个抽象类，将具体的创建工作交给他的子类完成。这个抽象的工厂类仅规定具体工厂实现的接口，而不明确指出如何实例化一个产品类，这使得工厂方法模式允许系统在不修改原有产品结构的情况下轻松的引进新产品。</p>
-</blockquote>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 先定义不同的支付方式（对应工厂里具体的产品），及每个产品具体的生产细节</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BigCat</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 关于传参的处理方式一： 有构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,money)</span>:</span></span><br><span class="line">        self.money = money</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pay</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"收到大猫金融的支付金额&#123;0&#125;"</span>.format(self.money))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WeChat</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        self.money = money</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pay</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        print(<span class="string">"收到微信支付的金额&#123;0&#125;"</span>.format(money))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ZhiFuBao</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        self.money = money</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pay</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"收到支付宝支付的金额&#123;0&#125;"</span>.format(self.money))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 为每个支付方式(每个产品）定义特定的工厂,每个工厂都有具体的工厂方法函数，负责返回</span></span><br><span class="line"><span class="comment"># 具体的工厂方法函数，其实就是对每个产品具体的生产细节进行了包装，让外部使用者只能用，却不知道具体的生产过程细节</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 对外只提供这些特定的工厂（接口）</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BigCatFactory</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">create</span><span class="params">(self,money)</span>:</span></span><br><span class="line">        <span class="keyword">return</span>  BigCat(money)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WeChatFactory</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">create</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span>  WeChat()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ZhiFuBaoFactory</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">create</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        <span class="keyword">return</span>  ZhiFuBao(money)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### 4 抽象工厂模式</span></span><br><span class="line"></span><br><span class="line">&gt;抽象工厂模式是所有形式的工厂模式中最为抽象和最具一般性的一种形式。当系统所提供的工厂生产的具体产品并不是一个简单的对象，而是多个位于不同产品等级结构、属于不同类型的具体产品时就可以使用抽象工厂模式 ，抽象工厂模式中的具体工厂不只是创建一种产品，它负责创建一族产品 当一个工厂等级结构可以创建出分属于不同产品等级结构的一个产品族中的所有对象时，抽象工厂模式比工厂方法模式更为简单、更有效率</span><br><span class="line"></span><br><span class="line">基于工厂方法的例子：</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FactoryProducer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_factory</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> name == <span class="string">"BigCat"</span>:</span><br><span class="line">            <span class="keyword">return</span> BigCatFactory()</span><br><span class="line">        <span class="keyword">elif</span> name == <span class="string">"WeChat"</span></span><br><span class="line">            <span class="keyword">return</span> WeChatFactory()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> ZhiFuBaoFactory()</span><br><span class="line"><span class="comment"># 相对于工厂方法，抽象工厂方法具体创建了一个接口来访问整个工厂，这样更加具有封装性</span></span><br></pre></td></tr></table></figure>
-<h3 id="5总结"><a href="#5总结" class="headerlink" title="5总结"></a>5总结</h3><blockquote>
-<p>上面这些工厂方法的封装性都不断增强，这样符合开闭原则，但是会对底层修改带来很大麻烦。</p>
-</blockquote>
-<p>适用场景：</p>
-<blockquote>
-<p>一个系统不应当依赖于产品类实例如何被创建、组合和表达的细节 系统中有多于一个的产品族，但每次只使用其中某一产品族 属于同一个产品族的产品将在一起使用，这一约束必须在系统的设计中体现出来 产品等级结构稳定，设计完成之后，不会向系统中增加新的产品等级结构或者删除已有的产品等级结构</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -912,7 +919,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -967,12 +974,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">19k</span>
+    <span title="站点总字数">20k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">19 分钟</span>
 </div>
 
         

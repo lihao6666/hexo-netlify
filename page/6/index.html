@@ -160,7 +160,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">38</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">39</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -211,6 +211,136 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/" class="post-title-link" itemprop="url">机器学习之决策树</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-05 23:28:45" itemprop="dateCreated datePublished" datetime="2019-11-05T23:28:45+08:00">2019-11-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-04 01:22:23" itemprop="dateModified" datetime="2020-02-04T01:22:23+08:00">2020-02-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/" class="post-meta-item leancloud_visitors" data-flag-title="机器学习之决策树" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="机器学习之决策树"><a href="#机器学习之决策树" class="headerlink" title="机器学习之决策树"></a>机器学习之决策树</h2><blockquote>
+<p>决策树是一个有监督分类与回归算法。<br>决策树的生成只考虑局部最优，相对的，决策树剪枝则考虑全局最优</p>
+</blockquote>
+<h4 id="1-树模型"><a href="#1-树模型" class="headerlink" title="1 树模型"></a>1 树模型</h4><blockquote>
+<p>分类决策树模型是一种描述对实例进行分类的树形结构。结点有两种类型，内部结点表示一个特征或属性，叶结点表示一个类。 用决策树分类，从根结点开始，对实例的某一特征进行测试，根据测试结果，将实例分配到其子节点；这时，每一个子结点对应着该特征的一个取值，如此递归下去，直到到达叶子结点。最后将实例分到叶结点的类中。</p>
+</blockquote>
+<p>如下图：<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_10-39-50.png" alt=""></p>
+<h4 id="2-划分依据"><a href="#2-划分依据" class="headerlink" title="2 划分依据"></a>2 划分依据</h4><h5 id="①-熵"><a href="#①-熵" class="headerlink" title="① 熵"></a>① 熵</h5><blockquote>
+<p>物理学上，熵 Entropy 是“混乱” 程度的量度。<br>系统越有序，熵值越低；系统越混乱或者分散，熵值越高.</p>
+</blockquote>
+<h5 id="②-熵计算公式"><a href="#②-熵计算公式" class="headerlink" title="② 熵计算公式"></a>② 熵计算公式</h5><p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234517.png" alt=""></p>
+<blockquote>
+<p>其中pi表示分类选择的概率，log2pi为信息定义</p>
+</blockquote>
+<h5 id="③-特征选择-信息增益"><a href="#③-特征选择-信息增益" class="headerlink" title="③ 特征选择(信息增益)"></a>③ 特征选择(信息增益)</h5><blockquote>
+<p>1、以某特征划分数据集前后的熵的差值。熵可以表示样本集合的不确定性，熵越大，样本的不确定性就越大。因此可以使用划分前后集合熵的差值来衡量使用当前特征对于样本集合D划分效果的好坏</p>
+</blockquote>
+<p>计算方法如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">entroy(前)-entroy(后)</span><br><span class="line"><span class="comment"># 表示未划分之前的熵和划分后熵值的差</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="3-决策树构建"><a href="#3-决策树构建" class="headerlink" title="3 决策树构建"></a>3 决策树构建</h4><blockquote>
+<p>构建决策树就要基于划分依据，进行划分数据信息增益的计算，选择信息增益最大的来进行划分数据，直到求到叶子节点，实现数据集的划分</p>
+</blockquote>
+<p><strong>例子</strong>:</p>
+<p>分类数据如下<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-00-03.png" alt=""></p>
+<ul>
+<li>不划分，计算原始的熵<br><img src="https://ws1.sinaimg.cn/large/006QuJaKly1g94vtlo5axj30xc081jrc.jpg" alt=""></li>
+<li>如果划分的话第一步，先假设按照outlook这一标准划分，结果如下：<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-01-44.png" alt=""></li>
+<li>分别计算这三种类别的熵，然后计算三种类别的总熵(概率和熵值得乘积之和)<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234907.png" alt=""><br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234920.png" alt=""></li>
+<li>计算信息增益，IG(outlook)=0.940−0.694=0.246</li>
+<li>分别计算另外两种划分的信息增益率，然后构建第一层决策树<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-10-34.png" alt=""></li>
+<li>接着在每一种类别下再进行划分，直到每个节点下只有一个分类，即叶子节点，如下图<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-12-33.png" alt=""></li>
+</ul>
+<h4 id="4-代码示例"><a href="#4-代码示例" class="headerlink" title="4 代码示例"></a>4 代码示例</h4><p>略</p>
+<h4 id="5-参考文章"><a href="#5-参考文章" class="headerlink" title="5 参考文章"></a>5 参考文章</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/sinat_30353259/</span>article<span class="regexp">/details/</span><span class="number">80917362</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -714,131 +844,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三毛的小窝">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/" class="post-title-link" itemprop="url">Python设计模式1</a>
-        </h1>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-15 21:57:58" itemprop="dateCreated datePublished" datetime="2019-10-15T21:57:58+08:00">2019-10-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-16 14:37:48" itemprop="dateModified" datetime="2019-12-16T14:37:48+08:00">2019-12-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">Python设计模式</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%88%9B%E5%BB%BA%E5%9E%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">创建型</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式1" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/10/15/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h2 id="Python设计模式1-单例模式"><a href="#Python设计模式1-单例模式" class="headerlink" title="Python设计模式1(单例模式)"></a>Python设计模式1(单例模式)</h2><hr>
-<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><blockquote>
-<p>单例模式就是确保一个类只有一个实例.当你希望整个系统中,某个类只有一个实例时,单例模式就派上了用场。比如,某个服务器的配置信息存在在一个文件中,客户端通过AppConfig类来读取配置文件的信息.如果程序的运行的过程中,很多地方都会用到配置文件信息,则就需要创建很多的AppConfig实例,这样就导致内存中有很多AppConfig对象的实例,造成资源的浪费.其实这个时候AppConfig我们希望它只有一份,就可以使用单例模式.</p>
-</blockquote>
-<h3 id="单例模式实现"><a href="#单例模式实现" class="headerlink" title="单例模式实现"></a>单例模式实现</h3><h4 id="1-使用模块"><a href="#1-使用模块" class="headerlink" title="1 使用模块"></a>1 使用模块</h4><blockquote>
-<p>python模块就是单例模式的一个体现、因为第一次导入模块的时候会生成.pyc文件，第二次导入时就会加载.pyc文件</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">singleton = Singleton()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过模块调用</span></span><br><span class="line"><span class="keyword">from</span> test <span class="keyword">import</span> singleton</span><br></pre></td></tr></table></figure>
-<h4 id="2-装饰器"><a href="#2-装饰器" class="headerlink" title="2 装饰器"></a>2 装饰器</h4><blockquote>
-<p>装饰器里面的外层变量定义一个字典,里面存放这个类的实例.当第一次创建的收,就将这个实例保存到这个字典中.然后以后每次创建对象的时候,都去这个字典中判断一下,如果已经被实例化,就直接取这个实例对象.如果不存在就保存到字典中.</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    _instance = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_singleton</span><span class="params">(*args, **kargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> _instance:</span><br><span class="line">            _instance[cls] = cls(*args, **kargs)</span><br><span class="line">        <span class="keyword">return</span> _instance[cls]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> _singleton</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Singleton</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span></span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, a)</span>:</span></span><br><span class="line">        self.a = a</span><br><span class="line"></span><br><span class="line">a1 = A(<span class="number">2</span>)</span><br><span class="line">a2 = A(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="3-加锁类方法"><a href="#3-加锁类方法" class="headerlink" title="3 加锁类方法"></a>3 加锁类方法</h4><blockquote>
-<p>多线程调用如果出现堵塞，单纯的类方法无法实现单例模式，这里需要加锁</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    _instance_lock = threading.Lock()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,*args,**kwargs)</span>:</span></span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_instance</span><span class="params">(cls,*args,**kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(Singleton,<span class="string">'_instance'</span>):</span><br><span class="line">            <span class="keyword">with</span> Singleton._instance_lock:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> hasattr(Singleton,<span class="string">'_instance'</span>):</span><br><span class="line">                    Singleton._instance = Singleton(*args,**kwargs)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Singleton._instance</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">(arg)</span>:</span></span><br><span class="line">    obj = Singleton.get_instance(arg)</span><br><span class="line">    print(obj)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    t = threading.Thread(target=task,args=[i,])</span><br><span class="line">    t.start()</span><br><span class="line"></span><br><span class="line">obj = Singleton.get_instance()</span><br><span class="line">print(obj)</span><br></pre></td></tr></table></figure>
-<h4 id="4-基于new方法实现的单例模式"><a href="#4-基于new方法实现的单例模式" class="headerlink" title="4 基于new方法实现的单例模式"></a>4 基于<strong>new</strong>方法实现的单例模式</h4><blockquote>
-<p>一个对象的实例化过程是先执行类的<strong>new</strong>方法,如果我们没有写,默认会调用object的<strong>new</strong>方法,返回一个实例化对象,然后再调用<strong>init</strong>方法,对这个对象进行初始化,我们可以根据这个实现单例.在一个类的<strong>new</strong>方法中先判断是不是存在实例,如果存在实例,就直接返回,如果不存在实例就创建.</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    _instance_lock = threading.Lock()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(Singleton, <span class="string">"_instance"</span>):</span><br><span class="line">            <span class="keyword">with</span> Singleton._instance_lock:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> hasattr(Singleton, <span class="string">"_instance"</span>):</span><br><span class="line">                    Singleton._instance = object.__new__(cls)  </span><br><span class="line">        <span class="keyword">return</span> Singleton._instance</span><br><span class="line"></span><br><span class="line">obj1 = Singleton()</span><br><span class="line">obj2 = Singleton()</span><br><span class="line">print(obj1,obj2)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task</span><span class="params">(arg)</span>:</span></span><br><span class="line">    obj = Singleton()</span><br><span class="line">    print(obj)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    t = threading.Thread(target=task,args=[i,])</span><br><span class="line">    t.start()</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -911,7 +916,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -966,7 +971,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">20k</span>
+    <span title="站点总字数">21k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

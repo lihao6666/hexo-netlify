@@ -334,6 +334,41 @@
       </tags>
   </entry>
   <entry>
+    <title>Python设计模式10</title>
+    <url>/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F10/</url>
+    <content><![CDATA[<h2 id="Python设计模式10-代理模式-结构型"><a href="#Python设计模式10-代理模式-结构型" class="headerlink" title="Python设计模式10(代理模式-结构型)"></a>Python设计模式10(代理模式-结构型)</h2><blockquote>
+<p>在某些应用中，我们想要在访问某个对象之前执行一个或者多个重要的操作，例如，访问敏感信息 — 在允许用户访问敏感信息之前，我们希望确保用户具备足够的去权限。同时在网络访问时，限制某些网络的访问等操作。</p>
+</blockquote>
+<ul>
+<li><p>真实的对象（执行业务逻辑，被代理的对象）</p>
+</li>
+<li><p>代理类（用户请求的一个接口，对真实目标的保护）</p>
+</li>
+<li><p>用户（获取任务的用户请求）</p>
+</li>
+</ul>
+<h4 id="1、实例"><a href="#1、实例" class="headerlink" title="1、实例"></a>1、实例</h4><p>例子：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">## 以下是来自于github的代码：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SalesManager</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"Sales Manager ready to talk"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Proxy</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.busy = <span class="string">'No'</span></span><br><span class="line">        self.sales = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"Proxy checking for Sales Manager availability"</span>)</span><br><span class="line">        <span class="keyword">if</span> self.busy == <span class="string">'No'</span>:</span><br><span class="line">            self.sales = SalesManager()</span><br><span class="line">            time.sleep(<span class="number">0.1</span>)</span><br><span class="line">            self.sales.talk()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            time.sleep(<span class="number">0.1</span>)</span><br><span class="line">            print(<span class="string">"Sales Manager is busy"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NoTalkProxy</span><span class="params">(Proxy)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"Proxy checking for Sales Manager availability"</span>)</span><br><span class="line">        time.sleep(<span class="number">0.1</span>)</span><br><span class="line">        print(<span class="string">"This Sales Manager will not talk to you whether he/she is busy or not"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Proxy()</span><br><span class="line">    p.talk()</span><br><span class="line">    p.busy = <span class="string">'Yes'</span></span><br><span class="line">    p.talk()</span><br><span class="line">    p = NoTalkProxy()</span><br><span class="line">    p.talk()</span><br><span class="line">    p.busy = <span class="string">'Yes'</span></span><br><span class="line">    p.talk()</span><br><span class="line"></span><br><span class="line"><span class="comment">### OUTPUT ###</span></span><br><span class="line"><span class="comment"># Proxy checking for Sales Manager availability</span></span><br><span class="line"><span class="comment"># Sales Manager ready to talk</span></span><br><span class="line"><span class="comment"># Proxy checking for Sales Manager availability</span></span><br><span class="line"><span class="comment"># Sales Manager is busy</span></span><br><span class="line"><span class="comment"># Proxy checking for Sales Manager availability</span></span><br><span class="line"><span class="comment"># This Sales Manager will not talk to you whether he/she is busy or not</span></span><br><span class="line"><span class="comment"># Proxy checking for Sales Manager availability</span></span><br><span class="line"><span class="comment"># This Sales Manager will not talk to you whether he/she is busy or not</span></span><br></pre></td></tr></table></figure>
+<h4 id="2、应用场景"><a href="#2、应用场景" class="headerlink" title="2、应用场景"></a>2、应用场景</h4><ul>
+<li><p>远程代理，也就是为一个对象在不同的地址空间提供局部代表。这样可以隐藏一个对象存在于不同地址空间的事实。</p>
+</li>
+<li><p>虚拟代理，是根据需要创建开销大的对象。通过它来存放实例化需要很长时间的真是对象。用于惰性求值，将一个大计算量对象的创建延迟到真正需要的时候进行。例如html中，图片需要load很久，所以通过虚拟代理来代替真实的图片</p>
+</li>
+<li><p>安全代理，或叫保护/防护代理：控制对敏感对象的访问。用来控制真实对象访问时的权限</p>
+</li>
+<li><p>智能（引用）代理：在对象被访问时执行额外的动作。此类代理的例子包括引用计数和线程安全检查。是指当调用真实的对象时，代理处理另外一些事</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Python设计模式</category>
+        <category>结构型</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python设计模式11</title>
     <url>/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F11/</url>
     <content><![CDATA[<h2 id="Python设计模式11-观察者模式-行为型"><a href="#Python设计模式11-观察者模式-行为型" class="headerlink" title="Python设计模式11(观察者模式-行为型)"></a>Python设计模式11(观察者模式-行为型)</h2><blockquote>
@@ -368,41 +403,6 @@
       <categories>
         <category>Python设计模式</category>
         <category>行为型</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python设计模式10</title>
-    <url>/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F10/</url>
-    <content><![CDATA[<h2 id="Python设计模式10-代理模式-结构型"><a href="#Python设计模式10-代理模式-结构型" class="headerlink" title="Python设计模式10(代理模式-结构型)"></a>Python设计模式10(代理模式-结构型)</h2><blockquote>
-<p>在某些应用中，我们想要在访问某个对象之前执行一个或者多个重要的操作，例如，访问敏感信息 — 在允许用户访问敏感信息之前，我们希望确保用户具备足够的去权限。同时在网络访问时，限制某些网络的访问等操作。</p>
-</blockquote>
-<ul>
-<li><p>真实的对象（执行业务逻辑，被代理的对象）</p>
-</li>
-<li><p>代理类（用户请求的一个接口，对真实目标的保护）</p>
-</li>
-<li><p>用户（获取任务的用户请求）</p>
-</li>
-</ul>
-<h4 id="1、实例"><a href="#1、实例" class="headerlink" title="1、实例"></a>1、实例</h4><p>例子：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">## 以下是来自于github的代码：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SalesManager</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"Sales Manager ready to talk"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Proxy</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.busy = <span class="string">'No'</span></span><br><span class="line">        self.sales = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"Proxy checking for Sales Manager availability"</span>)</span><br><span class="line">        <span class="keyword">if</span> self.busy == <span class="string">'No'</span>:</span><br><span class="line">            self.sales = SalesManager()</span><br><span class="line">            time.sleep(<span class="number">0.1</span>)</span><br><span class="line">            self.sales.talk()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            time.sleep(<span class="number">0.1</span>)</span><br><span class="line">            print(<span class="string">"Sales Manager is busy"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NoTalkProxy</span><span class="params">(Proxy)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"Proxy checking for Sales Manager availability"</span>)</span><br><span class="line">        time.sleep(<span class="number">0.1</span>)</span><br><span class="line">        print(<span class="string">"This Sales Manager will not talk to you whether he/she is busy or not"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    p = Proxy()</span><br><span class="line">    p.talk()</span><br><span class="line">    p.busy = <span class="string">'Yes'</span></span><br><span class="line">    p.talk()</span><br><span class="line">    p = NoTalkProxy()</span><br><span class="line">    p.talk()</span><br><span class="line">    p.busy = <span class="string">'Yes'</span></span><br><span class="line">    p.talk()</span><br><span class="line"></span><br><span class="line"><span class="comment">### OUTPUT ###</span></span><br><span class="line"><span class="comment"># Proxy checking for Sales Manager availability</span></span><br><span class="line"><span class="comment"># Sales Manager ready to talk</span></span><br><span class="line"><span class="comment"># Proxy checking for Sales Manager availability</span></span><br><span class="line"><span class="comment"># Sales Manager is busy</span></span><br><span class="line"><span class="comment"># Proxy checking for Sales Manager availability</span></span><br><span class="line"><span class="comment"># This Sales Manager will not talk to you whether he/she is busy or not</span></span><br><span class="line"><span class="comment"># Proxy checking for Sales Manager availability</span></span><br><span class="line"><span class="comment"># This Sales Manager will not talk to you whether he/she is busy or not</span></span><br></pre></td></tr></table></figure>
-<h4 id="2、应用场景"><a href="#2、应用场景" class="headerlink" title="2、应用场景"></a>2、应用场景</h4><ul>
-<li><p>远程代理，也就是为一个对象在不同的地址空间提供局部代表。这样可以隐藏一个对象存在于不同地址空间的事实。</p>
-</li>
-<li><p>虚拟代理，是根据需要创建开销大的对象。通过它来存放实例化需要很长时间的真是对象。用于惰性求值，将一个大计算量对象的创建延迟到真正需要的时候进行。例如html中，图片需要load很久，所以通过虚拟代理来代替真实的图片</p>
-</li>
-<li><p>安全代理，或叫保护/防护代理：控制对敏感对象的访问。用来控制真实对象访问时的权限</p>
-</li>
-<li><p>智能（引用）代理：在对象被访问时执行额外的动作。此类代理的例子包括引用计数和线程安全检查。是指当调用真实的对象时，代理处理另外一些事</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Python设计模式</category>
-        <category>结构型</category>
       </categories>
       <tags>
         <tag>设计模式</tag>
@@ -453,6 +453,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Python设计模式9</title>
+    <url>/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F9/</url>
+    <content><![CDATA[<h2 id="Python设计模式9-组合模式-结构型"><a href="#Python设计模式9-组合模式-结构型" class="headerlink" title="Python设计模式9(组合模式-结构型)"></a>Python设计模式9(组合模式-结构型)</h2><blockquote>
+<p>将对象组合成树状结构，来表示业务逻辑上的[部分-整体]层次，这种组合使单个对象和组合对象的使用方法一样</p>
+</blockquote>
+<h4 id="1、实例"><a href="#1、实例" class="headerlink" title="1、实例"></a>1、实例</h4><p>例子:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComponentBases</span>:</span></span><br><span class="line">    <span class="string">"""部门抽象出来的基类"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        slef.name = name</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">display</span><span class="params">(self, number)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(ComponentBases)</span>:</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, duty)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.duty = duty</span><br><span class="line">        self.children = []</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        self.children.append(obj)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        self.children.remove(obj)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">display</span><span class="params">(self, number=<span class="number">1</span>)</span>:</span></span><br><span class="line">        print(<span class="string">"部门：&#123;&#125; 级别：&#123;&#125; 职责：&#123;&#125;"</span>.format(self.name, number, self.duty))</span><br><span class="line">        n = number+<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> obj <span class="keyword">in</span> self.children:</span><br><span class="line">            obj.display(n)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    root = Node(<span class="string">"总经理办公室"</span>, <span class="string">"总负责人"</span>)</span><br><span class="line">    node1 = Node(<span class="string">"财务部门"</span>, <span class="string">"公司财务管理"</span>)</span><br><span class="line">    root.add(node1)</span><br><span class="line">    node2 = Node(<span class="string">"业务部门"</span>, <span class="string">"销售产品"</span>)</span><br><span class="line">    root.add(node2)</span><br><span class="line">    node3 = Node(<span class="string">"生产部门"</span>, <span class="string">"生产产品"</span>)</span><br><span class="line">    root.add(node3)</span><br><span class="line">    node4 = Node(<span class="string">"销售事业一部门"</span>, <span class="string">"A产品销售"</span>)</span><br><span class="line">    node2.add(node4)</span><br><span class="line">    node5 = Node(<span class="string">"销售事业二部门"</span>, <span class="string">"B产品销售"</span>)</span><br><span class="line">    node2.add(node5)</span><br><span class="line">    root.display()</span><br><span class="line"> </span><br><span class="line">----------输出-----------</span><br><span class="line">部门：总经理办公室 级别：<span class="number">1</span> 职责：总负责人</span><br><span class="line">部门：财务部门 级别：<span class="number">2</span> 职责：公司财务管理</span><br><span class="line">部门：业务部门 级别：<span class="number">2</span> 职责：销售产品</span><br><span class="line">部门：销售事业一部门 级别：<span class="number">3</span> 职责：A产品销售</span><br><span class="line">部门：销售事业二部门 级别：<span class="number">3</span> 职责：B产品销售</span><br><span class="line">部门：生产部门 级别：<span class="number">2</span> 职责：生产产品</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>就是建立节点的方法，用于树状分支</p>
+</blockquote>
+<h4 id="2、应用实例"><a href="#2、应用实例" class="headerlink" title="2、应用实例"></a>2、应用实例</h4><p>待补充</p>
+]]></content>
+      <categories>
+        <category>Python设计模式</category>
+        <category>结构型</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python设计模式8</title>
     <url>/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F8/</url>
     <content><![CDATA[<h2 id="Python设计模8-外观模式-结构型"><a href="#Python设计模8-外观模式-结构型" class="headerlink" title="Python设计模8(外观模式-结构型)"></a>Python设计模8(外观模式-结构型)</h2><blockquote>
@@ -465,27 +486,6 @@
 <p>这样封装通过客户端直接操作对象，可以与复杂的子系统隔离开</p>
 </blockquote>
 <h4 id="2、应用场景"><a href="#2、应用场景" class="headerlink" title="2、应用场景"></a>2、应用场景</h4><p>待补充</p>
-]]></content>
-      <categories>
-        <category>Python设计模式</category>
-        <category>结构型</category>
-      </categories>
-      <tags>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python设计模式9</title>
-    <url>/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F9/</url>
-    <content><![CDATA[<h2 id="Python设计模式9-组合模式-结构型"><a href="#Python设计模式9-组合模式-结构型" class="headerlink" title="Python设计模式9(组合模式-结构型)"></a>Python设计模式9(组合模式-结构型)</h2><blockquote>
-<p>将对象组合成树状结构，来表示业务逻辑上的[部分-整体]层次，这种组合使单个对象和组合对象的使用方法一样</p>
-</blockquote>
-<h4 id="1、实例"><a href="#1、实例" class="headerlink" title="1、实例"></a>1、实例</h4><p>例子:</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComponentBases</span>:</span></span><br><span class="line">    <span class="string">"""部门抽象出来的基类"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        slef.name = name</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">display</span><span class="params">(self, number)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(ComponentBases)</span>:</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, duty)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.duty = duty</span><br><span class="line">        self.children = []</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        self.children.append(obj)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self, obj)</span>:</span></span><br><span class="line">        self.children.remove(obj)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">display</span><span class="params">(self, number=<span class="number">1</span>)</span>:</span></span><br><span class="line">        print(<span class="string">"部门：&#123;&#125; 级别：&#123;&#125; 职责：&#123;&#125;"</span>.format(self.name, number, self.duty))</span><br><span class="line">        n = number+<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> obj <span class="keyword">in</span> self.children:</span><br><span class="line">            obj.display(n)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    root = Node(<span class="string">"总经理办公室"</span>, <span class="string">"总负责人"</span>)</span><br><span class="line">    node1 = Node(<span class="string">"财务部门"</span>, <span class="string">"公司财务管理"</span>)</span><br><span class="line">    root.add(node1)</span><br><span class="line">    node2 = Node(<span class="string">"业务部门"</span>, <span class="string">"销售产品"</span>)</span><br><span class="line">    root.add(node2)</span><br><span class="line">    node3 = Node(<span class="string">"生产部门"</span>, <span class="string">"生产产品"</span>)</span><br><span class="line">    root.add(node3)</span><br><span class="line">    node4 = Node(<span class="string">"销售事业一部门"</span>, <span class="string">"A产品销售"</span>)</span><br><span class="line">    node2.add(node4)</span><br><span class="line">    node5 = Node(<span class="string">"销售事业二部门"</span>, <span class="string">"B产品销售"</span>)</span><br><span class="line">    node2.add(node5)</span><br><span class="line">    root.display()</span><br><span class="line"> </span><br><span class="line">----------输出-----------</span><br><span class="line">部门：总经理办公室 级别：<span class="number">1</span> 职责：总负责人</span><br><span class="line">部门：财务部门 级别：<span class="number">2</span> 职责：公司财务管理</span><br><span class="line">部门：业务部门 级别：<span class="number">2</span> 职责：销售产品</span><br><span class="line">部门：销售事业一部门 级别：<span class="number">3</span> 职责：A产品销售</span><br><span class="line">部门：销售事业二部门 级别：<span class="number">3</span> 职责：B产品销售</span><br><span class="line">部门：生产部门 级别：<span class="number">2</span> 职责：生产产品</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>就是建立节点的方法，用于树状分支</p>
-</blockquote>
-<h4 id="2、应用实例"><a href="#2、应用实例" class="headerlink" title="2、应用实例"></a>2、应用实例</h4><p>待补充</p>
 ]]></content>
       <categories>
         <category>Python设计模式</category>

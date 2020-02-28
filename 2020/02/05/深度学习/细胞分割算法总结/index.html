@@ -46,30 +46,20 @@
   };
 </script>
 
-  <meta name="description" content="机器学习之决策树 决策树是一个有监督分类与回归算法。决策树的生成只考虑局部最优，相对的，决策树剪枝则考虑全局最优  1 树模型 分类决策树模型是一种描述对实例进行分类的树形结构。结点有两种类型，内部结点表示一个特征或属性，叶结点表示一个类。 用决策树分类，从根结点开始，对实例的某一特征进行测试，根据测试结果，将实例分配到其子节点；这时，每一个子结点对应着该特征的一个取值，如此递归下去，直到到达叶子">
+  <meta name="description" content="一、传统方法 1、最大类间阈值法(大津法)原理：    大津法又叫最大类间方差法、最大类间阈值法（OTSU）。它的基本思想是，用一个阈值将图像中的数据分为两类，一类中图像的像素点的灰度均小于这个阈值，另一类中的图像的像素点的灰度均大于或者等于该阈值。如果这两个类中像素点的灰度的方差越大，说明获取到的阈值就是最佳的阈值（方差是灰度分布均匀性的一种度量,背景和前景之间的类间方差越大,说明构成图像的两部">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习之决策树">
-<meta property="og:url" content="https://lihao6666.cn/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/index.html">
+<meta property="og:title" content="细胞分割算法总结">
+<meta property="og:url" content="https://lihao6666.cn/2020/02/05/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BB%86%E8%83%9E%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="三毛的小窝">
-<meta property="og:description" content="机器学习之决策树 决策树是一个有监督分类与回归算法。决策树的生成只考虑局部最优，相对的，决策树剪枝则考虑全局最优  1 树模型 分类决策树模型是一种描述对实例进行分类的树形结构。结点有两种类型，内部结点表示一个特征或属性，叶结点表示一个类。 用决策树分类，从根结点开始，对实例的某一特征进行测试，根据测试结果，将实例分配到其子节点；这时，每一个子结点对应着该特征的一个取值，如此递归下去，直到到达叶子">
+<meta property="og:description" content="一、传统方法 1、最大类间阈值法(大津法)原理：    大津法又叫最大类间方差法、最大类间阈值法（OTSU）。它的基本思想是，用一个阈值将图像中的数据分为两类，一类中图像的像素点的灰度均小于这个阈值，另一类中的图像的像素点的灰度均大于或者等于该阈值。如果这两个类中像素点的灰度的方差越大，说明获取到的阈值就是最佳的阈值（方差是灰度分布均匀性的一种度量,背景和前景之间的类间方差越大,说明构成图像的两部">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_10-39-50.png">
-<meta property="og:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234517.png">
-<meta property="og:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-00-03.png">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006QuJaKly1g94vtlo5axj30xc081jrc.jpg">
-<meta property="og:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-01-44.png">
-<meta property="og:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234907.png">
-<meta property="og:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234920.png">
-<meta property="og:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-10-34.png">
-<meta property="og:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-12-33.png">
-<meta property="article:published_time" content="2019-11-05T15:28:45.000Z">
-<meta property="article:modified_time" content="2020-02-03T17:22:23.176Z">
+<meta property="article:published_time" content="2020-02-05T08:30:03.000Z">
+<meta property="article:modified_time" content="2020-02-28T00:40:11.769Z">
 <meta property="article:author" content="李浩">
-<meta property="article:tag" content="决策树">
+<meta property="article:tag" content="分割算法">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_10-39-50.png">
 
-<link rel="canonical" href="https://lihao6666.cn/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/">
+<link rel="canonical" href="https://lihao6666.cn/2020/02/05/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BB%86%E8%83%9E%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">
 
 
 <script id="page-configurations">
@@ -81,7 +71,7 @@
   };
 </script>
 
-  <title>机器学习之决策树 | 三毛的小窝</title>
+  <title>细胞分割算法总结 | 三毛的小窝</title>
   
 
 
@@ -162,17 +152,17 @@
       
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">17</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">19</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">18</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">20</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">42</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">46</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -227,7 +217,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2020/02/05/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BB%86%E8%83%9E%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.png">
@@ -240,10 +230,14 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          机器学习之决策树
+          细胞分割算法总结
         </h1>
 
         <div class="post-meta">
+          
+            <i class="fa fa-thumb-tack"></i>
+            <font color="RED">置顶</font>
+            <span class="post-meta-divider">|</span>
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,14 +245,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-11-05 23:28:45" itemprop="dateCreated datePublished" datetime="2019-11-05T23:28:45+08:00">2019-11-05</time>
+              <time title="创建时间：2020-02-05 16:30:03" itemprop="dateCreated datePublished" datetime="2020-02-05T16:30:03+08:00">2020-02-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-04 01:22:23" itemprop="dateModified" datetime="2020-02-04T01:22:23+08:00">2020-02-04</time>
+                <time title="修改时间：2020-02-28 08:40:11" itemprop="dateModified" datetime="2020-02-28T08:40:11+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,14 +260,14 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
-                    <span itemprop="name">机器学习</span>
+                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">深度学习</span>
                   </a>
                 </span>
             </span>
 
           
-            <span id="/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/" class="post-meta-item leancloud_visitors" data-flag-title="机器学习之决策树" title="阅读次数">
+            <span id="/2020/02/05/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BB%86%E8%83%9E%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="post-meta-item leancloud_visitors" data-flag-title="细胞分割算法总结" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -288,8 +282,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%86%B3%E7%AD%96%E6%A0%91/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/02/05/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BB%86%E8%83%9E%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/05/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BB%86%E8%83%9E%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -304,39 +298,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="机器学习之决策树"><a href="#机器学习之决策树" class="headerlink" title="机器学习之决策树"></a>机器学习之决策树</h2><blockquote>
-<p>决策树是一个有监督分类与回归算法。<br>决策树的生成只考虑局部最优，相对的，决策树剪枝则考虑全局最优</p>
-</blockquote>
-<h4 id="1-树模型"><a href="#1-树模型" class="headerlink" title="1 树模型"></a>1 树模型</h4><blockquote>
-<p>分类决策树模型是一种描述对实例进行分类的树形结构。结点有两种类型，内部结点表示一个特征或属性，叶结点表示一个类。 用决策树分类，从根结点开始，对实例的某一特征进行测试，根据测试结果，将实例分配到其子节点；这时，每一个子结点对应着该特征的一个取值，如此递归下去，直到到达叶子结点。最后将实例分到叶结点的类中。</p>
-</blockquote>
-<p>如下图：<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_10-39-50.png" alt=""></p>
-<h4 id="2-划分依据"><a href="#2-划分依据" class="headerlink" title="2 划分依据"></a>2 划分依据</h4><h5 id="①-熵"><a href="#①-熵" class="headerlink" title="① 熵"></a>① 熵</h5><blockquote>
-<p>物理学上，熵 Entropy 是“混乱” 程度的量度。<br>系统越有序，熵值越低；系统越混乱或者分散，熵值越高.</p>
-</blockquote>
-<h5 id="②-熵计算公式"><a href="#②-熵计算公式" class="headerlink" title="② 熵计算公式"></a>② 熵计算公式</h5><p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234517.png" alt=""></p>
+        <h2 id="一、传统方法"><a href="#一、传统方法" class="headerlink" title="一、传统方法"></a>一、传统方法</h2><hr>
+<h3 id="1、最大类间阈值法-大津法"><a href="#1、最大类间阈值法-大津法" class="headerlink" title="1、最大类间阈值法(大津法)"></a>1、最大类间阈值法(大津法)</h3><p>原理：</p>
 <blockquote>
-<p>其中pi表示分类选择的概率，log2pi为信息定义</p>
+<p>  大津法又叫最大类间方差法、最大类间阈值法（OTSU）。它的基本思想是，用一个阈值将图像中的数据分为两类，一类中图像的像素点的灰度均小于这个阈值，另一类中的图像的像素点的灰度均大于或者等于该阈值。如果这两个类中像素点的灰度的方差越大，说明获取到的阈值就是最佳的阈值（方差是灰度分布均匀性的一种度量,背景和前景之间的类间方差越大,说明构成图像的两部分的差别越大,当部分前景错分为背景或部分背景错分为前景都会导致两部分差别变小。</p>
 </blockquote>
-<h5 id="③-特征选择-信息增益"><a href="#③-特征选择-信息增益" class="headerlink" title="③ 特征选择(信息增益)"></a>③ 特征选择(信息增益)</h5><blockquote>
-<p>1、以某特征划分数据集前后的熵的差值。熵可以表示样本集合的不确定性，熵越大，样本的不确定性就越大。因此可以使用划分前后集合熵的差值来衡量使用当前特征对于样本集合D划分效果的好坏</p>
-</blockquote>
-<p>计算方法如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">entroy(前)-entroy(后)</span><br><span class="line"><span class="comment"># 表示未划分之前的熵和划分后熵值的差</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="3-决策树构建"><a href="#3-决策树构建" class="headerlink" title="3 决策树构建"></a>3 决策树构建</h4><blockquote>
-<p>构建决策树就要基于划分依据，进行划分数据信息增益的计算，选择信息增益最大的来进行划分数据，直到求到叶子节点，实现数据集的划分</p>
-</blockquote>
-<p><strong>例子</strong>:</p>
-<p>分类数据如下<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-00-03.png" alt=""></p>
+<p>实现思路：</p>
 <ul>
-<li>不划分，计算原始的熵<br><img src="https://ws1.sinaimg.cn/large/006QuJaKly1g94vtlo5axj30xc081jrc.jpg" alt=""></li>
-<li>如果划分的话第一步，先假设按照outlook这一标准划分，结果如下：<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-01-44.png" alt=""></li>
-<li>分别计算这三种类别的熵，然后计算三种类别的总熵(概率和熵值得乘积之和)<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234907.png" alt=""><br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200202234920.png" alt=""></li>
-<li>计算信息增益，IG(outlook)=0.940−0.694=0.246</li>
-<li>分别计算另外两种划分的信息增益率，然后构建第一层决策树<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-10-34.png" alt=""></li>
-<li>接着在每一种类别下再进行划分，直到每个节点下只有一个分类，即叶子节点，如下图<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-07_11-12-33.png" alt=""></li>
+<li><p>计算0~255各灰阶对应的像素个数，保存至一个数组中，该数组下标是灰度值，保存内容是当前灰度值对应像素数；</p>
+</li>
+<li><p>计算背景图像的平均灰度、背景图像像素数所占比例；</p>
+</li>
+<li><p>计算前景图像的平均灰度、前景图像像素数所占比例；</p>
+</li>
+<li><p>遍历0~255各灰阶，计算并寻找类间方差极大值；</p>
+</li>
 </ul>
-<h4 id="4-代码示例"><a href="#4-代码示例" class="headerlink" title="4 代码示例"></a>4 代码示例</h4><p>略</p>
-<h4 id="5-参考文章"><a href="#5-参考文章" class="headerlink" title="5 参考文章"></a>5 参考文章</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>blog.csdn.net<span class="regexp">/sinat_30353259/</span>article<span class="regexp">/details/</span><span class="number">80917362</span></span><br></pre></td></tr></table></figure>
+<h3 id="2、-形态学分水岭算法"><a href="#2、-形态学分水岭算法" class="headerlink" title="2、 形态学分水岭算法"></a>2、 形态学分水岭算法</h3><p>原理：</p>
+<blockquote>
+<p>分水岭算法(watershed)是一种比较基本的数学形态学分割算法，其基本思想是将灰度图像转换为梯度图像，将梯度值看作高低起伏的山岭，将局部极小值及其邻域看作一个“集水盆”。设想一个个“集水盆”中存在积水，且水位不断升高，淹没梯度较低的地方，当水漫过程停止后，就找出了分割线，图像也就可以被分割成几块连通区域。</p>
+</blockquote>
+<div class="note ">
+            <p><a href="https://blog.csdn.net/weixin_40647819/article/details/90231477" target="_blank" rel="noopener">参考文章</a></p>
+          </div>
 
     </div>
 
@@ -347,7 +331,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E5%86%B3%E7%AD%96%E6%A0%91/" rel="tag"><i class="fa fa-tag"></i> 决策树</a>
+              <a href="/tags/%E5%88%86%E5%89%B2%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 分割算法</a>
           </div>
 
         
@@ -356,12 +340,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/11/04/Python%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/" rel="prev" title="Python魔术方法">
-      <i class="fa fa-chevron-left"></i> Python魔术方法
+    <a href="/2020/02/03/Hexo-next-%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/" rel="prev" title="Hexo next 博客优化">
+      <i class="fa fa-chevron-left"></i> Hexo next 博客优化
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019/11/08/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB/" rel="next" title="读经分享1">
-      读经分享1 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/02/06/%E6%96%B0%E5%9E%8B%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92%E7%88%86%E5%8F%91%E6%9C%89%E6%84%9F-%E8%B4%A3%E4%BB%BB%E4%B9%8B%E7%88%B1/" rel="next" title="新型冠状病毒爆发有感-责任之爱">
+      新型冠状病毒爆发有感-责任之爱 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -423,7 +407,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习之决策树"><span class="nav-number">1.</span> <span class="nav-text">机器学习之决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-树模型"><span class="nav-number">1.0.1.</span> <span class="nav-text">1 树模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-划分依据"><span class="nav-number">1.0.2.</span> <span class="nav-text">2 划分依据</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#①-熵"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">① 熵</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#②-熵计算公式"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">② 熵计算公式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#③-特征选择-信息增益"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">③ 特征选择(信息增益)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-决策树构建"><span class="nav-number">1.0.3.</span> <span class="nav-text">3 决策树构建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-代码示例"><span class="nav-number">1.0.4.</span> <span class="nav-text">4 代码示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-参考文章"><span class="nav-number">1.0.5.</span> <span class="nav-text">5 参考文章</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、传统方法"><span class="nav-number">1.</span> <span class="nav-text">一、传统方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、最大类间阈值法-大津法"><span class="nav-number">1.1.</span> <span class="nav-text">1、最大类间阈值法(大津法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、-形态学分水岭算法"><span class="nav-number">1.2.</span> <span class="nav-text">2、 形态学分水岭算法</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -439,20 +423,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -494,12 +478,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">23k</span>
+    <span title="站点总字数">27k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">21 分钟</span>
+    <span title="站点阅读时长">25 分钟</span>
 </div>
 
         

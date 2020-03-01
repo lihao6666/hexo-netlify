@@ -1233,7 +1233,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #26ffff;
+  background: #6cffff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2779,6 +2779,12 @@ ul.breadcrumb li + li:last-child {
   margin: 0 auto;
   text-align: center;
 }
+.ImageGrid2 {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  text-align: center;
+}
 .card {
   overflow: hidden;
   transition: 0.3s ease-in-out;
@@ -2788,6 +2794,12 @@ ul.breadcrumb li + li:last-child {
 .ImageInCard img {
   padding: 0 0 0 0;
   border-radius: 8px;
+}
+.life {
+  color: #dd4b39;
+}
+.fellowship {
+  color: #dd4b39;
 }
 body {
   background: url("/images/body-bg.png");

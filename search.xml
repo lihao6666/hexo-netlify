@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>读经分享13</title>
+    <url>/2020/03/02/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB13/</url>
+    <content><![CDATA[<p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200225230127.png" width=500 height=350></p>
+<div class="note success">
+            <ul><li>山地也要归你，虽是树林，你也可以砍伐；靠近之地必归你。迦南人虽有铁车，虽是强盛，你也能把他们赶出去。<pre><code>                                              (约书亚记 17:18 和合本)</code></pre></li></ul>
+          </div>
+<h3 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h3><hr>
+<h4 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h4><p>今天读到的依然是十二个支派的分地讲述，但是不一样的是读到约瑟支派的分配时，看到了不一样的地方，感觉读到了约书亚记真正的关键。</p>
+<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><p>约书亚记17章先介绍的是玛拿西半支派的分地，上一章也介绍了以法莲，他们是除了犹大以外可以说是分到最得祝福的地界了，然后到了约瑟支派，得到的确大相径庭，甚至还需要和当地的伽南人去斗争，咋一看感觉有点不合理啊，约瑟是被祝福的支派，为什么要这样分呢？这就要回顾整个约书亚记了，自己对于那些分地和支派的介绍真的是读不下去，但是对于神在征战中对以色列民各样的命令以及他们后面的行为却记忆犹新，包括我上一篇写到的<a href="/2020/02/25/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB11/" title="&lt;亚干犯罪&gt;">&lt;亚干犯罪&gt;</a>以及当面对强大敌人时神的<code>教导</code>等等，可以看出这些征战不仅仅是神的应许，更多是对以色列民包括领袖的管教，上一篇分享中我分享过约书亚的反应和这里约书亚的回答形成鲜明的对比。<code>靠近之地必归你</code>,说出这样的话，是里面有多少的信心啊？也能够看到经过神这一次又一次的<code>管教</code>,约书亚领袖光芒的展现。</p>
+<p>除了这之外，看解释还发现了一点，为什么这里要专门给约瑟支派驱逐伽南人的任务呢？在<code>创世纪48章17-20节</code>，雅各说给依法立案的祝福要比玛拿西大，但是在分地的时候却可以看出玛拿西支派分到的地更好。解释给到了<code>申命记7章1-26节</code>，这里可以看到以法莲支派在得到如此大的祝福后确犯了一个错误，没有驱逐本地的<code>伽南人</code>。再回到我的问题里面，仔细一想，感觉神的旨意真的很奇妙，是不是啊。</p>
+<h4 id="落笔"><a href="#落笔" class="headerlink" title="落笔"></a>落笔</h4><p>读约书亚记真的太枯燥了，但是静下来，结合注释真的也能看到很多以前看不到的东西。。。</p>
+]]></content>
+      <categories>
+        <category>信仰</category>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue学习笔记2之Vue基础操作</title>
     <url>/2020/02/29/%E5%89%8D%E7%AB%AF/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02%E4%B9%8BVue%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h2><h3 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h3><h4 id="1、文本"><a href="#1、文本" class="headerlink" title="1、文本"></a>1、文本</h4><p>和Django的模板很类似，这里是会动态刷新的数据，且可以使用表达式当data数据变化的时候也会相应的变化，可以用v-once实现一次插入，所以v-once的作用就是实现一次渲染<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Message: &#123;&#123; msg*2 &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-once</span>&gt;</span>这个将不会改变: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -48,7 +69,7 @@
 <h4 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h4><p>最近在读约书亚记，因为最近都是一些战斗的记录，自己里面的分享很少，所以就分享一下今天茶经看到一段话吧，也是柳斌弟兄说出来的，自己也想起来自己在学校早上读经时和大家的分享，这里重新梳理下吧。</p>
 <h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><p>很多时候，自己里面对<code>福音</code>一直处于很迷茫的态度，或许很多时候看到自己很<code>刚强</code>,那是在团契的环境下，自己有了那样的遮盖之所，有弟兄姊妹的相互鼓励扶持，但是放到大环境之中，其实，就自己目前的生命，可能也会像很多基督徒一样入浮萍般起起伏伏吧。就像对于<code>福音</code>,去年一整年，我们团契都在传福音的浪潮中，自己也参加了很多次以这个为主题的营会，听到了很多关于<code>传福音</code>的见证，可能当时有很多的感动，但是过一段时间，自己里面对它的认识又愈行愈远。其实很多时候感觉自己都是在表面接受真理的浇灌，自己的里面确没有一点的负担。就像在学校里面，可能我的一些同学也知道我是基督徒，也都很尊重我，但是自己里面确对他们没有一丝丝的负担，因为自己里面已经认定了，I can’t do it! 就像这次寒假在家的状况一样，在家里面，对自己的父亲一点负担没有，有时候还会大声的说话来掩盖自己的<code>不爽</code>.很多时候自己的里面都已经认定，<code>那样真的不可能</code>(将福音带给他们)。</p>
 <p>自己也祷告过，希望能得到回应，但是并没有，今天的茶经不是这个主题，但是不知道自己为什么会联想到这个话题，可能是真的被肉哥的话打动了吧。爱一个人，引导他走当行的道，就是到老，他也不偏这道，主爱永伴，我就毫无忧伤。我记得柳斌之前也教导过我们，很多时候我们不敢去做是因为感觉做了也没有用的理性思维，现在想想当时自己的<code>&quot;狡辩&quot;</code>真的很可笑哈!而当自己里面真正的想去爱一个人，帮助一个人的时候，我们又怎么会在乎这么多呢？就像我分享的那一句，<code>神的道是活泼的</code>,当我们做了，无论结果如何，神都能看见，可能一时对方无法接受，那是需要<code>调和</code>,就像我们是平白无故的相信一一些事物一样，信仰这个东西，要自己去体会，但是首先你要让他可以接触到这份到，剩下的都是神那奇妙的作为了。。。</p>
-<h4 id="落笔"><a href="#落笔" class="headerlink" title="落笔"></a>落笔</h4><p>写了这么多，其实就是想给自己一个警戒，真的爱一个人不是说说而已，要去行动出来，要相信我们的后面有那一位在始终帮助者我们，哈哈哈！</p>
+<h4 id="落笔"><a href="#落笔" class="headerlink" title="落笔"></a>落笔</h4><p>写了这么多，其实就是想给自己一个警戒，真的爱一个人不是说说而已，要去行动出来，要相信我们的后面有那一位在始终帮助着我们，哈哈哈！</p>
 <h4 id="插曲"><a href="#插曲" class="headerlink" title="插曲"></a>插曲</h4><p>真的是听这首歌写完的分享，也和我分享的主题完全契合，分享给大家<a href="https://www.xiami.com/song/bqv09ji5494f" target="_blank" rel="noopener">上帝的宝贝</a></p>
 ]]></content>
       <categories>

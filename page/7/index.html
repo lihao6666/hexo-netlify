@@ -166,7 +166,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">47</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">48</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -217,6 +217,122 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/11/27/Cookie%E7%88%AC%E5%8F%96Ajax%E6%95%B0%E6%8D%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/27/Cookie%E7%88%AC%E5%8F%96Ajax%E6%95%B0%E6%8D%AE/" class="post-title-link" itemprop="url">Cookie爬取Ajax数据</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-27 17:27:11" itemprop="dateCreated datePublished" datetime="2019-11-27T17:27:11+08:00">2019-11-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-02 14:44:48" itemprop="dateModified" datetime="2020-02-02T14:44:48+08:00">2020-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%88%AC%E8%99%AB/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/11/27/Cookie%E7%88%AC%E5%8F%96Ajax%E6%95%B0%E6%8D%AE/" class="post-meta-item leancloud_visitors" data-flag-title="Cookie爬取Ajax数据" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/11/27/Cookie%E7%88%AC%E5%8F%96Ajax%E6%95%B0%E6%8D%AE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/27/Cookie%E7%88%AC%E5%8F%96Ajax%E6%95%B0%E6%8D%AE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="纪念一次心血来潮的爬虫测试"><a href="#纪念一次心血来潮的爬虫测试" class="headerlink" title="纪念一次心血来潮的爬虫测试"></a>纪念一次心血来潮的爬虫测试</h2><blockquote>
+<p>上次做完行政，心里真的是很不爽，一方面学校网站不给力，一方面那个题也是很难受的，虽然后来发现了懵搜小助手，但还是效率很慢，想着自己可以不可以搞得快一点，当时第一想法就是把题爬出来，然后发给萌搜小助手，到时候自己对着消息写答案不是美滋滋，哈哈哈，下面记录一下自己的这次心血来潮。</p>
+</blockquote>
+<h4 id="1、网站分析"><a href="#1、网站分析" class="headerlink" title="1、网站分析"></a>1、网站分析</h4><blockquote>
+<p>之前爬过学校的图书馆，因为为了实现自动化所以用的selenium(一个webdriver测试工具)，也是为了用来解决验证码问题和js渲染，这里分析了一下两个网站登录的区别，发现学堂云的网站基本上所有数据都是基于js渲染的。这样的话想要直接获取数据是比较困难的</p>
+</blockquote>
+<p>网站截图(已经进入课程):<br><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-27_17-50-32.jpg" alt="学堂云"></p>
+<p>这是我直接get网站的结果:</p>
+<p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/Snipaste_2019-11-27_17-41-30.jpg" alt="get结果"></p>
+<blockquote>
+<p>所以接下来的问题就在于如何获取js渲染的数据呢，我们知道很多时候为了实现数据的及时刷新，都会使用Ajax，那我们展示的数据就会存放在ajax的数据中，所以接下来我们的目标就是找到带题目数据的ajax数据</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/11/27/Cookie%E7%88%AC%E5%8F%96Ajax%E6%95%B0%E6%8D%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -737,133 +853,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="李浩">
-      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="三毛的小窝">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/" class="post-title-link" itemprop="url">Python设计模式5</a>
-        </h1>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-03 15:54:13" itemprop="dateCreated datePublished" datetime="2019-11-03T15:54:13+08:00">2019-11-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-04 01:22:10" itemprop="dateModified" datetime="2020-02-04T01:22:10+08:00">2020-02-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">Python设计模式</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">结构型</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/" class="post-meta-item leancloud_visitors" data-flag-title="Python设计模式5" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/03/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F5/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Python设计模式5-适配器模式-结构型"><a href="#Python设计模式5-适配器模式-结构型" class="headerlink" title="Python设计模式5(适配器模式-结构型)"></a>Python设计模式5(适配器模式-结构型)</h2><blockquote>
-<p>当我们希望把一个老组件用于一个新组系统或者把一个新组件应用于老系统中，同时在代码无法修改的，或者说无法访问这些代码时（在实际开发中，旧系统的代码修改后牵一而动全身，很容易引起系统的崩溃。）。这时候，我们可以编写一个额外的代码层，该代码层包含让这两个接口之间能够通信需要进行的所有修改,通俗的来讲就是构建一个适配器可以将一个类接口转换为需要的一个接口</p>
-</blockquote>
-<h3 id="1-简单举例"><a href="#1-简单举例" class="headerlink" title="1 简单举例"></a>1 简单举例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Target</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">request</span><span class="params">(self)</span>:</span></span><br><span class="line">    print(<span class="string">"普通请求"</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adaptee</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">specific_request</span><span class="params">(self)</span>:</span></span><br><span class="line">    print(<span class="string">"特殊请求"</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adapter</span><span class="params">(Target)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.adaptee = Adaptee()</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">request</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.adaptee.specific_request()</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  target = Adapter()</span><br><span class="line">  target.request()</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>从上面的例子中可以看出来两个类有不同的print需求，通过建立一个适配器Adapter类,将下一个类的print功能和Target类相契合</p>
-</blockquote>
-<h3 id="2-复杂一点的举例"><a href="#2-复杂一点的举例" class="headerlink" title="2 复杂一点的举例"></a>2 复杂一点的举例</h3><p>增加类：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Synthesizer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'the &#123;&#125; synthesizer'</span>.format(self.name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">play</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'is playing an electronic song'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&#123;&#125; the human'</span>.format(self.name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">speak</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'says hello'</span></span><br></pre></td></tr></table></figure>
-<p>原有类：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Computer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'the &#123;&#125; computer'</span>.format(self.name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">execute</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'executes a program'</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>从上面可以看出来，新增加的类主要在执行类play()和speak()和原始类不一样，而对于执行系统来说，都要使用obj.excute()来执行，这样就需要构建一个适配器来实现来设计类调用</p>
-</blockquote>
-<p>增加适配器:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adapter</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, obj, adapted_methods)</span>:</span></span><br><span class="line">        self.obj = obj</span><br><span class="line">        self.__dict__.update(adapted_methods)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> str(self.obj)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">new_main</span><span class="params">()</span>:</span></span><br><span class="line">    objects = [Computer(<span class="string">'Asus'</span>)]</span><br><span class="line">    synth = Synthesizer(<span class="string">'moog'</span>)</span><br><span class="line">    objects.append(Adapter(synth, dict(execute=synth.play)))</span><br><span class="line">    human = Human(<span class="string">'Bob'</span>)</span><br><span class="line">    objects.append(Adapter(human, dict(execute=human.speak)))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> objects:</span><br><span class="line">        print(<span class="string">'&#123;&#125; &#123;&#125;'</span>.format(str(i), i.execute()))</span><br><span class="line">        print(<span class="string">'type is &#123;&#125;'</span>.format(type(i)))</span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">the Asus computer executes a program</span><br><span class="line">type <span class="keyword">is</span> &lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">Computer</span>'&gt;</span></span><br><span class="line"><span class="class"><span class="title">the</span> <span class="title">moog</span> <span class="title">synthesizer</span> <span class="title">is</span> <span class="title">playing</span> <span class="title">an</span> <span class="title">electronic</span> <span class="title">song</span></span></span><br><span class="line"><span class="class"><span class="title">type</span> <span class="title">is</span> &lt;<span class="title">class</span> '<span class="title">__main__</span>.<span class="title">Adapter</span>'&gt;</span></span><br><span class="line"><span class="class"><span class="title">Bob</span> <span class="title">the</span> <span class="title">human</span> <span class="title">says</span> <span class="title">hello</span></span></span><br><span class="line"><span class="class"><span class="title">type</span> <span class="title">is</span> &lt;<span class="title">class</span> '<span class="title">__main__</span>.<span class="title">Adapter</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这里用到了python魔术方法中的<strong>dict</strong>,具体可参考我的文章。。。，这里主要的实现功能和上一个例子，就是只改适配器中内容而改变其它两个类中的功能函数</p>
-</blockquote>
-<h3 id="3-实际应用"><a href="#3-实际应用" class="headerlink" title="3 实际应用"></a>3 实际应用</h3><blockquote>
-<p>比如电商平台中，货币的支持这个功能，可能刚开始只支持pay一种货币，后面需要支持别的货币，这时候就需要针对不同货币的付款金额，实现pay的接口适配</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -936,7 +925,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -991,7 +980,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">28k</span>
+    <span title="站点总字数">29k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

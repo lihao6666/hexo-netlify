@@ -166,7 +166,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">47</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">48</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -217,6 +217,118 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/09/29/linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/29/linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">linux双系统安装</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-29 17:40:27" itemprop="dateCreated datePublished" datetime="2019-09-29T17:40:27+08:00">2019-09-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/09/29/linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" class="post-meta-item leancloud_visitors" data-flag-title="linux双系统安装" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/09/29/linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/29/linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Linux-Mint-配置1（GRUB）"><a href="#Linux-Mint-配置1（GRUB）" class="headerlink" title="Linux Mint 配置1（GRUB）"></a>Linux Mint 配置1（GRUB）</h1><hr>
+<h2 id="1-删除原来的Linux"><a href="#1-删除原来的Linux" class="headerlink" title="1. 删除原来的Linux"></a>1. 删除原来的Linux</h2><h3 id="一-修复MBR（主引导记录）"><a href="#一-修复MBR（主引导记录）" class="headerlink" title="一 修复MBR（主引导记录）"></a>一 修复MBR（主引导记录）</h3><pre><code>1. 下载MbrFix软件，下载地址为http://www.sysint.no/mbrfix（注意64位）
+2. 先右键打开软件以管理员运行，然后cmd进入文件夹输入
+3. 输入：32位：MbrFix/drive 0 fixmbr
+        64位：MbrFix64/drive 0 fixmbr
+4. 输入Y， OK！！！
+</code></pre><h3 id="二-删除数据（Ubuntu）"><a href="#二-删除数据（Ubuntu）" class="headerlink" title="二 删除数据（Ubuntu）"></a>二 删除数据（Ubuntu）</h3><pre><code>1. 进入磁盘管理
+2. 点击没有名字的分区，删除（就是没有像D：这样的盘符）
+3. 重启
+</code></pre><h2 id="2-下载需要安装的Linux，使用软件做启动盘（略）"><a href="#2-下载需要安装的Linux，使用软件做启动盘（略）" class="headerlink" title="2. 下载需要安装的Linux，使用软件做启动盘（略）"></a>2. 下载需要安装的Linux，使用软件做启动盘（略）</h2><h2 id="3-GRUB引导（双显卡）"><a href="#3-GRUB引导（双显卡）" class="headerlink" title="3. GRUB引导（双显卡）"></a>3. GRUB引导（双显卡）</h2><pre><code>1. 开机bios先选择u盘启动，然后F10保存进入Linux引导界面
+2. 按e编辑grub，到quiet splash 一行，在后面加上nouveau.modeset=0（禁用n卡），然后F10进入安装（也可以删除quiet splash，这样很装逼，你可以看见电脑进程启动记录）
+3. 到了分配空间最好选择自动分配，会自动选择你删除的那个盘，然后分区
+</code></pre><h2 id="4-修改GRUB"><a href="#4-修改GRUB" class="headerlink" title="4. 修改GRUB"></a>4. 修改GRUB</h2><pre><code>1. sudo vi /etc/default/grub
+2. 在quiet splash后面加入nouveau.modeset=0，保存
+3. sudo update-grub
+</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -498,7 +610,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -553,7 +665,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">28k</span>
+    <span title="站点总字数">29k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

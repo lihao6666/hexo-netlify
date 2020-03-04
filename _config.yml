@@ -112,4 +112,16 @@ search:
 deploy:
   type: git
   repo: git@github.com:lihao6666/hexo-netlify.git
+    # gitee: git@gitee.com:Mars-lh/Mars-lh.git
+    # coding: git@e.coding.net:mars-se6666/mars-se.git
   branch: run-page
+    # github: run-page
+    # gitee: master
+    # coding: master
+
+# baidu站点
+# 自动生成sitemap
+sitemap: 
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml

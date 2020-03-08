@@ -151,14 +151,19 @@
 
 
       
-        <li class="menu-item menu-item-光影">
+        <li class="menu-item menu-item-photos">
 
     <a href="/photos" rel="section"><i class="fa fa-fw fa-camera-retro"></i>光影</a>
 
   </li>
+        <li class="menu-item menu-item-daily">
+
+    <a href="/daily" rel="section"><i class="fa fa-fw fa-bookmark"></i>日志</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">19</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -168,7 +173,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">48</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">49</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -294,19 +299,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="图片操作"><a href="#图片操作" class="headerlink" title="图片操作"></a>图片操作</h2><h3 id="1-图像视频读取"><a href="#1-图像视频读取" class="headerlink" title="1.图像视频读取"></a>1.图像视频读取</h3><h4 id="1-1图像读取"><a href="#1-1图像读取" class="headerlink" title="1.1图像读取"></a>1.1图像读取</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(path,parameter)</span><br><span class="line"><span class="comment">#第二个参数可以是cv2.IMREAD_COLOR(彩色读取，忽略透明度，默认的)</span></span><br><span class="line"><span class="comment">#cv2.IMREAD_GRAYSCALE：以灰度模式读入图像</span></span><br><span class="line"><span class="comment">#cv2.IMREAD_UNCHANGED：读入一幅图像，并且包括图像的 alpha 通道</span></span><br><span class="line"><span class="comment">#注意读取路径错误opencv不会报错，结果是None</span></span><br></pre></td></tr></table></figure>
-<h4 id="1-2图像显示"><a href="#1-2图像显示" class="headerlink" title="1.2图像显示"></a>1.2图像显示</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.imshow(<span class="string">'image'</span>,img)</span><br></pre></td></tr></table></figure>
-<h4 id="1-3图像保存"><a href="#1-3图像保存" class="headerlink" title="1.3图像保存"></a>1.3图像保存</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.imwrite(<span class="string">'messigray.png'</span>,img)</span><br></pre></td></tr></table></figure>
-<h4 id="1-4视频读取"><a href="#1-4视频读取" class="headerlink" title="1.4视频读取"></a>1.4视频读取</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)<span class="comment">#获取设备</span></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">     ret, frame = cap.read()<span class="comment">#检查读取帧数是否正确，返回boolean值，查看视频是否结尾</span></span><br><span class="line">     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</span><br><span class="line">     cv2.imshow(<span class="string">'frame'</span>,gray)</span><br><span class="line">     <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span> == ord(<span class="string">'q'</span>):</span><br><span class="line">     <span class="keyword">break</span></span><br><span class="line">     cap.release()</span><br><span class="line">     cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h3 id="2-opencv绘图函数"><a href="#2-opencv绘图函数" class="headerlink" title="2.opencv绘图函数"></a>2.opencv绘图函数</h3><h4 id="2-1画线"><a href="#2-1画线" class="headerlink" title="2.1画线"></a>2.1画线</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">img = np.zeros((<span class="number">512</span>,<span class="number">512</span>,<span class="number">3</span>),np.uint8)</span><br><span class="line">cv2.line(img,(<span class="number">0</span>,<span class="number">0</span>),(<span class="number">511</span>,<span class="number">511</span>),(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">5</span>)</span><br><span class="line">cv2.imshow(<span class="string">"line"</span>,img)</span><br><span class="line">cv2.waitKey (<span class="number">10000</span>) <span class="comment"># 显示 10000 ms 即 10s 后消失</span></span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-<h4 id="2-2画矩形"><a href="#2-2画矩形" class="headerlink" title="2.2画矩形"></a>2.2画矩形</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.rectangle(img,(<span class="number">384</span>,<span class="number">0</span>),(<span class="number">510</span>,<span class="number">128</span>),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">3</span>)<span class="comment">#左上角点和右下角点</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-3画圆"><a href="#2-3画圆" class="headerlink" title="2.3画圆"></a>2.3画圆</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.circle(img,(<span class="number">447</span>,<span class="number">63</span>), <span class="number">63</span>, (<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>), <span class="number">-1</span>)<span class="comment">#圆心和半径</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-4画椭圆"><a href="#2-4画椭圆" class="headerlink" title="2.4画椭圆"></a>2.4画椭圆</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.ellipse(img,(<span class="number">256</span>,<span class="number">256</span>),(<span class="number">100</span>,<span class="number">50</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">180</span>,<span class="number">255</span>,<span class="number">-1</span>)<span class="comment">#第一个参数是圆心，第二个是长轴和短轴长度，第三个是椭圆沿逆时针旋转的角度，第四五个是椭圆弧的顺时针起始角度和结束角度</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-5画多边形"><a href="#2-5画多边形" class="headerlink" title="2.5画多边形"></a>2.5画多边形</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img = np.zeros((<span class="number">512</span>,<span class="number">512</span>,<span class="number">3</span>), np.uint8)</span><br><span class="line">pts = np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]], np.int32)</span><br><span class="line">pts = pts.reshape((<span class="number">-1</span>,<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line">cv2.polylines(img,[pts],<span class="literal">True</span>,(<span class="number">0</span>,<span class="number">255</span>,<span class="number">255</span>))</span><br></pre></td></tr></table></figure>
-<h4 id="2-6图像添加文字"><a href="#2-6图像添加文字" class="headerlink" title="2.6图像添加文字"></a>2.6图像添加文字</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cv2.putText(img, text, org, fontFace, fontScale, color[, thickness[, lineType[, bottomLeftOrigin]]])</span></span><br><span class="line">img = np.zeros((<span class="number">512</span>,<span class="number">512</span>,<span class="number">3</span>), np.uint8)</span><br><span class="line">font = cv2.FONT_HERSHEY_SIMPLEX</span><br><span class="line">cv2.putText(img,<span class="string">'OpenCV'</span>,(<span class="number">10</span>,<span class="number">500</span>), font, <span class="number">4</span>,(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>),<span class="number">2</span>,cv2.LINE_AA)</span><br></pre></td></tr></table></figure>
-<h3 id="3-opencv鼠标控制"><a href="#3-opencv鼠标控制" class="headerlink" title="3.opencv鼠标控制"></a>3.opencv鼠标控制</h3><h4 id="3-1事件"><a href="#3-1事件" class="headerlink" title="3.1事件"></a>3.1事件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">event：</span><br><span class="line">EVENT_LBUTTONDBLCLK = <span class="number">7</span>         左键双击</span><br><span class="line">EVENT_LBUTTONDOWN = <span class="number">1</span>           左键点击</span><br><span class="line">EVENT_LBUTTONUP = <span class="number">4</span>             左键释放</span><br><span class="line">EVENT_MBUTTONDBLCLK = <span class="number">9</span>         中间释放</span><br><span class="line">EVENT_MBUTTONDOWN = <span class="number">3</span>           中间点击</span><br><span class="line">EVENT_MBUTTONUP = <span class="number">6</span>             中间释放</span><br><span class="line">EVENT_MOUSEHWHEEL = <span class="number">11</span>          滚轮事件</span><br><span class="line">EVENT_MOUSEMOVE = <span class="number">0</span>             滑动</span><br><span class="line">EVENT_MOUSEWHEEL = <span class="number">10</span>           滚轮事件</span><br><span class="line">EVENT_RBUTTONDBLCLK = <span class="number">8</span>         右键双击</span><br><span class="line">EVENT_RBUTTONDOWN = <span class="number">2</span>           右键点击</span><br><span class="line">EVENT_RBUTTONUP = <span class="number">5</span>             右键释放</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">flags:</span><br><span class="line">EVENT_FLAG_ALTKEY = <span class="number">32</span>          按Alt不放事件</span><br><span class="line">EVENT_FLAG_CTRLKEY = <span class="number">8</span>          按Ctrl不放事件</span><br><span class="line">EVENT_FLAG_LBUTTON = <span class="number">1</span>          左键拖拽</span><br><span class="line">EVENT_FLAG_MBUTTON = <span class="number">4</span>          中键拖拽</span><br><span class="line">EVENT_FLAG_RBUTTON = <span class="number">2</span>          右键拖拽</span><br><span class="line">EVENT_FLAG_SHIFTKEY = <span class="number">16</span>        按Shift不放事件</span><br></pre></td></tr></table></figure>
-<h4 id="3-2样例"><a href="#3-2样例" class="headerlink" title="3.2样例"></a>3.2样例</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw_rectangle</span><span class="params">(event,x,y,flags,param)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> ix, iy</span><br><span class="line">    <span class="keyword">if</span> event==cv2.EVENT_LBUTTONDOWN:</span><br><span class="line">        ix, iy = x, y</span><br><span class="line">        print(<span class="string">"point1:="</span>, x, y)</span><br><span class="line">    <span class="keyword">elif</span> event==cv2.EVENT_LBUTTONUP:</span><br><span class="line">        print(<span class="string">"point2:="</span>, x, y)</span><br><span class="line">        print(<span class="string">"width="</span>,x-ix)</span><br><span class="line">        print(<span class="string">"height="</span>, y - iy)</span><br><span class="line">        cv2.rectangle(img, (ix, iy), (x, y), (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">"max.png"</span>)  <span class="comment">#加载图片</span></span><br><span class="line">cv2.namedWindow(<span class="string">'image'</span>)</span><br><span class="line">cv2.setMouseCallback(<span class="string">'image'</span>, draw_rectangle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">'image'</span>, img)</span><br><span class="line">    <span class="keyword">if</span> cv2.waitKey(<span class="number">20</span>) &amp; <span class="number">0xFF</span> == <span class="number">27</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-
+        <h2 id="图片操作"><a href="#图片操作" class="headerlink" title="图片操作"></a>图片操作</h2><h3 id="1-图像视频读取"><a href="#1-图像视频读取" class="headerlink" title="1.图像视频读取"></a>1.图像视频读取</h3><h4 id="1-1图像读取"><a href="#1-1图像读取" class="headerlink" title="1.1图像读取"></a>1.1图像读取</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(path,parameter)</span><br><span class="line"><span class="comment">#第二个参数可以是cv2.IMREAD_COLOR(彩色读取，忽略透明度，默认的)</span></span><br><span class="line"><span class="comment">#cv2.IMREAD_GRAYSCALE：以灰度模式读入图像</span></span><br><span class="line"><span class="comment">#cv2.IMREAD_UNCHANGED：读入一幅图像，并且包括图像的 alpha 通道</span></span><br><span class="line"><span class="comment">#注意读取路径错误opencv不会报错，结果是None</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="1-2图像显示"><a href="#1-2图像显示" class="headerlink" title="1.2图像显示"></a>1.2图像显示</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.imshow(<span class="string">'image'</span>,img)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="1-3图像保存"><a href="#1-3图像保存" class="headerlink" title="1.3图像保存"></a>1.3图像保存</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.imwrite(<span class="string">'messigray.png'</span>,img)</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="1-4视频读取"><a href="#1-4视频读取" class="headerlink" title="1.4视频读取"></a>1.4视频读取</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)<span class="comment">#获取设备</span></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">     ret, frame = cap.read()<span class="comment">#检查读取帧数是否正确，返回boolean值，查看视频是否结尾</span></span><br><span class="line">     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</span><br><span class="line">     cv2.imshow(<span class="string">'frame'</span>,gray)</span><br><span class="line">     <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span> == ord(<span class="string">'q'</span>):</span><br><span class="line">     <span class="keyword">break</span></span><br><span class="line">     cap.release()</span><br><span class="line">     cv2.destroyAllWindows()</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-opencv绘图函数"><a href="#2-opencv绘图函数" class="headerlink" title="2.opencv绘图函数"></a>2.opencv绘图函数</h3><h4 id="2-1画线"><a href="#2-1画线" class="headerlink" title="2.1画线"></a>2.1画线</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">img = np.zeros((<span class="number">512</span>,<span class="number">512</span>,<span class="number">3</span>),np.uint8)</span><br><span class="line">cv2.line(img,(<span class="number">0</span>,<span class="number">0</span>),(<span class="number">511</span>,<span class="number">511</span>),(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>),<span class="number">5</span>)</span><br><span class="line">cv2.imshow(<span class="string">"line"</span>,img)</span><br><span class="line">cv2.waitKey (<span class="number">10000</span>) <span class="comment"># 显示 10000 ms 即 10s 后消失</span></span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="2-2画矩形"><a href="#2-2画矩形" class="headerlink" title="2.2画矩形"></a>2.2画矩形</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.rectangle(img,(<span class="number">384</span>,<span class="number">0</span>),(<span class="number">510</span>,<span class="number">128</span>),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">3</span>)<span class="comment">#左上角点和右下角点</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="2-3画圆"><a href="#2-3画圆" class="headerlink" title="2.3画圆"></a>2.3画圆</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.circle(img,(<span class="number">447</span>,<span class="number">63</span>), <span class="number">63</span>, (<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>), <span class="number">-1</span>)<span class="comment">#圆心和半径</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-4画椭圆"><a href="#2-4画椭圆" class="headerlink" title="2.4画椭圆"></a>2.4画椭圆</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv2.ellipse(img,(<span class="number">256</span>,<span class="number">256</span>),(<span class="number">100</span>,<span class="number">50</span>),<span class="number">0</span>,<span class="number">0</span>,<span class="number">180</span>,<span class="number">255</span>,<span class="number">-1</span>)<span class="comment">#第一个参数是圆心，第二个是长轴和短轴长度，第三个是椭圆沿逆时针旋转的角度，第四五个是椭圆弧的顺时针起始角度和结束角度</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="2-5画多边形"><a href="#2-5画多边形" class="headerlink" title="2.5画多边形"></a>2.5画多边形</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img = np.zeros((<span class="number">512</span>,<span class="number">512</span>,<span class="number">3</span>), np.uint8)</span><br><span class="line">pts = np.array([[<span class="number">10</span>,<span class="number">5</span>],[<span class="number">20</span>,<span class="number">30</span>],[<span class="number">70</span>,<span class="number">20</span>],[<span class="number">50</span>,<span class="number">10</span>]], np.int32)</span><br><span class="line">pts = pts.reshape((<span class="number">-1</span>,<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line">cv2.polylines(img,[pts],<span class="literal">True</span>,(<span class="number">0</span>,<span class="number">255</span>,<span class="number">255</span>))</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="2-6图像添加文字"><a href="#2-6图像添加文字" class="headerlink" title="2.6图像添加文字"></a>2.6图像添加文字</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cv2.putText(img, text, org, fontFace, fontScale, color[, thickness[, lineType[, bottomLeftOrigin]]])</span></span><br><span class="line">img = np.zeros((<span class="number">512</span>,<span class="number">512</span>,<span class="number">3</span>), np.uint8)</span><br><span class="line">font = cv2.FONT_HERSHEY_SIMPLEX</span><br><span class="line">cv2.putText(img,<span class="string">'OpenCV'</span>,(<span class="number">10</span>,<span class="number">500</span>), font, <span class="number">4</span>,(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>),<span class="number">2</span>,cv2.LINE_AA)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="3-opencv鼠标控制"><a href="#3-opencv鼠标控制" class="headerlink" title="3.opencv鼠标控制"></a>3.opencv鼠标控制</h3><h4 id="3-1事件"><a href="#3-1事件" class="headerlink" title="3.1事件"></a>3.1事件</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">event：</span><br><span class="line">EVENT_LBUTTONDBLCLK = <span class="number">7</span>         左键双击</span><br><span class="line">EVENT_LBUTTONDOWN = <span class="number">1</span>           左键点击</span><br><span class="line">EVENT_LBUTTONUP = <span class="number">4</span>             左键释放</span><br><span class="line">EVENT_MBUTTONDBLCLK = <span class="number">9</span>         中间释放</span><br><span class="line">EVENT_MBUTTONDOWN = <span class="number">3</span>           中间点击</span><br><span class="line">EVENT_MBUTTONUP = <span class="number">6</span>             中间释放</span><br><span class="line">EVENT_MOUSEHWHEEL = <span class="number">11</span>          滚轮事件</span><br><span class="line">EVENT_MOUSEMOVE = <span class="number">0</span>             滑动</span><br><span class="line">EVENT_MOUSEWHEEL = <span class="number">10</span>           滚轮事件</span><br><span class="line">EVENT_RBUTTONDBLCLK = <span class="number">8</span>         右键双击</span><br><span class="line">EVENT_RBUTTONDOWN = <span class="number">2</span>           右键点击</span><br><span class="line">EVENT_RBUTTONUP = <span class="number">5</span>             右键释放</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">flags:</span><br><span class="line">EVENT_FLAG_ALTKEY = <span class="number">32</span>          按Alt不放事件</span><br><span class="line">EVENT_FLAG_CTRLKEY = <span class="number">8</span>          按Ctrl不放事件</span><br><span class="line">EVENT_FLAG_LBUTTON = <span class="number">1</span>          左键拖拽</span><br><span class="line">EVENT_FLAG_MBUTTON = <span class="number">4</span>          中键拖拽</span><br><span class="line">EVENT_FLAG_RBUTTON = <span class="number">2</span>          右键拖拽</span><br><span class="line">EVENT_FLAG_SHIFTKEY = <span class="number">16</span>        按Shift不放事件</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="3-2样例"><a href="#3-2样例" class="headerlink" title="3.2样例"></a>3.2样例</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw_rectangle</span><span class="params">(event,x,y,flags,param)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> ix, iy</span><br><span class="line">    <span class="keyword">if</span> event==cv2.EVENT_LBUTTONDOWN:</span><br><span class="line">        ix, iy = x, y</span><br><span class="line">        print(<span class="string">"point1:="</span>, x, y)</span><br><span class="line">    <span class="keyword">elif</span> event==cv2.EVENT_LBUTTONUP:</span><br><span class="line">        print(<span class="string">"point2:="</span>, x, y)</span><br><span class="line">        print(<span class="string">"width="</span>,x-ix)</span><br><span class="line">        print(<span class="string">"height="</span>, y - iy)</span><br><span class="line">        cv2.rectangle(img, (ix, iy), (x, y), (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">"max.png"</span>)  <span class="comment">#加载图片</span></span><br><span class="line">cv2.namedWindow(<span class="string">'image'</span>)</span><br><span class="line">cv2.setMouseCallback(<span class="string">'image'</span>, draw_rectangle)</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    cv2.imshow(<span class="string">'image'</span>, img)</span><br><span class="line">    <span class="keyword">if</span> cv2.waitKey(<span class="number">20</span>) &amp; <span class="number">0xFF</span> == <span class="number">27</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
     </div>
 
     
@@ -315,11 +338,27 @@
 
       <footer class="post-footer">
           
+          <hr/>
+           
+            <div class="post-recommend"><h5 class="post-recommend-title">相关推荐:</h5></div>
+            <ul class="popular-posts">
+            
+              
+                
+                   <li><a href=/2020/02/28/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%E4%B9%8B%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C2/>opencv学习笔记1之基础操作(像素操作)</li>
+                
+              
+                
+              
+            
+            </ul>
+          
           <div class="post-tags">
               <a href="/tags/opencv/" rel="tag"><i class="fa fa-tag"></i> opencv</a>
           </div>
 
         
+
 
 
         
@@ -408,7 +447,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -421,7 +460,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -466,28 +505,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">32k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
 </div>
 
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
 
         
@@ -619,6 +644,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 

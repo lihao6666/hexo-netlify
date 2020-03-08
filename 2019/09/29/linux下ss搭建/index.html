@@ -56,9 +56,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/0*VK1s3NgNSJKpbvUD.jpg">
 <meta property="article:published_time" content="2019-09-29T09:41:38.000Z">
-<meta property="article:modified_time" content="2019-11-27T14:49:04.000Z">
+<meta property="article:modified_time" content="2020-03-08T15:38:51.936Z">
 <meta property="article:author" content="李浩">
-<meta property="article:tag" content="linux-ss">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1600/0*VK1s3NgNSJKpbvUD.jpg">
 
@@ -153,14 +153,19 @@
 
 
       
-        <li class="menu-item menu-item-光影">
+        <li class="menu-item menu-item-photos">
 
     <a href="/photos" rel="section"><i class="fa fa-fw fa-camera-retro"></i>光影</a>
 
   </li>
+        <li class="menu-item menu-item-daily">
+
+    <a href="/daily" rel="section"><i class="fa fa-fw fa-bookmark"></i>日志</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">19</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -170,7 +175,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">48</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">49</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -256,7 +261,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
+                <time title="修改时间：2020-03-08 23:38:51" itemprop="dateModified" datetime="2020-03-08T23:38:51+08:00">2020-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -312,21 +317,39 @@
 2. sudo apt-get install shadowsocks//安装ss
 </code></pre><h3 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2. 修改配置文件"></a>2. 修改配置文件</h3><pre><code>1. 在/etc/下创建文件ss.json (名字随意路径也可以自己选择）
 2. 编辑配置文件sudo vim /etc/ss.json
-</code></pre><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"server"</span>:<span class="string">"my_server_ip"</span>,<span class="comment">//代理ip</span></span><br><span class="line">	<span class="attr">"server_port"</span>:my_port,<span class="comment">//代理端口</span></span><br><span class="line">	<span class="attr">"password"</span>:<span class="string">"passwd"</span>,<span class="comment">//密码</span></span><br><span class="line">	<span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span><span class="comment">//没有逗号</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">	<span class="attr">"server"</span>:<span class="string">"my_server_ip"</span>,<span class="comment">//代理ip</span></span><br><span class="line">	<span class="attr">"server_port"</span>:my_port,<span class="comment">//代理端口</span></span><br><span class="line">	<span class="attr">"password"</span>:<span class="string">"passwd"</span>,<span class="comment">//密码</span></span><br><span class="line">	<span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span><span class="comment">//没有逗号</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <pre><code>3. 打开终端输入sslocal -c /etc/ss.json（如果不报错打开google测试即可）
-</code></pre><h3 id="3-可能出现问题"><a href="#3-可能出现问题" class="headerlink" title="3. 可能出现问题"></a>3. 可能出现问题</h3><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">运行sslocal 报错</span><br><span class="line"><span class="symbol">AttributeError:</span> /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">x86_64</span>-<span class="title">Linux</span>-<span class="title">gnu</span>/<span class="title">libcrypto</span>.<span class="title">so</span>.1.1: <span class="title">undefined</span> <span class="title">symbol</span>: <span class="title">EVP_CIPHER_CTX_cleanuphttp</span>://<span class="title">www</span>.<span class="title">cnblogs</span>.<span class="title">com</span>/<span class="title">lzhd24</span>/<span class="title">p</span>/6686803.<span class="title">html</span></span></span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="3-可能出现问题"><a href="#3-可能出现问题" class="headerlink" title="3. 可能出现问题"></a>3. 可能出现问题</h3><figure class="highlight crystal"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">运行sslocal 报错</span><br><span class="line"><span class="symbol">AttributeError:</span> /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">x86_64</span>-<span class="title">Linux</span>-<span class="title">gnu</span>/<span class="title">libcrypto</span>.<span class="title">so</span>.1.1: <span class="title">undefined</span> <span class="title">symbol</span>: <span class="title">EVP_CIPHER_CTX_cleanuphttp</span>://<span class="title">www</span>.<span class="title">cnblogs</span>.<span class="title">com</span>/<span class="title">lzhd24</span>/<span class="title">p</span>/6686803.<span class="title">html</span></span></span><br></pre></td></tr></tbody></table></figure>
 <pre><code>1. 用vi打开文件：vi /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
 2. 将第52行libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,) 改为libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
 3. 再次搜索cleanup（全文件共2处，此处位于111行），将libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx) 改为libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
 4.保存退出继续运行sslocal -c 命令
 </code></pre><h3 id="4-设置开机启动项"><a href="#4-设置开机启动项" class="headerlink" title="4.设置开机启动项"></a>4.设置开机启动项</h3><pre><code>系统有开机启动项设置，这里可以在开机启动项里设置加入启动命令即可（这里rc.local)出现问题，在新版本ubuntu中不执行
 </code></pre><h3 id="5-设置终端运行（前面设置的ss不是全局代理，终端无法ping-谷歌）"><a href="#5-设置终端运行（前面设置的ss不是全局代理，终端无法ping-谷歌）" class="headerlink" title="5.设置终端运行（前面设置的ss不是全局代理，终端无法ping 谷歌）"></a>5.设置终端运行（前面设置的ss不是全局代理，终端无法ping 谷歌）</h3><h4 id="1-安装polipo（支持socks6）"><a href="#1-安装polipo（支持socks6）" class="headerlink" title="(1)安装polipo（支持socks6）"></a>(1)安装polipo（支持socks6）</h4><pre><code>sudo apt install polipo
-</code></pre><h4 id="2-编辑配置文件，保存到-etc-polipo-config"><a href="#2-编辑配置文件，保存到-etc-polipo-config" class="headerlink" title="(2) 编辑配置文件，保存到/etc/polipo/config"></a>(2) 编辑配置文件，保存到/etc/polipo/config</h4><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This file only needs to list configuration variables that deviate</span></span><br><span class="line"><span class="comment"># from the default values.  See /usr/share/doc/polipo/examples/config.sample</span></span><br><span class="line"><span class="comment"># and "polipo -v" for variables you can tweak and further information.</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">logSyslog</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">logFile</span> = /var/log/polipo/polipo.log</span><br><span class="line"> </span><br><span class="line"><span class="attr">proxyAddress</span> = <span class="string">"0.0.0.0"</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">socksParentProxy</span> = <span class="string">"127.0.0.1:1080"</span></span><br><span class="line"><span class="attr">socksProxyType</span> = socks5</span><br><span class="line"> </span><br><span class="line"><span class="attr">chunkHighMark</span> = <span class="number">50331648</span></span><br><span class="line"><span class="attr">objectHighMark</span> = <span class="number">16384</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">serverMaxSlots</span> = <span class="number">64</span></span><br><span class="line"><span class="attr">serverSlots</span> = <span class="number">16</span></span><br><span class="line"><span class="attr">serverSlots1</span> = <span class="number">32</span></span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="2-编辑配置文件，保存到-etc-polipo-config"><a href="#2-编辑配置文件，保存到-etc-polipo-config" class="headerlink" title="(2) 编辑配置文件，保存到/etc/polipo/config"></a>(2) 编辑配置文件，保存到/etc/polipo/config</h4><figure class="highlight ini"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This file only needs to list configuration variables that deviate</span></span><br><span class="line"><span class="comment"># from the default values.  See /usr/share/doc/polipo/examples/config.sample</span></span><br><span class="line"><span class="comment"># and "polipo -v" for variables you can tweak and further information.</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">logSyslog</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">logFile</span> = /var/log/polipo/polipo.log</span><br><span class="line"> </span><br><span class="line"><span class="attr">proxyAddress</span> = <span class="string">"0.0.0.0"</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">socksParentProxy</span> = <span class="string">"127.0.0.1:1080"</span></span><br><span class="line"><span class="attr">socksProxyType</span> = socks5</span><br><span class="line"> </span><br><span class="line"><span class="attr">chunkHighMark</span> = <span class="number">50331648</span></span><br><span class="line"><span class="attr">objectHighMark</span> = <span class="number">16384</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">serverMaxSlots</span> = <span class="number">64</span></span><br><span class="line"><span class="attr">serverSlots</span> = <span class="number">16</span></span><br><span class="line"><span class="attr">serverSlots1</span> = <span class="number">32</span></span><br></pre></td></tr></tbody></table></figure>
 <h4 id="3-重启polipo"><a href="#3-重启polipo" class="headerlink" title="(3)重启polipo"></a>(3)重启polipo</h4><pre><code>sudo service polipo restart
 curl google.com（看看是否有用）
-</code></pre><h4 id="4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）"><a href="#4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）" class="headerlink" title="(4)添加环境变量，要不然只能这一个终端可以使用（vim ～/.bashrc)(添加后source /etc/profile 让环境变量立即生效）"></a>(4)添加环境变量，要不然只能这一个终端可以使用（vim ～/.bashrc)(添加后source /etc/profile 让环境变量立即生效）</h4><pre><code>export http_proxy=&quot;http://127.0.0.1:8123&quot;
-export https_proxy=&quot;https://127.0.0.1:8123&quot;
-</code></pre>
+</code></pre><h4 id="4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）"><a href="#4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）" class="headerlink" title="(4)添加环境变量，要不然只能这一个终端可以使用（vim ～/.bashrc)(添加后source /etc/profile 让环境变量立即生效）"></a>(4)添加环境变量，要不然只能这一个终端可以使用（vim ～/.bashrc)(添加后source /etc/profile 让环境变量立即生效）</h4><pre><code>export http_proxy="http://127.0.0.1:8123"
+export https_proxy="https://127.0.0.1:8123"
+</code></pre><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
     </div>
 
     
@@ -335,11 +358,31 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
 
       <footer class="post-footer">
           
+          <hr/>
+           
+            <div class="post-recommend"><h5 class="post-recommend-title">相关推荐:</h5></div>
+            <ul class="popular-posts">
+            
+              
+                
+              
+                
+                   <li><a href=/2019/09/29/linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/>linux双系统安装</li>
+                
+              
+                
+                   <li><a href=/2019/09/28/jupyter-notebook-%E6%90%AD%E5%BB%BA%E7%A7%BB%E5%8A%A8%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C/>jupyter notebook 搭建移动代码运行</li>
+                
+              
+            
+            </ul>
+          
           <div class="post-tags">
-              <a href="/tags/linux-ss/" rel="tag"><i class="fa fa-tag"></i> linux-ss</a>
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
           </div>
 
         
+
 
 
         
@@ -428,7 +471,7 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -441,7 +484,7 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -486,28 +529,14 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">32k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
 </div>
 
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
 
         
@@ -639,6 +668,15 @@ export https_proxy=&quot;https://127.0.0.1:8123&quot;
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 

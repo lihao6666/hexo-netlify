@@ -153,14 +153,19 @@
 
 
       
-        <li class="menu-item menu-item-光影">
+        <li class="menu-item menu-item-photos">
 
     <a href="/photos" rel="section"><i class="fa fa-fw fa-camera-retro"></i>光影</a>
 
   </li>
+        <li class="menu-item menu-item-daily">
+
+    <a href="/daily" rel="section"><i class="fa fa-fw fa-bookmark"></i>日志</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">19</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -170,7 +175,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">48</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">49</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -308,7 +313,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/IMG_0015.JPG" width=500 height=350></p>
+        <p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/IMG_0015.JPG" width="500" height="350"></p>
 <div class="note success">
             <ul><li>我也能说你们那样的话；你们若处在我的境遇，我也会联络言语攻击你们，又能向你们摇头。但我必用口坚固你们，用嘴消解你们的忧愁。<pre><code>                              (约伯记 16:4-5 和合本)</code></pre></li></ul>
           </div>
@@ -316,7 +321,25 @@
 <p>接着上次的分享，这次是约伯和来看望他的朋友<code>以利法</code>的对话，从以利法的回复中可以看出，对于上一章约伯的回复，他认为这是对神的悖逆，而不只是言语上的抗拒，我自己读的时候也是很迷惑，感觉就是<code>以利法</code>就站在神的角度去考虑问题，就像<code>人是什么，竟算为洁净呢？妇人所生的是什么，竟算为义呢？(约伯记 15:14 和合本)</code>，这里我也无法反驳他的说法，但是在接下的一章约伯的回答里可以看到，就像上分享的经文一样，我们很多时候考虑问题是不是都是这样，总是站在自己理解的角度，或则随着大流就用附和的言语去攻击别人呢。</p>
 <p>从约伯的回答中，有时候真的可以反映大多数人处于那种境地的想法，当自己脆弱无助的时候更需要的可以坚固自己信心的鼓励，而不是一味的责怪嘲笑….</p>
 <p>吐槽：这几天读约伯记真的感觉在两种境地中徘徊的感觉，总感觉飘忽不定的方向，不看注释真的难以理解啊。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
     </div>
 
     
@@ -325,11 +348,33 @@
 
       <footer class="post-footer">
           
+          <hr/>
+           
+            <div class="post-recommend"><h5 class="post-recommend-title">相关推荐:</h5></div>
+            <ul class="popular-posts">
+            
+              
+                
+                   <li><a href=/2020/03/08/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB14/>读经分享14</li>
+                
+              
+                
+                   <li><a href=/2020/03/02/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB13/>读经分享13</li>
+                
+              
+                
+                   <li><a href=/2020/02/28/%E8%8D%92%E6%BC%A0%E7%94%98%E6%B3%89/%E8%AF%BB%E7%BB%8F%E5%88%86%E4%BA%AB12/>读经分享12</li>
+                
+              
+            
+            </ul>
+          
           <div class="post-tags">
               <a href="/tags/%E5%88%86%E4%BA%AB/" rel="tag"><i class="fa fa-tag"></i> 分享</a>
           </div>
 
         
+
 
 
         
@@ -418,7 +463,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -431,7 +476,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -476,28 +521,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">32k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
 </div>
 
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
 
         
@@ -629,6 +660,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 

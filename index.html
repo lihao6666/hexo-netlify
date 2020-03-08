@@ -2,7 +2,6 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="baidu-site-verification" content="1tGS0PolRm" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
@@ -150,14 +149,19 @@
 
 
       
-        <li class="menu-item menu-item-光影">
+        <li class="menu-item menu-item-photos">
 
     <a href="/photos" rel="section"><i class="fa fa-fw fa-camera-retro"></i>光影</a>
 
   </li>
+        <li class="menu-item menu-item-daily">
+
+    <a href="/daily" rel="section"><i class="fa fa-fw fa-bookmark"></i>日志</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">19</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -167,7 +171,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">48</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">49</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -398,7 +402,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-01 10:16:58" itemprop="dateModified" datetime="2020-03-01T10:16:58+08:00">2020-03-01</time>
+                <time title="修改时间：2020-03-06 12:40:52" itemprop="dateModified" datetime="2020-03-06T12:40:52+08:00">2020-03-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -444,13 +448,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200203215950.png" alt="三毛"><br><div class="note success">
-            <p>一个人至少拥有一个梦想，有一个理由去坚强。心若没有栖息的地方，到哪里都是在流浪。<br>                                                    <p align="right"> — 三毛</p>
-          </div></p>
+          <p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200203215950.png" alt="三毛"><br></p><div class="note success">
+            <p>一个人至少拥有一个梦想，有一个理由去坚强。心若没有栖息的地方，到哪里都是在流浪。<br>                                                    </p><p align="right"> — 三毛</p>
+          </div><p></p>
 <h2 id="一、文章编写优化"><a href="#一、文章编写优化" class="headerlink" title="一、文章编写优化"></a>一、文章编写优化</h2><hr>
 <h3 id="1、题头图片"><a href="#1、题头图片" class="headerlink" title="1、题头图片"></a>1、题头图片</h3><ul>
 <li>基础方法(无法定义大小)<br><code>![备注](url)</code></li>
-<li>修改图片方法<br><code>&lt;img src=&quot;&quot; width=800 height=800 aligin=right &gt;</code>
+<li>修改图片方法<br><code>&lt;img src="" width=800 height=800 aligin=right &gt;</code></li></ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/02/03/Hexo-next-%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/#more" rel="contents">
@@ -513,7 +517,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-27 21:23:08" itemprop="dateModified" datetime="2020-02-27T21:23:08+08:00">2020-02-27</time>
+                <time title="修改时间：2020-03-06 14:11:21" itemprop="dateModified" datetime="2020-03-06T14:11:21+08:00">2020-03-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -559,7 +563,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/EE897BD9-D085-4D81-A4D5-703E7F91E34F_1_105_c.jpeg" width=350 height=600></p>
+          <p><img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/EE897BD9-D085-4D81-A4D5-703E7F91E34F_1_105_c.jpeg" width="350" height="600"></p>
 <div class="note success">
             <p>惟有忍耐到底的，必然得救。<br>                    (马太福音 24:13 和合本)</p>
           </div>
@@ -872,7 +876,25 @@
 <div class="note ">
             <p><a href="https://blog.csdn.net/weixin_40647819/article/details/90231477" target="_blank" rel="noopener">参考文章</a></p>
           </div>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -959,7 +981,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -972,7 +994,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1017,28 +1039,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">32k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
 </div>
 
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
 
         
@@ -1170,6 +1178,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 

@@ -149,14 +149,19 @@
 
 
       
-        <li class="menu-item menu-item-光影">
+        <li class="menu-item menu-item-photos">
 
     <a href="/photos" rel="section"><i class="fa fa-fw fa-camera-retro"></i>光影</a>
 
   </li>
+        <li class="menu-item menu-item-daily">
+
+    <a href="/daily" rel="section"><i class="fa fa-fw fa-bookmark"></i>日志</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">19</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -166,7 +171,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">48</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">49</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -221,6 +226,145 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="李浩">
+      <meta itemprop="description" content="分享信仰、爱好、Python等个人学习记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="三毛的小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">linux下ss搭建</a>
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-29 17:41:38" itemprop="dateCreated datePublished" datetime="2019-09-29T17:41:38+08:00">2019-09-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-08 23:38:51" itemprop="dateModified" datetime="2020-03-08T23:38:51+08:00">2020-03-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/" class="post-meta-item leancloud_visitors" data-flag-title="linux下ss搭建" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/29/linux%E4%B8%8Bss%E6%90%AD%E5%BB%BA/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Linux-Mint配置2（ss科学上网）"><a href="#Linux-Mint配置2（ss科学上网）" class="headerlink" title="Linux Mint配置2（ss科学上网）"></a>Linux Mint配置2（ss科学上网）</h1><h2 id="一-服务器的搭建（VPS）"><a href="#一-服务器的搭建（VPS）" class="headerlink" title="一 . 服务器的搭建（VPS）"></a>一 . 服务器的搭建（VPS）</h2><h3 id="1-在合适的VPS网站上购买VPS（vultr推荐），记住ip，password"><a href="#1-在合适的VPS网站上购买VPS（vultr推荐），记住ip，password" class="headerlink" title="1. 在合适的VPS网站上购买VPS（vultr推荐），记住ip，password"></a>1. 在合适的VPS网站上购买VPS（vultr推荐），记住ip，password</h3><h3 id="2-进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）"><a href="#2-进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）" class="headerlink" title="2. 进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）"></a>2. 进入服务器的控制面板（这里也建议通过ssh，因为浏览器进入控制面板的终端很low，曾经被虐的很惨）</h3><pre><code>  命令格式：ssh root@ip（这里第一次登陆时可能会让你输入用户名和密码，需要你输入你买VPS注册得账号密码）
+</code></pre><p><img src="https://cdn-images-1.medium.com/max/1600/0*VK1s3NgNSJKpbvUD.jpg" alt="ssh"></p>
+<h3 id="3-输入密码一路回车到出现root-···即可"><a href="#3-输入密码一路回车到出现root-···即可" class="headerlink" title="3. 输入密码一路回车到出现root@···即可"></a>3. 输入密码一路回车到出现root@···即可</h3><h3 id="4-部署服务器端（这里有代码）"><a href="#4-部署服务器端（这里有代码）" class="headerlink" title="4. 部署服务器端（这里有代码）"></a>4. 部署服务器端（这里有代码）</h3><pre><code>1. wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
+2. chmod +x shadowsocks.sh
+3. ./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log
+4.  剩下自己按照提示输入就行，结束后回到桌面会发现这个文件
+</code></pre><h2 id="二-Linux安装ss并配置开机启动"><a href="#二-Linux安装ss并配置开机启动" class="headerlink" title="二. Linux安装ss并配置开机启动"></a>二. Linux安装ss并配置开机启动</h2><h3 id="1-下载ss"><a href="#1-下载ss" class="headerlink" title="1. 下载ss"></a>1. 下载ss</h3><pre><code>1. sudo apt-get install python-pip //安装pip
+2. sudo apt-get install shadowsocks//安装ss
+</code></pre><h3 id="2-修改配置文件"><a href="#2-修改配置文件" class="headerlink" title="2. 修改配置文件"></a>2. 修改配置文件</h3><pre><code>1. 在/etc/下创建文件ss.json (名字随意路径也可以自己选择）
+2. 编辑配置文件sudo vim /etc/ss.json
+</code></pre><figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">	<span class="attr">"server"</span>:<span class="string">"my_server_ip"</span>,<span class="comment">//代理ip</span></span><br><span class="line">	<span class="attr">"server_port"</span>:my_port,<span class="comment">//代理端口</span></span><br><span class="line">	<span class="attr">"password"</span>:<span class="string">"passwd"</span>,<span class="comment">//密码</span></span><br><span class="line">	<span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span><span class="comment">//没有逗号</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre><code>3. 打开终端输入sslocal -c /etc/ss.json（如果不报错打开google测试即可）
+</code></pre><h3 id="3-可能出现问题"><a href="#3-可能出现问题" class="headerlink" title="3. 可能出现问题"></a>3. 可能出现问题</h3><figure class="highlight crystal"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">运行sslocal 报错</span><br><span class="line"><span class="symbol">AttributeError:</span> /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">x86_64</span>-<span class="title">Linux</span>-<span class="title">gnu</span>/<span class="title">libcrypto</span>.<span class="title">so</span>.1.1: <span class="title">undefined</span> <span class="title">symbol</span>: <span class="title">EVP_CIPHER_CTX_cleanuphttp</span>://<span class="title">www</span>.<span class="title">cnblogs</span>.<span class="title">com</span>/<span class="title">lzhd24</span>/<span class="title">p</span>/6686803.<span class="title">html</span></span></span><br></pre></td></tr></tbody></table></figure>
+<pre><code>1. 用vi打开文件：vi /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
+2. 将第52行libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,) 改为libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
+3. 再次搜索cleanup（全文件共2处，此处位于111行），将libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx) 改为libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
+4.保存退出继续运行sslocal -c 命令
+</code></pre><h3 id="4-设置开机启动项"><a href="#4-设置开机启动项" class="headerlink" title="4.设置开机启动项"></a>4.设置开机启动项</h3><pre><code>系统有开机启动项设置，这里可以在开机启动项里设置加入启动命令即可（这里rc.local)出现问题，在新版本ubuntu中不执行
+</code></pre><h3 id="5-设置终端运行（前面设置的ss不是全局代理，终端无法ping-谷歌）"><a href="#5-设置终端运行（前面设置的ss不是全局代理，终端无法ping-谷歌）" class="headerlink" title="5.设置终端运行（前面设置的ss不是全局代理，终端无法ping 谷歌）"></a>5.设置终端运行（前面设置的ss不是全局代理，终端无法ping 谷歌）</h3><h4 id="1-安装polipo（支持socks6）"><a href="#1-安装polipo（支持socks6）" class="headerlink" title="(1)安装polipo（支持socks6）"></a>(1)安装polipo（支持socks6）</h4><pre><code>sudo apt install polipo
+</code></pre><h4 id="2-编辑配置文件，保存到-etc-polipo-config"><a href="#2-编辑配置文件，保存到-etc-polipo-config" class="headerlink" title="(2) 编辑配置文件，保存到/etc/polipo/config"></a>(2) 编辑配置文件，保存到/etc/polipo/config</h4><figure class="highlight ini"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This file only needs to list configuration variables that deviate</span></span><br><span class="line"><span class="comment"># from the default values.  See /usr/share/doc/polipo/examples/config.sample</span></span><br><span class="line"><span class="comment"># and "polipo -v" for variables you can tweak and further information.</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">logSyslog</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">logFile</span> = /var/log/polipo/polipo.log</span><br><span class="line"> </span><br><span class="line"><span class="attr">proxyAddress</span> = <span class="string">"0.0.0.0"</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">socksParentProxy</span> = <span class="string">"127.0.0.1:1080"</span></span><br><span class="line"><span class="attr">socksProxyType</span> = socks5</span><br><span class="line"> </span><br><span class="line"><span class="attr">chunkHighMark</span> = <span class="number">50331648</span></span><br><span class="line"><span class="attr">objectHighMark</span> = <span class="number">16384</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">serverMaxSlots</span> = <span class="number">64</span></span><br><span class="line"><span class="attr">serverSlots</span> = <span class="number">16</span></span><br><span class="line"><span class="attr">serverSlots1</span> = <span class="number">32</span></span><br></pre></td></tr></tbody></table></figure>
+<h4 id="3-重启polipo"><a href="#3-重启polipo" class="headerlink" title="(3)重启polipo"></a>(3)重启polipo</h4><pre><code>sudo service polipo restart
+curl google.com（看看是否有用）
+</code></pre><h4 id="4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）"><a href="#4-添加环境变量，要不然只能这一个终端可以使用（vim-～-bashrc-添加后source-etc-profile-让环境变量立即生效）" class="headerlink" title="(4)添加环境变量，要不然只能这一个终端可以使用（vim ～/.bashrc)(添加后source /etc/profile 让环境变量立即生效）"></a>(4)添加环境变量，要不然只能这一个终端可以使用（vim ～/.bashrc)(添加后source /etc/profile 让环境变量立即生效）</h4><pre><code>export http_proxy="http://127.0.0.1:8123"
+export https_proxy="https://127.0.0.1:8123"
+</code></pre><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://lihao6666.cn/2019/09/29/linux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -253,7 +397,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-27 22:49:04" itemprop="dateModified" datetime="2019-11-27T22:49:04+08:00">2019-11-27</time>
+                <time title="修改时间：2020-03-08 23:38:45" itemprop="dateModified" datetime="2020-03-08T23:38:45+08:00">2020-03-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -314,7 +458,25 @@
 </code></pre><h2 id="4-修改GRUB"><a href="#4-修改GRUB" class="headerlink" title="4. 修改GRUB"></a>4. 修改GRUB</h2><pre><code>1. sudo vi /etc/default/grub
 2. 在quiet splash后面加入nouveau.modeset=0，保存
 3. sudo update-grub
-</code></pre>
+</code></pre><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -417,8 +579,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">回归了宁静寂静忧愁无尽，</span><br><span class="line">我在想你在想他在想什么。</span><br><span class="line">那种快乐和幸福只是一刻，</span><br><span class="line">走出人群彷徨惆怅留我一个。</span><br><span class="line"></span><br><span class="line">当初的祈祷是献给谁为祭？</span><br><span class="line">当初举手是在谁面前的誓言？</span><br><span class="line">当初的眼泪是音乐的渲染嘛？</span><br><span class="line">当初的宣告为了别人眼光嘛？</span><br><span class="line"></span><br><span class="line">感恩是因为生活富足嘛？</span><br><span class="line">没有了一切热情还会在吗？</span><br><span class="line">困窘逆境还会倾诉嘛？</span><br><span class="line">走出人群还能有信心嘛？</span><br><span class="line"></span><br><span class="line">多么想回到你面前，</span><br><span class="line">脱开难断的锁链，</span><br><span class="line">那些我知道不知道的事，</span><br><span class="line">放心交在你手间。</span><br><span class="line"></span><br><span class="line">万物借你话而创造，</span><br><span class="line">我可以再一次微笑，</span><br><span class="line">靠着你所出的每句话，</span><br><span class="line">我可以回到你面前。</span><br></pre></td></tr></table></figure>
-
+          <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">回归了宁静寂静忧愁无尽，</span><br><span class="line">我在想你在想他在想什么。</span><br><span class="line">那种快乐和幸福只是一刻，</span><br><span class="line">走出人群彷徨惆怅留我一个。</span><br><span class="line"></span><br><span class="line">当初的祈祷是献给谁为祭？</span><br><span class="line">当初举手是在谁面前的誓言？</span><br><span class="line">当初的眼泪是音乐的渲染嘛？</span><br><span class="line">当初的宣告为了别人眼光嘛？</span><br><span class="line"></span><br><span class="line">感恩是因为生活富足嘛？</span><br><span class="line">没有了一切热情还会在吗？</span><br><span class="line">困窘逆境还会倾诉嘛？</span><br><span class="line">走出人群还能有信心嘛？</span><br><span class="line"></span><br><span class="line">多么想回到你面前，</span><br><span class="line">脱开难断的锁链，</span><br><span class="line">那些我知道不知道的事，</span><br><span class="line">放心交在你手间。</span><br><span class="line"></span><br><span class="line">万物借你话而创造，</span><br><span class="line">我可以再一次微笑，</span><br><span class="line">靠着你所出的每句话，</span><br><span class="line">我可以回到你面前。</span><br></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -516,14 +696,32 @@
 
       
           <h1 id="服务器搭建jupyter-notebook"><a href="#服务器搭建jupyter-notebook" class="headerlink" title="服务器搭建jupyter notebook"></a>服务器搭建jupyter notebook</h1><hr>
-<h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#先购买一个虚拟服务器、如腾讯的校园服务器</span></span><br><span class="line">pip3 install jupyter</span><br></pre></td></tr></table></figure>
-<h2 id="二、生成访问密码"><a href="#二、生成访问密码" class="headerlink" title="二、生成访问密码"></a>二、生成访问密码</h2><p>1.进入服务器python3<br>2.输入<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from notebook<span class="selector-class">.auth</span> import passwd</span><br><span class="line"><span class="function"><span class="title">passswd</span><span class="params">()</span></span></span><br><span class="line">#输入密码，重复，复制生成的密文</span><br></pre></td></tr></table></figure></p>
-<h2 id="三、修改配置文件"><a href="#三、修改配置文件" class="headerlink" title="三、修改配置文件"></a>三、修改配置文件</h2><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#生成配置文件</span><br><span class="line">jupyter notebook --<span class="keyword">generate</span>-<span class="keyword">config</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改配置文件</span></span><br><span class="line"><span class="comment"># 找到下面几项将前面的#去除，并进行相应的修改</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定ip访问，允许任意ip访问</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">'*'</span></span><br><span class="line"><span class="comment"># 不打开浏览器</span></span><br><span class="line">c.NotebookApp.open_browser = <span class="literal">False</span></span><br><span class="line"><span class="comment"># 用于访问的端口，设定一个不用的端口即可，这里设置为7000</span></span><br><span class="line">c.NotebookApp.port = <span class="number">7000</span></span><br><span class="line"><span class="comment"># 设置登录密码， 将刚刚复制的内容替换此处的xxx</span></span><br><span class="line">c.NotebookApp.password = <span class="string">u'xxx'</span></span><br><span class="line"><span class="comment"># 保存退出即可</span></span><br></pre></td></tr></table></figure>
-<h2 id="四、运行jupyter-notebook"><a href="#四、运行jupyter-notebook" class="headerlink" title="四、运行jupyter notebook"></a>四、运行jupyter notebook</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#可以使用screen运行和ctrl + a + d快捷键</span></span><br><span class="line">jupyter notebook <span class="comment">--allow-root</span></span><br></pre></td></tr></table></figure>
+<h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#先购买一个虚拟服务器、如腾讯的校园服务器</span></span><br><span class="line">pip3 install jupyter</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="二、生成访问密码"><a href="#二、生成访问密码" class="headerlink" title="二、生成访问密码"></a>二、生成访问密码</h2><p>1.进入服务器python3<br>2.输入<br></p><figure class="highlight stylus"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from notebook<span class="selector-class">.auth</span> import passwd</span><br><span class="line"><span class="function"><span class="title">passswd</span><span class="params">()</span></span></span><br><span class="line">#输入密码，重复，复制生成的密文</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="三、修改配置文件"><a href="#三、修改配置文件" class="headerlink" title="三、修改配置文件"></a>三、修改配置文件</h2><figure class="highlight verilog"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#生成配置文件</span><br><span class="line">jupyter notebook --<span class="keyword">generate</span>-<span class="keyword">config</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改配置文件</span></span><br><span class="line"><span class="comment"># 找到下面几项将前面的#去除，并进行相应的修改</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定ip访问，允许任意ip访问</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">'*'</span></span><br><span class="line"><span class="comment"># 不打开浏览器</span></span><br><span class="line">c.NotebookApp.open_browser = <span class="literal">False</span></span><br><span class="line"><span class="comment"># 用于访问的端口，设定一个不用的端口即可，这里设置为7000</span></span><br><span class="line">c.NotebookApp.port = <span class="number">7000</span></span><br><span class="line"><span class="comment"># 设置登录密码， 将刚刚复制的内容替换此处的xxx</span></span><br><span class="line">c.NotebookApp.password = <span class="string">u'xxx'</span></span><br><span class="line"><span class="comment"># 保存退出即可</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="四、运行jupyter-notebook"><a href="#四、运行jupyter-notebook" class="headerlink" title="四、运行jupyter notebook"></a>四、运行jupyter notebook</h2><figure class="highlight applescript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#可以使用screen运行和ctrl + a + d快捷键</span></span><br><span class="line">jupyter notebook <span class="comment">--allow-root</span></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="五、浏览器登录"><a href="#五、浏览器登录" class="headerlink" title="五、浏览器登录"></a>五、浏览器登录</h2><p>进入浏览器输入服务器ip+端口号即可</p>
-<h2 id="六、ipad使用技巧"><a href="#六、ipad使用技巧" class="headerlink" title="六、ipad使用技巧"></a>六、ipad使用技巧</h2><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">因为<span class="keyword">jupyter支持远程访问、我们完全可以通过ipad </span>网址加端口号访问，ipad也可以通过termius远程控制应用开启关闭，具体参考上一节</span><br></pre></td></tr></table></figure>
-<h2 id="七、可能遇到的问题"><a href="#七、可能遇到的问题" class="headerlink" title="七、可能遇到的问题"></a>七、可能遇到的问题</h2><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">有些服务器没有安装<span class="keyword">python</span>或者pip，百度安装</span><br><span class="line"></span><br><span class="line">pip更新</span><br></pre></td></tr></table></figure>
+<h2 id="六、ipad使用技巧"><a href="#六、ipad使用技巧" class="headerlink" title="六、ipad使用技巧"></a>六、ipad使用技巧</h2><figure class="highlight mipsasm"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">因为<span class="keyword">jupyter支持远程访问、我们完全可以通过ipad </span>网址加端口号访问，ipad也可以通过termius远程控制应用开启关闭，具体参考上一节</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="七、可能遇到的问题"><a href="#七、可能遇到的问题" class="headerlink" title="七、可能遇到的问题"></a>七、可能遇到的问题</h2><figure class="highlight mel"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">有些服务器没有安装<span class="keyword">python</span>或者pip，百度安装</span><br><span class="line"></span><br><span class="line">pip更新</span><br></pre></td></tr></tbody></table></figure><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -610,7 +808,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -623,7 +821,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -668,28 +866,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">32k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
 </div>
 
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
 
         
@@ -821,6 +1005,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 

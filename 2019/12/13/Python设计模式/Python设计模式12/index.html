@@ -151,14 +151,19 @@
 
 
       
-        <li class="menu-item menu-item-光影">
+        <li class="menu-item menu-item-photos">
 
     <a href="/photos" rel="section"><i class="fa fa-fw fa-camera-retro"></i>光影</a>
 
   </li>
+        <li class="menu-item menu-item-daily">
+
+    <a href="/daily" rel="section"><i class="fa fa-fw fa-bookmark"></i>日志</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">19</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -168,7 +173,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">48</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">49</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -305,8 +310,26 @@
 <p>因此策略模式可以定义为：　定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法可以独立于使用它的客户变化。每一个封装算法的类称之为策略(Strategy)类，策略模式提供了一种可插入式(Pluggable)算法的实现方案</p>
 </blockquote>
 <h4 id="1、实例"><a href="#1、实例" class="headerlink" title="1、实例"></a>1、实例</h4><p>例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">customer</span>:</span></span><br><span class="line">    customer_name=<span class="string">""</span></span><br><span class="line">    snd_way=<span class="string">""</span></span><br><span class="line">    info=<span class="string">""</span></span><br><span class="line">    phone=<span class="string">""</span></span><br><span class="line">    email=<span class="string">""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setPhone</span><span class="params">(self,phone)</span>:</span></span><br><span class="line">        self.phone=phone</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setEmail</span><span class="params">(self,mail)</span>:</span></span><br><span class="line">        self.email=mail</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getPhone</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.phone</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getEmail</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.email</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setInfo</span><span class="params">(self,info)</span>:</span></span><br><span class="line">        self.info=info</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setName</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        self.customer_name=name</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setBrdWay</span><span class="params">(self,snd_way)</span>:</span></span><br><span class="line">        self.snd_way=snd_way</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sndMsg</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.snd_way.send(self.info)</span><br><span class="line"></span><br><span class="line"><span class="comment">#snd_way向客户发送信息的方式，该方式置为可设，即可根据业务来进行策略的选择。</span></span><br><span class="line"><span class="comment">#发送方式构建如下：</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">msgSender</span>:</span></span><br><span class="line">    dst_code=<span class="string">""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setCode</span><span class="params">(self,code)</span>:</span></span><br><span class="line">        self.dst_code=code</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(self,info)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">emailSender</span><span class="params">(msgSender)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(self,info)</span>:</span></span><br><span class="line">        print(<span class="string">"EMAIL_ADDRESS:%s EMAIL:%s"</span>%(self.dst_code,info))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">textSender</span><span class="params">(msgSender)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(self,info)</span>:</span></span><br><span class="line">        print(<span class="string">"TEXT_CODE:%s EMAIL:%s"</span>%(self.dst_code,info))</span><br><span class="line"></span><br><span class="line"><span class="comment">#业务场景中将发送方式作为策略</span></span><br><span class="line"><span class="keyword">if</span>  __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    customer_x=customer()</span><br><span class="line">    customer_x.setName(<span class="string">"CUSTOMER_X"</span>)</span><br><span class="line">    customer_x.setPhone(<span class="string">"10023456789"</span>)</span><br><span class="line">    customer_x.setEmail(<span class="string">"customer_x@xmail.com"</span>)</span><br><span class="line">    customer_x.setInfo(<span class="string">"Welcome to our new party!"</span>)</span><br><span class="line">    text_sender=textSender()</span><br><span class="line">    text_sender.setCode(customer_x.getPhone())</span><br><span class="line">    customer_x.setBrdWay(text_sender)</span><br><span class="line">    customer_x.sndMsg()</span><br><span class="line">    mail_sender=emailSender()</span><br><span class="line">    mail_sender.setCode(customer_x.getEmail())</span><br><span class="line">    customer_x.setBrdWay(mail_sender)</span><br><span class="line">    customer_x.sndMsg()</span><br></pre></td></tr></table></figure>
-<h4 id="2、应用场景"><a href="#2、应用场景" class="headerlink" title="2、应用场景"></a>2、应用场景</h4>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">customer</span>:</span></span><br><span class="line">    customer_name=<span class="string">""</span></span><br><span class="line">    snd_way=<span class="string">""</span></span><br><span class="line">    info=<span class="string">""</span></span><br><span class="line">    phone=<span class="string">""</span></span><br><span class="line">    email=<span class="string">""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setPhone</span><span class="params">(self,phone)</span>:</span></span><br><span class="line">        self.phone=phone</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setEmail</span><span class="params">(self,mail)</span>:</span></span><br><span class="line">        self.email=mail</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getPhone</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.phone</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getEmail</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.email</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setInfo</span><span class="params">(self,info)</span>:</span></span><br><span class="line">        self.info=info</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setName</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        self.customer_name=name</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setBrdWay</span><span class="params">(self,snd_way)</span>:</span></span><br><span class="line">        self.snd_way=snd_way</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sndMsg</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.snd_way.send(self.info)</span><br><span class="line"></span><br><span class="line"><span class="comment">#snd_way向客户发送信息的方式，该方式置为可设，即可根据业务来进行策略的选择。</span></span><br><span class="line"><span class="comment">#发送方式构建如下：</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">msgSender</span>:</span></span><br><span class="line">    dst_code=<span class="string">""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setCode</span><span class="params">(self,code)</span>:</span></span><br><span class="line">        self.dst_code=code</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(self,info)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">emailSender</span><span class="params">(msgSender)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(self,info)</span>:</span></span><br><span class="line">        print(<span class="string">"EMAIL_ADDRESS:%s EMAIL:%s"</span>%(self.dst_code,info))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">textSender</span><span class="params">(msgSender)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(self,info)</span>:</span></span><br><span class="line">        print(<span class="string">"TEXT_CODE:%s EMAIL:%s"</span>%(self.dst_code,info))</span><br><span class="line"></span><br><span class="line"><span class="comment">#业务场景中将发送方式作为策略</span></span><br><span class="line"><span class="keyword">if</span>  __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    customer_x=customer()</span><br><span class="line">    customer_x.setName(<span class="string">"CUSTOMER_X"</span>)</span><br><span class="line">    customer_x.setPhone(<span class="string">"10023456789"</span>)</span><br><span class="line">    customer_x.setEmail(<span class="string">"customer_x@xmail.com"</span>)</span><br><span class="line">    customer_x.setInfo(<span class="string">"Welcome to our new party!"</span>)</span><br><span class="line">    text_sender=textSender()</span><br><span class="line">    text_sender.setCode(customer_x.getPhone())</span><br><span class="line">    customer_x.setBrdWay(text_sender)</span><br><span class="line">    customer_x.sndMsg()</span><br><span class="line">    mail_sender=emailSender()</span><br><span class="line">    mail_sender.setCode(customer_x.getEmail())</span><br><span class="line">    customer_x.setBrdWay(mail_sender)</span><br><span class="line">    customer_x.sndMsg()</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="2、应用场景"><a href="#2、应用场景" class="headerlink" title="2、应用场景"></a>2、应用场景</h4><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
     </div>
 
     
@@ -315,11 +338,31 @@
 
       <footer class="post-footer">
           
+          <hr/>
+           
+            <div class="post-recommend"><h5 class="post-recommend-title">相关推荐:</h5></div>
+            <ul class="popular-posts">
+            
+              
+                
+                   <li><a href=/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F10/>Python设计模式10</li>
+                
+              
+                
+                   <li><a href=/2019/12/13/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Python%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F11/>Python设计模式11</li>
+                
+              
+                
+              
+            
+            </ul>
+          
           <div class="post-tags">
               <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"><i class="fa fa-tag"></i> 设计模式</a>
           </div>
 
         
+
 
 
         
@@ -408,7 +451,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -421,7 +464,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -466,28 +509,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">32k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
 </div>
 
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
 
         
@@ -619,6 +648,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 

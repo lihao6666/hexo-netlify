@@ -1233,7 +1233,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #09ffe0;
+  background: #8ef5b0;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2773,34 +2773,6 @@ ul.breadcrumb li + li:last-child {
     margin: 8px 0 0;
   }
 }
-.ImageGrid {
-  width: 100%;
-  max-width: 1040px;
-  margin: 0 auto;
-  text-align: center;
-}
-.ImageGrid2 {
-  width: 100%;
-  max-width: 1040px;
-  margin: 0 auto;
-  text-align: center;
-}
-.card {
-  overflow: hidden;
-  transition: 0.3s ease-in-out;
-  border-radius: 8px;
-  background-color: #ddd;
-}
-.ImageInCard img {
-  padding: 0 0 0 0;
-  border-radius: 8px;
-}
-.life {
-  color: #dd4b39;
-}
-.fellowship {
-  color: #dd4b39;
-}
 body {
   background: url("/images/body-bg.png");
   background-repeat: repeat;
@@ -2858,4 +2830,39 @@ code {
 }
 .sub-menu {
   border-radius: 8px;
+}
+.daily-date {
+  color: #56adbc;
+  text-align: right;
+}
+.daily-photo {
+  border-radius: 8px;
+}
+.ImageGrid {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  text-align: center;
+}
+.ImageGrid2 {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  text-align: center;
+}
+.card {
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  border-radius: 8px;
+  background-color: #ddd;
+}
+.ImageInCard img {
+  padding: 0 0 0 0;
+  border-radius: 8px;
+}
+.life {
+  color: #dd4b39;
+}
+.fellowship {
+  color: #dd4b39;
 }

@@ -1,7 +1,7 @@
 ---
 title: linux下ss搭建
 date: 2019-09-29 17:41:38
-tags: linux-ss
+tags: linux
 categories: linux
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: linux双系统安装
 date: 2019-09-29 17:40:27
-tags: linux系统安装
+tags: linux
 categories: linux
 ---
 

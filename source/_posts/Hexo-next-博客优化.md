@@ -44,6 +44,10 @@ top: 99
 Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
 {% endblockquote %}
 ```
+* 添加引用
+```
+{% cq %}Elegant in code, simple in core{% endcq %}
+```
 
 ### 3、站内链接(跳转站内文章)
 * 在文章内加入下面片段

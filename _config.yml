@@ -4,9 +4,9 @@
 
 # Site
 title: 三毛的小窝
-subtitle: 意映如晤
-description: 分享信仰、爱好、Python等个人学习记录
-keywords: " Gold Is Beautiful、Python Is Easy"
+subtitle: 冬天已往,雨水已止息
+description: 分享信仰、生活、代码等个人学习记录
+keywords: " Gold Is Beautiful、Code Is Easy"
 author: 李浩
 language: zh-CN
 timezone:
@@ -111,10 +111,11 @@ search:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:lihao6666/hexo-netlify.git
+  repo: git@47.94.170.116:/home/git/hexo3/hexo-next.git
+    #git@github.com:lihao6666/hexo-netlify.git
     # gitee: git@gitee.com:Mars-lh/Mars-lh.git
     # coding: git@e.coding.net:mars-se6666/mars-se.git
-  branch: run-page
+  branch: master
     # github: run-page
     # gitee: master
     # coding: master
@@ -131,7 +132,15 @@ githubEmojis:
   enable: true
   className: github-emoji
   unicode: true
+  inject: false
   styles:
     display: inline
     vertical-align: middle 
   localEmojis:
+
+# 音乐播放器
+aplayer:
+  meting: true
+  asset_inject: false
+  # aplayer_cdn: https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js
+  # meting_cdn: https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js

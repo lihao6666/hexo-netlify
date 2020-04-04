@@ -1,0 +1,26 @@
+zh-CN:
+  title:
+    archive: 归档
+    category: 分类
+    tag: 标签
+    schedule: 日程表
+    Categories: 分类
+    Tags: 标签
+    Daily: 点滴
+    Music: 音乐
+    Photos: 相册
+  menu:
+    home: 首页
+    archives: 归档
+    categories: 分类
+    tags: 标签
+    about: 关于
+    search: 搜索
+    schedule: 日程表
+    sitemap: 站点地图
+    commonweal: 公益 404
+    site: 网站概览
+    share: 碎碎念
+    photos: 光影
+    daily: 点滴
+    music: 音乐

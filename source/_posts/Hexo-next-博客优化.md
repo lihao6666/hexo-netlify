@@ -1,8 +1,8 @@
 ---
 title: Hexo next 博客优化
 date: 2020-02-03 21:25:07
-tags: 博客
-categories: 博客
+tags: hexo
+categories: blog
 top: 99
 ---
 ![三毛](https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200203215950.png)
@@ -93,6 +93,9 @@ code {
  custom_file_path:
 -  #style: source/_data/styles.styl
 +  style: source/_data/styles.styl
-``````
+```
 
+## 二、博客访问优化
 
+### 1、使用pjax
+具体可以参考官网文档[pjax使用](https://theme-next.org/docs/third-party-services/external-libraries)

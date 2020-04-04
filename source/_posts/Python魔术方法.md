@@ -3,7 +3,6 @@ title: Python魔术方法
 date: 2019-11-04 19:25:51
 tags: 技巧
 categories: Python基础
-top: 82
 ---
 
 ## Python魔术方法

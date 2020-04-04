@@ -1,5 +1,5 @@
 ---
-title: 相册
+title: Photos
 date: 2020-02-29 23:24:02
 type: picture
 comments: true

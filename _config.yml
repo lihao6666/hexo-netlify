@@ -4,7 +4,7 @@
 
 # Site
 title: 三毛的小窝
-subtitle: 冬天已往,雨水已止息
+subtitle: 靡不有初，鲜克有终
 description: 分享信仰、生活、代码等个人学习记录
 keywords: " Gold Is Beautiful、Code Is Easy"
 author: 李浩
@@ -111,7 +111,7 @@ search:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@47.94.170.116:/home/git/hexo3/hexo-next.git
+  repo: git@101.200.87.202:/home/git/hexo3/hexo-next.git
     #git@github.com:lihao6666/hexo-netlify.git
     # gitee: git@gitee.com:Mars-lh/Mars-lh.git
     # coding: git@e.coding.net:mars-se6666/mars-se.git

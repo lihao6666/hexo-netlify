@@ -3,7 +3,7 @@ title: Hexo next 博客优化
 date: 2020-02-03 21:25:07
 tags: hexo
 categories: blog
-top: 99
+top: 96
 ---
 ![三毛](https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200203215950.png)
 {% note success %}
@@ -93,6 +93,24 @@ code {
  custom_file_path:
 -  #style: source/_data/styles.styl
 +  style: source/_data/styles.styl
+```
+
+### 7、添加相关推荐
+在文章的最后添加tag相关的文章推荐，在主题文件夹下的`layout/_macro/post.swig`文件中的`post-footer`和`post-tags`中间添加如下代码:
+
+```js
+  {% if page.tags %}
+      <div class="post-recommend"><h5 class="post-recommend-title">相关推荐:</h5></div>
+      <ul class="popular-posts">
+      {% for tag in page.tags.toArray() %}
+        {% for post in tag.posts.toArray().slice('0','3') %}
+          {% if post.title != page.title %}
+              <li><a href={{ url_for(post.path) }}>{{ post.title }}</li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      </ul>
+  {% endif %}
 ```
 
 ## 二、博客访问优化

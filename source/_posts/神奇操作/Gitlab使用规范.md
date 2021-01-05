@@ -35,6 +35,8 @@ git init
 # 克隆仓库
 
 git clone http://.....
+git clone -b [分支名] http...
+
 
 # 将文件添加到暂存区
 

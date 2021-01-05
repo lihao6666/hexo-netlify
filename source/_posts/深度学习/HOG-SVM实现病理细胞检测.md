@@ -148,9 +148,9 @@ def save_image_neg2(filePath): # 平均切割
 > 我第一次提取特征，每个细胞像素(10,10),每块(4,4)个细胞,图片大小(100,100),然后每个细胞直方图设置为9个
 
 如下图：
-![1.png](http://ww1.sinaimg.cn/large/006QuJaKly1g8iz5t30x4j33402c0x6p.jpg)
+![1.png](https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/HOG.png)
 效果如下图:
-![Figure_1.png](http://ww1.sinaimg.cn/large/006QuJaKly1g8iz6pbmxzj30hs0dcq3d.jpg) ![Figure_2.png](http://ww1.sinaimg.cn/large/006QuJaKly1g8iz714jfoj30hs0dcaaq.jpg)
+![Figure_1.png](https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/hog2.jpg) ![Figure_2.png](https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/直方图.jpg)
 
 sklearn中提取hog特征关键代码：
 ```python

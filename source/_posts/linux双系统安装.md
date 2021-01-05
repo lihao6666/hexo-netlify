@@ -30,4 +30,3 @@ categories: linux
 	1. sudo vi /etc/default/grub
 	2. 在quiet splash后面加入nouveau.modeset=0，保存
 	3. sudo update-grub
-

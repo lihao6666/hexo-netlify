@@ -3,7 +3,7 @@ title: Hexo博客之音乐播放思考
 date: 2020-04-02 15:02:18
 tags: hexo
 categories: blog
-top: 99
+top: 96
 ---
 ![三毛](https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200203215950.png)
 {% note success %}

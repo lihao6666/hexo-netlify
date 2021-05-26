@@ -2,8 +2,8 @@ photo ={
     page: 1,
     //offset 用于设置照片数量的上限
     offset: 100,
-    cosUrl: "https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/myblog/",
-    cosUrl2: "https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/fellowship/",
+    cosUrl: "https://blog-1257711631.cos.ap-nanjing.myqcloud.com/myblog/",
+    cosUrl2: "https://blog-1257711631.cos.ap-nanjing.myqcloud.com/fellowship/",
     init: function () {
         var that = this;
         //这里设置的是刚才生成的 json 文件路径

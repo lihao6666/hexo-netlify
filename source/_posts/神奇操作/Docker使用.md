@@ -20,7 +20,8 @@ top: 98
 ### 二、docker运行命令
 
 ```
-docker run -it [镜像名字] /bin/bash
+docker run -it [镜像名字] /bin/bash 
+
 ```
 
 参数说明：
@@ -32,8 +33,10 @@ docker run -it [镜像名字] /bin/bash
 
 ```
 docker run --name [容器别名] -itd [镜像名字] /bin/bash
+docker run -itd --name mongo -p 27017:27017 mongo
 ```
 参数说明：
+
 * --name 会给容器一个别名，便于操作
 * -itd -d参数不会进入容器，会后台运行
 * 可以使用`docker exec -it [镜像id] /bin/bash进入镜像终端

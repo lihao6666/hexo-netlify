@@ -5,7 +5,7 @@ tags: hexo
 categories: blog
 top: 96
 ---
-![三毛](https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200203215950.png)
+![三毛](https://blog-1257711631.cos.ap-nanjing.myqcloud.com/20200203215950.png)
 {% note success %}
 一个人至少拥有一个梦想，有一个理由去坚强。心若没有栖息的地方，到哪里都是在流浪。
                                                     <p align="right"> -- 三毛

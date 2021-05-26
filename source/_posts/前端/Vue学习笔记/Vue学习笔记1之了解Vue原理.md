@@ -44,7 +44,7 @@ M(Model)| 数据模型，用来处理数据库数据事务
 V(View) | 视图，用来展示信息的DOM层
 VM(VueModel) | 视图模型层，实现数据绑定的关键
 
-![MVVM模型](https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200226225129.png)
+![MVVM模型](https://blog-1257711631.cos.ap-nanjing.myqcloud.com/20200226225129.png)
 
 其中View通过View-Model的DOM Listeners将事件绑定到Model上，而Model则通过Data Bindings来管理View中的数据。
 
@@ -190,7 +190,7 @@ vm.$emit('test', 'hi')
 
 主要过程有`init()`->`beforeCreated`->`created`->`beforeMount`->`mounted`->`beforeUpdate`->`updated`->`beforeDestroy`->`destroyed`，下面是Vue实例生命周期解析图:
 
-![Vue生命周期解析图](https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/20200226233022.png)
+![Vue生命周期解析图](https://blog-1257711631.cos.ap-nanjing.myqcloud.com/20200226233022.png)
 
 ***生命周期函数*** | ***功能***
 -|-|

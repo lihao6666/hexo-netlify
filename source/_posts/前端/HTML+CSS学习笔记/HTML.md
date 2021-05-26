@@ -14,10 +14,10 @@ categories:
 #### 块级元素和行内元素
 
 *块级元素*
-![](https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/html.png)
+![](https://blog-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/html.png)
 
 *行内元素*
-![](https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0.png)
+![](https://blog-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0.png)
 
 #### meta
 
@@ -52,11 +52,18 @@ categories:
 
 ##### 2、锚链接(实现当前页跳转)
 
-```
+```html
 <a name="miao">gigi</a>
 <a href="#miao">回到顶部</a>
+<!-- 可以实现当前页面跳转 -->
 ```
-可以实现页面跳转
+
+```html
+<a href="xx.html#tips"/>   <!--这里写需要定位的-->
+<a name="tips"/>      <!--被定位的-->
+<!-- 不同页面跳转 -->
+```
+
 
 ##### 3、邮件链接
 

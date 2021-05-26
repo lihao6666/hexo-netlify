@@ -10,7 +10,7 @@ date: 2020-03-09 23:53:44
 
 {% note %}
 成功被金伟弟兄cue到
-<img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/20200403164418.png" width=500 height=350>
+<img src="https://blog-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/20200403164418.png" width=500 height=350>
 <div class="daily-date"><i class="fa fa-calendar"></i> 2020-04-03 </div>
 {% endnote %}
 
@@ -27,13 +27,13 @@ flag ，明天起来写一篇自己的分享！
 
 {% note %}
 万恶的电子商务，疯狂吐槽
-<img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/雕爷牛腩嘲讽.png" width=500 height=350>
+<img src="https://blog-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/雕爷牛腩嘲讽.png" width=500 height=350>
 <div class="daily-date"><i class="fa fa-calendar"></i> 2020-04-13 </div>
 {% endnote %}
 
 {% note %}
 中药养身体中，最近真的很体会到温暖的感觉，感谢母亲和奶奶的照顾，虽然我还经常说他们唠叨。
-<img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/IMG_0166(20200420-201030).JPG" width=300 height=400>
+<img src="https://blog-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/IMG_0166(20200420-201030).JPG" width=300 height=400>
 <div class="daily-date"><i class="fa fa-calendar"></i> 2020-04-21 </div>
 {% endnote %}
 

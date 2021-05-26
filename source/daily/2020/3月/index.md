@@ -14,7 +14,7 @@ date: 2020-03-04 23:53:31
 {% note %}
 散步+茶经:dog:
 <div class="daily-photo">
-<img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/0F5318D7-D4C4-4364-851C-9322E618FBFD_1_105_c.jpeg" width=500 height=350>
+<img src="https://blog-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/0F5318D7-D4C4-4364-851C-9322E618FBFD_1_105_c.jpeg" width=500 height=350>
 </div>
 <div class="daily-date"><i class="fa fa-calendar"></i> 2020-03-06</div>
 {% endnote %}
@@ -48,7 +48,7 @@ icloud真的很香啊
 
 {% note %}
 手写读经分享哈哈哈，真的丑:smile:
-<img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/IMG_2B4B0A433E58-1.jpeg" width=500 height=350>
+<img src="https://blog-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/IMG_2B4B0A433E58-1.jpeg" width=500 height=350>
 
 <div class="daily-date"><i class="fa fa-calendar"></i> 2020-03-18 凌晨</div>
 {% endnote %}
@@ -60,7 +60,7 @@ icloud真的很香啊
 
 {% note %}
 拉了一天肚子，感谢老母亲送来的奶茶，原谅我天天的顶嘴哈哈哈
-<img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/8CD98054-124B-4B71-8873-6EC9CA094782_1_105_c.jpeg" width=500 height=350>
+<img src="https://blog-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/8CD98054-124B-4B71-8873-6EC9CA094782_1_105_c.jpeg" width=500 height=350>
 
 <div class="daily-date"><i class="fa fa-calendar"></i> 2020-03-20 晚</div>
 {% endnote %}
@@ -74,8 +74,8 @@ icloud真的很香啊
 
 {% note %}
 都要好好爱惜自己的胃啊大家！
-<img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/病历.png" width=500 height=350>
-<img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/病后伙食.jpeg" width=500 height=350>
+<img src="https://blog-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/病历.png" width=500 height=350>
+<img src="https://blog-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/病后伙食.jpeg" width=500 height=350>
 <div class="daily-date"><i class="fa fa-calendar"></i> 2020-03-23 </div>
 {% endnote %}
 
@@ -86,7 +86,7 @@ icloud真的很香啊
 
 {% note %}
 单词+奶茶，小惬意。
-<img src="https://hexo-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/20200331001538.png" width=500 height=350>
+<img src="https://blog-1257711631.cos.ap-nanjing.myqcloud.com/markdownpic/20200331001538.png" width=500 height=350>
 <div class="daily-date"><i class="fa fa-calendar"></i> 2020-03-30 晚</div>
 {% endnote %}
 

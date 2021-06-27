@@ -14,6 +14,6 @@ comments: true
 
 <h3 class = "fellowship" align="center">以便以谢</h3>
 {% note %}
-记录在以便以谢教会和大家一起度过的时光吧，希望你我都可以走的更远
+记录在以便以谢教和大家一起度过的时光吧，希望你我都可以走的更远
 {% endnote %}
 <div class="ImageGrid2"></div>

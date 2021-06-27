@@ -15,7 +15,7 @@ top: 98
 * docker images //查看安装的镜像
 * docker rmi [id] //删除安装的镜像 docker rm [id] //删除容器
 * docker ps // 查看现在运行的容器 docker ps -a //查看所有的容器
-* docker ps -p //查看正在运行的容器的id
+* docker ps -q- //查看正在运行的容器的id
 
 ### 二、docker运行命令
 
@@ -51,4 +51,52 @@ docker run -itd --name mongo -p 27017:27017 mongo
 
 ## 进阶
 
-后面补充
+### 一、查看日志
+命令格式：
+
+```cmd
+docker logs [OPTIONS] CONTAINER
+  Options:
+        --details        显示更多的信息
+    -f, --follow         跟踪实时日志
+        --since string   显示自某个timestamp之后的日志，或相对时间，如42m（即42分钟）
+        --tail string    从日志末尾显示多少行日志， 默认是all
+    -t, --timestamps     显示时间戳
+        --until string   显示自某个timestamp之前的日志，或相对时间，如42m（即42分钟）
+```
+查看当前运行容器的实时日志:
+```cmd
+docker logs --tail 10000 -f [容器id]
+```
+### 二、docker容器文件拷贝
+
+容器中文件拷贝到本地：
+
+```cmd
+docker cp [容器名称]:[容器中文件或者文件夹路径] [本地路径]
+```
+本地文件拷贝到容器中：
+```cmd
+docker cp [本地路径] [容器名称]:[容器中文件或者文件夹路径] 
+```
+
+### 三、查看容器运行的ip地址
+
+```cmd
+docker inspect [容器名字] | grep IPAddress
+```
+
+## 进阶使用
+### docker-compose使用
+
+[docker-compose使用](https://www.runoob.com/docker/docker-compose.html)
+
+
+### dockerfile使用
+
+[dockerfile使用](https://www.runoob.com/docker/docker-dockerfile.html)
+
+
+
+
+

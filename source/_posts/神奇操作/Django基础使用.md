@@ -42,7 +42,7 @@ python manage.py startapp [app名字]
 
 ## 二、项目逻辑介绍
 
-
+Django基于MTV开发模型，所以在使用的过程中需要根据具体需求进行配置，
 
 ## 三、进阶用法
 

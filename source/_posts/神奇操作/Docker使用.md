@@ -5,6 +5,16 @@ tags: docker
 categories: 神奇操作
 top: 98
 ---
+## docker原理
+
+[docker原理](http://dockone.io/article/2941)
+
+- 进程隔离（命名空间）
+- Docker 通过 Linux 的命名空间实现了网络的隔离，又通过 iptables 进行数据包转发
+- 目录隔离
+- 物理资源的隔离
+- 镜像的layer(可读)，容器是最上层(可写可读)
+- 与虚拟机的区别
 
 ## 基础使用
 
@@ -17,6 +27,7 @@ top: 98
 * docker ps // 查看现在运行的容器 docker ps -a //查看所有的容器
 * docker ps -q- //查看正在运行的容器的id
 
+<!--more-->
 ### 二、docker运行命令
 
 ```
@@ -87,16 +98,56 @@ docker inspect [容器名字] | grep IPAddress
 ```
 
 ## 进阶使用
-### docker-compose使用
+
+### 一、docker-compose使用
 
 [docker-compose使用](https://www.runoob.com/docker/docker-compose.html)
 
 
-### dockerfile使用
+
+### 二、dockerfile使用
 
 [dockerfile使用](https://www.runoob.com/docker/docker-dockerfile.html)
 
+### 三、配合使用
 
+比如下面的应用场景，我们拉取了一个镜像，但是镜像中还有些环境需要配置，比如一些python包没安装，这时候我们需要使用Dockerfile将自己需要的python库打包到相对应的镜像中，Dockerfile内容如下:
+
+```Dockerfile
+FROM osimis/orthanc
+
+# RUN echo '这是一个本地构建的nginx镜像' 
+# COPY ./orthanc.json /etc/orthanc/orthanc.json
+RUN apt install python3-pip \
+&& pip3 install pymysql \
+&& pip3 install pyjwt
+```
+
+下面我们需要使用docker-compose先构建对应的镜像，然后再运行容器，docker-compose.yml内容如下:
+
+```yml
+version: "3.3"
+services:
+    orthanc:
+        build:
+            context: ./orthanc                 # 指定Dockerfile文件所在路径
+            dockerfile: Dockerfile             # 指定Dockerfile文件名
+        ports: ["8000:8042"]
+        image: orthanc-dev                     # 有build了，image为构建镜像的名字
+        container_name: orthanc
+        environment:
+            ORTHANC__NAME: "orthanc"
+            VERBOSE_ENABLED: "false"
+            VERBOSE_STARTUP: "false"
+            PYTHON_PLUGIN_ENABLED: "true"
+            ORTHANC__PYTHON_SCRIPT: "/etc/orthanc/python/test.py"
+            ORTHANC__PYTHON_VERBOSE: "false"
+            # ORTHANC__LUA_SCRIPYS: "/etc/orthanc/python/test.lua"
+            ORTHANC__AUTHENTICATION_ENABLED: "false"
+        volumes:
+            - ./orthanc/python:/etc/orthanc/python
+            - ./orthanc/orthanc-db:/var/lib/orthanc/db
+```
 
 
 

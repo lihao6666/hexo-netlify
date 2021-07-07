@@ -1,8 +1,8 @@
 ---
 title: Hexo next 博客优化
 date: 2020-02-03 21:25:07
-tags: hexo
-categories: blog
+tags: blog
+categories: 神奇操作
 top: 96
 ---
 ![三毛](https://blog-1257711631.cos.ap-nanjing.myqcloud.com/20200203215950.png)

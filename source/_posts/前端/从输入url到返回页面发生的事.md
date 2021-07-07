@@ -1,8 +1,10 @@
 ---
 title: 从输入url到返回页面发生的事
 date: 2019-10-14 19:15:02
-tags: url
-categories: web
+tags: 原理
+categories: 
+- 前端
+- 其它
 ---
 
 # 从输入url到返回页面发生的事

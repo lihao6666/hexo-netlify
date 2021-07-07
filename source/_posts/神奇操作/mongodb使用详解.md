@@ -39,3 +39,5 @@ categories: 神奇操作
 
 ### 1、scrapy中mongodb的使用
 
+就是使用pymongo的语法即可
+

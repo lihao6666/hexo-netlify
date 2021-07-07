@@ -101,10 +101,10 @@ typeof [变量]
 
 *显示类型转换*
 
-- toString() 调用方法为`变量.toString()`
+- toString() 调用方法为`变量.toString()`，返回新变量结果
 - String() 调用方法为`String(变量)`
 - Number() 包括小数,调用方法为`Number(变量)`,其中对于null为0，undefined为NaN
-- parseInt(string) 特性是z
+- parseInt(string) 特性是只保留字符串开头的数字、自动截断小数
 - parseFloat(string)
 - Boolean()
 
@@ -115,6 +115,11 @@ typeof [变量]
 - 正号/负号：`+a`、`-a`
 - 加号：`+`
 - 运算符：`-`、`*`、`/`
+
+
+
+
+
 
 
 

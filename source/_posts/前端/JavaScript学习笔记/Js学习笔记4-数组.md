@@ -155,7 +155,15 @@ numArr.forEach((item, index, arr) => {
 });
 console.log(JSON.stringify(numArr)); // 打印结果：[2,4,6]
 ```
+**for of**
 
+```js
+let arr1 = [2, 6, 8, 5];
+
+for (let value of arr1) {
+    console.log(value);
+}
+```
 ### map()方法
 
 对数组中每一项运行回调函数，返回该函数的结果，组成的新数组（返回的是**加工之后**的新数组）。不会改变原数组

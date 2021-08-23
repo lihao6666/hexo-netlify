@@ -107,6 +107,7 @@ pip install django-cors-headers
       'corsheaders',
    ]
    ```
+- 注释掉MIDDLEWARE_CLASSES中的`django.middleware.csrf.CsrfViewMiddleware`
 
 - 在MIDDLEWARE_CLASSES添加配置
 

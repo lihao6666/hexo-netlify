@@ -17,7 +17,7 @@ ssh-keygen  -t rsa –C "邮箱"
 
 ```
 
-### 二、Git使用
+### 二、Git基本使用
 
 #### 1、简单配置及命令
 
@@ -116,3 +116,9 @@ git remote add origin [github仓库]
 git push origin master # origin表示远程主机，master表示主分支
 
 ```
+
+### Git进阶使用
+
+#### 1、git stash
+
+如果当前分支开发过程中，想切换到另一个分支，但是不想commit到仓库，可以先运行`git stash`进行储藏 ，然后可以切换到另一个分支，如果切换回来后，可以运行`git stash apply`恢复分支存储

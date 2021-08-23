@@ -3,17 +3,26 @@ title: Music
 date: 2020-04-02 16:25:18
 type: music
 ---
-### 如果不显示，请刷新
+
+{% centerquote %}
+僕は時代のものじゃなくて,あなたのものになりたいんだ
+我不是时代的产物，只想成为你的所有物
+{% endcenterquote %}
+<iframe src="//player.bilibili.com/player.html?aid=375857068&bvid=BV1No4y127ha&cid=346051513&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<!-- {% meting "5347633405" "netease" "playlist" "theme:#e8deca" "mode:circulation" "mutex:true" %} -->
+
 
 
 {% centerquote %}
-安静的心，紧跟的脚步，愿你我都能越走越远
+想成为一只猫
 {% endcenterquote %}
-{% meting "5347633405" "netease" "playlist" "theme:#e8deca" "mode:circulation" "mutex:true" %}
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=530 height=450 src="//music.163.com/outchain/player?type=0&id=5347633405&auto=0&height=430"></iframe>
 
 {% centerquote %}
-民谣有三：孤独、理想和远方
+意映如晤
 {% endcenterquote %}
 
-{% meting "7541065761" "tencent" "playlist" "theme:#e8deca" "mode:circulation" "mutex:true" %}
-
+<!-- {% meting "7541065761" "tencent" "playlist" "theme:#e8deca" "mode:circulation" "mutex:true" %} -->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=530 height=450 src="//music.163.com/outchain/player?type=0&id=5301943343&auto=0&height=430"></iframe>

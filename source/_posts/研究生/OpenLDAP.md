@@ -26,5 +26,3 @@ docker cp openldap:/var/lib/ldap /tmp/ldap/database/
 docker run --name -p 389:389 -p 636:636 openldap -v /tmp/ldap/database/ldap:/var/lib/ldap -v /tmp/ldap/config/slapd.d:/etc/ldap/slapd.d -itd osixia/openldap:1.5.0
 ```
 
-## 测试运行
-

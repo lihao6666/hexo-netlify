@@ -96,7 +96,7 @@ ignore:
 theme: next
 
 symbols_count_time:
-  symbols: false               # 文章字数统计
+  symbols: true               # 文章字数统计
   time: false                   # 文章阅读时长
   total_symbols: true          # 站点总字数统计
   total_time: true             # 站点总阅读时长
@@ -111,7 +111,7 @@ search:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@101.200.87.202:/home/git/hexo3/hexo-next.git
+  repo: git@114.115.156.32:/home/git/hexo3/hexo-next.git
     #git@github.com:lihao6666/hexo-netlify.git
     # gitee: git@gitee.com:Mars-lh/Mars-lh.git
     # coding: git@e.coding.net:mars-se6666/mars-se.git

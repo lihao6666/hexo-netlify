@@ -5,6 +5,27 @@ tags: docker
 categories: 神奇操作
 top: 98
 ---
+
+## docker安装
+
+linux下安装`docker`和`docker-compose`使用如下命令
+
+```cmd
+curl -sSL https://get.daocloud.io/docker | sh 
+curl -L https://get.daocloud.io/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+```
+
+需要给docker加上权限
+```cmd
+
+```
+
+安装portainer管理docker环境
+```cmd
+
+```
 ## docker原理
 
 [docker原理](http://dockone.io/article/2941)

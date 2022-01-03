@@ -122,3 +122,39 @@ git push origin master # origin表示远程主机，master表示主分支
 #### 1、git stash
 
 如果当前分支开发过程中，想切换到另一个分支，但是不想commit到仓库，可以先运行`git stash`进行储藏 ，然后可以切换到另一个分支，如果切换回来后，可以运行`git stash apply`恢复分支存储
+
+#### 2、修改已经push的commit message
+
+修改最近的几个commit message,其中HEAD后面的数字表示修改最近的几个commit message
+
+```Shell
+git rebase -i HEAD~5
+```
+
+接下来会显示如下这样的界面，需要你使用VIM的编辑方式将你需要修改的commit messsage前面的`pick`改成`edit`
+
+```Shell
+pick 1d316b0 1 ->改为 edit 1d316b0 1
+pick f429786 2
+pick 880cfbc 3
+pick c55cf56 4
+pick d10fd07 5
+```
+
+保存后先使用amend命令修改commit message
+
+```Shell
+git commit --amend
+```
+
+修改message后运行rebase命令保存修改
+
+```Shell
+git rebase --continue
+```
+
+根据上面选择修改的commit进行多次重复操作，修改完全后，使用push -f 命令强制更新远程commit
+
+```Shell
+git push -f origin [分支名]
+```
